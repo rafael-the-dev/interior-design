@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import classNames from "classnames";
 
 import ListItem from "./components/list-item";
@@ -8,27 +8,53 @@ const HeroContainer = () => {
     const listRef = useRef(null);
     const setChildren = useRef(null);
     const children = useRef([]);
+    const currentIndex = useRef(0);
+    const previousIndex = useRef(0);
+    const heightRef = useRef(0);
+    
     const gradient = "linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .1))";
 
-    const setLayout = () => {
+    const setPostion = useCallback((element, index) => {
+        const signal = index % 2 === 0 ? "-" : "";
+
+        element.style.top = `${signal}${heightRef.current * 2}px`;
+    }, []);
+
+    const setLayout = useCallback(() => {
         children.current.forEach((child, index) => {
             const { height } = child.parentNode.getBoundingClientRect();
+            heightRef.current = height;
             
             if(index === 0) {
                 child.style.top = 0;
             } else {
-                const signal = index % 2 === 0 ? "-" : "";
-
-                child.style.top = `${signal}${height * 2}px`;
+                setPostion(child, index);
             }
         })
-    };
+    }, [ setPostion ]);
+
+    const slide = useCallback(() => {
+        if(children.current.length === 0) return;
+
+        children.current[previousIndex.current].style.zIndex = 0;
+
+        children.current[currentIndex.current].style.top = 0;
+        children.current[currentIndex.current].style.zIndex = 5;
+
+        if(previousIndex.current !== currentIndex.current) {
+            setTimeout(() => {
+                const elementIndex = currentIndex.current === 0 ? 1 : currentIndex.current;
+                setPostion(children.current[previousIndex.current], elementIndex);
+            }, 1100);
+        }
+
+    }, [ setPostion ]);
 
     useEffect(() => {
         children.current = [ ...listRef.current.children ];
         setChildren.current?.(children.current);
         setLayout();
-    }, []);
+    }, [ setLayout ]);
 
     return (
         <section className='relative'>
@@ -43,7 +69,12 @@ const HeroContainer = () => {
                     <div className={classNames("bg-cover bg-center bg-no-repeat h-full hero--crafted w-full")}></div>
                 </ListItem>
             </ul>
-            <Controllers setChildrenRef={setChildren} />
+            <Controllers 
+                currentIndex={currentIndex} 
+                previousIndex={previousIndex} 
+                slide={slide} 
+                setChildrenRef={setChildren} 
+            />
             <style jsx>
                 {
                     `
