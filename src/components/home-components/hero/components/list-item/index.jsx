@@ -1,6 +1,6 @@
 
 
-const ListItem = ({ children }) => (
+const ListItem = ({ children, className }) => (
     <li className="absolute hero__list-item h-full left-0 w-full">
         { children }
         <style jsx>
