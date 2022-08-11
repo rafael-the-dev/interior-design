@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
 
-import ListItem from "./components/list-item"
+import ListItem from "./components/list-item";
+import Controllers from "./components/controllers"
 
 const HeroContainer = () => {
     const listRef = useRef(null);
+    const setChildren = useRef(null);
     const children = useRef([]);
 
     const setLayout = () => {
@@ -22,11 +24,12 @@ const HeroContainer = () => {
 
     useEffect(() => {
         children.current = [ ...listRef.current.children ];
+        setChildren.current?.(children.current);
         setLayout();
     }, []);
 
     return (
-        <section>
+        <section className='relative'>
             <ul ref={listRef} className="hero__list overflow-hidden relative">
                 <ListItem>
                     <div></div>
@@ -38,6 +41,7 @@ const HeroContainer = () => {
                     <div></div>
                 </ListItem>
             </ul>
+            <Controllers setChildrenRef={setChildren} />
             <style jsx>
                 {
                     `
