@@ -15,7 +15,7 @@ const HeroContainer = () => {
     const previousIndex = useRef(0);
     const heightRef = useRef(0);
     
-    const gradient = "linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .1))";
+    const gradient = "linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .1))";
 
     const setPostion = useCallback((element, index) => {
         const signal = index % 2 === 0 ? "-" : "";
@@ -70,10 +70,12 @@ const HeroContainer = () => {
                     </div>
                 </ListItem>
                 <ListItem>
-                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--well-invented justify-center px-5 w-full")}>
-                        <Title>Crafted better</Title>
-                        <Description />
-                        <Link />
+                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--well-invented justify-center px-5 w-full md:items-center")}>
+                        <div>
+                            <Title>Crafted better</Title>
+                            <Description />
+                            <Link />
+                        </div>
                     </div>
                 </ListItem>
                 <ListItem>
@@ -94,7 +96,7 @@ const HeroContainer = () => {
                 {
                     `
                         .hero__list {
-                            height: 280px;
+                            height: 320px;
                         }
 
                         .hero--decoration {
@@ -107,6 +109,24 @@ const HeroContainer = () => {
 
                         .hero--crafted {
                             background-image: ${gradient}, url(/images/slides/v1-3.jpg);
+                        }
+
+                        @media screen and (min-width: 600px) {
+                            .hero__list {
+                                height: 420px;
+                            }
+                        }
+
+                        @media screen and (min-width: 768px) {
+                            .hero__list {
+                                height: 520px;
+                            }
+                        }
+
+                        @media screen and (min-width: 990px) {
+                            .hero__list {
+                                height: 620px;
+                            }
                         }
                     `
                 }

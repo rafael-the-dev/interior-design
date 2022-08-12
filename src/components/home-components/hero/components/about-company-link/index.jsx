@@ -7,7 +7,7 @@ import Link from "src/components/link";
 const LinkButton = () => (
     <Link href="/">
         <Button
-            className="bg-red-600 capitalize mt-6 px-4 py-2 rounded-none text-white"
+            className="bg-red-600 capitalize mt-6 px-4 py-2 rounded-none text-white sm:mt-12 sm:py-3"
             endIcon={<ArrowForwardIcon />}>
             About company
         </Button>
