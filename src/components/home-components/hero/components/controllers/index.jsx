@@ -9,8 +9,11 @@ const ControlersContainer = ({ currentIndex, previousIndex, slide, setChildrenRe
     const [ children, setChildren ] = useState([]);
     const childrenRef = useRef([]);
     const [ index, setIndex ] = useState(0);
+    const hasUserChanged = useRef(null);
     
-    const nextHandler = useCallback(() => {
+    const nextHandler = useCallback((event) => {
+        if(event) hasUserChanged.current = true;
+
         setIndex(currentValue => {
             previousIndex.current = currentValue;
             
@@ -22,7 +25,9 @@ const ControlersContainer = ({ currentIndex, previousIndex, slide, setChildrenRe
         })
     }, [ previousIndex ]);
 
-    const previousHandler = useCallback(() => {
+    const previousHandler = useCallback((event) => {
+        if(event) hasUserChanged.current = true;
+
         setIndex(currentValue => {
             previousIndex.current = currentValue;
             
@@ -46,7 +51,20 @@ const ControlersContainer = ({ currentIndex, previousIndex, slide, setChildrenRe
         currentIndex.current = index;
         console.log(index)
         slide();
-    }, [ currentIndex, index, slide ])
+    }, [ currentIndex, index, slide ]);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if(hasUserChanged.current) {
+                hasUserChanged.current = false;
+                return;
+            }
+
+            nextHandler();
+        }, 4000);
+
+        return () => clearInterval(timer);
+    }, [ nextHandler ])
 
     return (
         <div className=" absolute buttons-container flex justify-between px-2 w-full">
