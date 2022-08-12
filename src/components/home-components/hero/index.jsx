@@ -2,7 +2,10 @@ import { useCallback, useEffect, useRef } from "react";
 import classNames from "classnames";
 
 import ListItem from "./components/list-item";
-import Controllers from "./components/controllers"
+import Controllers from "./components/controllers";
+import Title from "./components/title";
+import Description from "./components/description";
+import Link from "./components/about-company-link";
 
 const HeroContainer = () => {
     const listRef = useRef(null);
@@ -60,13 +63,25 @@ const HeroContainer = () => {
         <section className='relative'>
             <ul ref={listRef} className="hero__list overflow-hidden relative">
                 <ListItem className="">
-                    <div className={classNames("bg-cover bg-center bg-no-repeat h-full hero--decoration w-full")}></div>
+                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--decoration justify-center px-5 w-full")}>
+                        <Title>Decorate ideas</Title>
+                        <Description />
+                        <Link />
+                    </div>
                 </ListItem>
                 <ListItem>
-                    <div className={classNames("bg-cover bg-center bg-no-repeat h-full hero--well-invented w-full")}></div>
+                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--well-invented justify-center px-5 w-full")}>
+                        <Title>Crafted better</Title>
+                        <Description />
+                        <Link />
+                    </div>
                 </ListItem>
                 <ListItem>
-                    <div className={classNames("bg-cover bg-center bg-no-repeat h-full hero--crafted w-full")}></div>
+                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--crafted justify-center px-5 w-full")}>
+                        <Title>Well Invented</Title>
+                        <Description />
+                        <Link />
+                    </div>
                 </ListItem>
             </ul>
             <Controllers 
