@@ -1,4 +1,3 @@
-
 import Hero from "src/components/home-components/hero";
 import HightlightCard from "src/components/home-components/highlight-card"
 
@@ -8,7 +7,7 @@ const Home = () => {
         <>
             <Hero />
             <div>
-                <div className="px-5 py-12">
+                <div className="hightlight-cards-container justify-between px-5 py-12 relative sm:px-[10%] sm:pt-28 lg:px-5">
                     <HightlightCard
                         description="Indignation dislike who are beguile works &amp; demoralized the charms."
                         title="Concept designs" 
@@ -23,6 +22,24 @@ const Home = () => {
                     />
                 </div>
             </div>
+            <style jsx>
+                {
+                    `
+                        @media screen and (min-width: 990px) {
+                            .hightlight-cards-container {
+                                display: flex;
+                            }
+                        }
+
+                        @media screen and (min-width: 1060px) {
+                            .hightlight-cards-container {
+                                transform: translateY(-177px);
+                                z-index: 20;
+                            }
+                        }
+                    `
+                }
+            </style>
         </>
     );
 };
