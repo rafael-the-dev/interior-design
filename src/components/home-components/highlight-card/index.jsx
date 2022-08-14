@@ -14,7 +14,7 @@ const HightlightCard  = ({ description, image, title }) => (
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
             <Avatar
                 className={classNames(classes.avatar, "border-2 border-solid bg-white border-red-600 mx-auto",
-                "sm:absolute top-0")}
+                "sm:absolute top-0 before:absolute before:bg-red-600 before:block before:h-full")}
                 src={image} 
             />
             <Typography
@@ -32,8 +32,8 @@ const HightlightCard  = ({ description, image, title }) => (
             className="mt-8"
             href="/">
             <Button 
-                className="bg-slate-50 capitalize font-normal py-3 rounded-t-none rounded-b-lg text-black w-full 
-                    hover:bg-slate-50 hover:text-red-600 sm:py-4"
+                className={classNames(classes.button, `bg-slate-50 capitalize font-normal py-3 rounded-t-none rounded-b-lg text-black w-full 
+                hover:bg-slate-50 hover:text-red-600 sm:py-4`)}
                 endIcon={<ArrowForwardIcon />}>
                 Read more
             </Button>

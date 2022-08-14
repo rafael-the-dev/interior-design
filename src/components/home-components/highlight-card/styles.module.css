@@ -7,6 +7,22 @@
     width: 85px;
 }
 
+.avatar::before {
+    content: "" !important;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width .5s ease-in;
+    width: 0;
+}
+
+.container:hover .avatar::before {
+    width: 100%;
+}
+
+.container:hover .button {
+    color: #dc2626;
+}
+
 @media screen {
     .container {
         margin-bottom: 6rem;
