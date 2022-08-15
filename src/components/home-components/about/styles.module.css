@@ -21,3 +21,50 @@
     width: 90px;
     z-index: 5;
 }
+
+.title::before {
+    content: "About company" !important;
+}
+@media screen and (min-width: 483px) {
+    .imageContainer {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .imageContainer {
+        height: 360px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .imageContainer {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .box {
+        width: 320px;
+    }
+
+    .imageContainer {
+        height: 270px;
+        width: 315px;
+    }
+
+    .content {
+        width: 55%;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .box {
+        width: 360px;
+    }
+
+    .imageContainer {
+        height: 350px;
+        width: 380px;
+    }
+}

@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <Hero />
             <div>
-                <div className="hightlight-cards-container justify-between px-5 py-12 relative sm:px-[10%] sm:pt-28 lg:px-5">
+                <div className="hightlight-cards-container justify-between px-5 py-12 relative sm:px-[10%] sm:pt-28 lg:py-0 lg:px-5">
                     <HightlightCard
                         description="Indignation dislike who are beguile works &amp; demoralized the charms."
                         title="Concept designs" 
@@ -35,7 +35,7 @@ const Home = () => {
 
                         @media screen and (min-width: 1060px) {
                             .hightlight-cards-container {
-                                transform: translateY(-177px);
+                                transform: translateY(-86px);
                                 z-index: 20;
                             }
                         }
