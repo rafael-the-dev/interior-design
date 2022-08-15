@@ -1,0 +1,8 @@
+.container {
+    background-image: linear-gradient(rgba(40, 41, 46, 0.97), rgba(40, 41, 46, 0.97)), url(/images/parallax-background/working-bg.jpg);
+}
+
+.title::before {
+    content: "working areas" !important;
+    font-size: 1.1rem;
+}
