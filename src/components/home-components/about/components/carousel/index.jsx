@@ -29,6 +29,20 @@ const Carousel = () => {
         setChildrenListRef.current?.(childrenList.current);
     }, []);
 
+    const resizeHandler = useCallback(() => {
+        layout();
+        slide({});
+    }, [ layout, slide ])
+
+    useEffect(() => {
+        const currentWindow = window;
+        currentWindow.addEventListener("resize", resizeHandler);
+
+        return () => {
+            currentWindow.removeEventListener("resize", resizeHandler)
+        };
+    }, [ resizeHandler ])
+
     return (
         <div>
             <div className="bg-red-600 mt-8 mission-carousel overflow-hidden px-5 py-8 relative after:absolute after:text-white">
@@ -64,6 +78,13 @@ const Carousel = () => {
 
                         .slider {
                             transition: transform .8s ease-in
+                        }
+
+                        @media screen and (min-width: 1024px) {
+                            .mission-carousel {
+                                padding-left: 10%;
+                                padding-right: 10%;
+                            }
                         }
                     `
                 }

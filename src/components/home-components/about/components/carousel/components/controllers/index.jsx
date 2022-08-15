@@ -45,8 +45,9 @@ const ControllersContainer = ({ nextIndex, slide, setChildrenListRef }) => {
     }, [ childrenList ]);
 
     useEffect(() => {
+        nextIndex.current = index;
         slide({ index });
-    }, [ index, slide ])
+    }, [ index, nextIndex, slide ])
     
     return (
         <div className='mt-6'>
