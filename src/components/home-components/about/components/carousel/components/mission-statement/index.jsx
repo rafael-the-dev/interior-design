@@ -2,7 +2,7 @@ import { Typography } from "@mui/material"
 
 
 const MissionStatement = () => (
-    <li className="absolute">
+    <li className="absolute h-full w-full">
         <div className="text-white">
             <Typography
                 component="h3"
