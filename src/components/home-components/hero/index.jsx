@@ -48,20 +48,28 @@ const HeroContainer = () => {
             setTimeout(() => {
                 const elementIndex = currentIndex.current === 0 ? 1 : currentIndex.current;
                 setPostion(children.current[previousIndex.current], elementIndex);
-            }, 1100);
+            }, 1450);
         }
 
     }, [ setPostion ]);
 
+    const sliderCallbackRef = useCallback(sliderNode => {
+        listRef.current = sliderNode;
+        
+        if(sliderNode) {
+            children.current = [ ...sliderNode.children ];
+            setLayout();
+
+        }
+    }, [])
+
     useEffect(() => {
-        children.current = [ ...listRef.current.children ];
         setChildren.current?.(children.current);
-        setLayout();
     }, [ setLayout ]);
 
     return (
         <section className='relative'>
-            <ul ref={listRef} className="hero__list overflow-hidden relative">
+            <ul ref={sliderCallbackRef} className="hero__list overflow-hidden relative">
                 <ListItem className="">
                     <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--decoration justify-center px-5 w-full")}>
                         <Title>Decorate ideas</Title>

@@ -21,11 +21,18 @@ const Carousel = () => {
         childrenList.current.forEach((child, index) => {
             child.style.left = `${width * index }px`;
         });
-    }, [])
+    }, []);
+
+    const sliderCallbackRef = useCallback((sliderNode) => {
+        sliderRef.current = sliderNode;
+
+        if(sliderNode) {
+            childrenList.current = [ ...sliderNode.children ];
+            layout();
+        } 
+    }, [ layout ])
 
     useEffect(() => {
-        childrenList.current = [ ...sliderRef.current.children ];
-        layout();
         setChildrenListRef.current?.(childrenList.current);
     }, []);
 
@@ -49,7 +56,7 @@ const Carousel = () => {
                 <div className="h-full overflow-hidden w-full">
                     <ul 
                         className="h-full relative slider w-full"
-                        ref={sliderRef}>
+                        ref={sliderCallbackRef}>
                         <Content />
                         <Content />
                         <Content />

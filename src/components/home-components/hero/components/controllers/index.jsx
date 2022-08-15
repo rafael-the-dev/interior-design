@@ -49,7 +49,6 @@ const ControlersContainer = ({ currentIndex, previousIndex, slide, setChildrenRe
 
     useEffect(() => {
         currentIndex.current = index;
-        console.log(index)
         slide();
     }, [ currentIndex, index, slide ]);
 

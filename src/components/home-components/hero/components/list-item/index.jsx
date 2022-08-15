@@ -7,7 +7,7 @@ const ListItem = ({ children, className }) => (
             {
                 `
                     .hero__list-item {
-                        transition: top 1s ease-in;
+                        transition: top 1.5s ease-in;
                     }
                 `
             }
