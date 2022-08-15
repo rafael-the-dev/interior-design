@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import classes from "./styles.module.css";
 
-
+import Carousel from "./components/carousel"
 
 const AboutSection = () => {
     return (
@@ -42,6 +42,7 @@ const AboutSection = () => {
                     className="mt-6 text-gray-500">
                     Indignation and dislike men who are so beguiled and demoralized by the charms pleasure of the moment, so blinded by desire, that they cannot foresee.
                 </Typography>
+                <Carousel />
             </div>
             <style jsx>
                 {

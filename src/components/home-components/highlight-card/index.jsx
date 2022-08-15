@@ -13,9 +13,8 @@ const HightlightCard  = ({ description, image, title }) => (
         elevation={2}>
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
             <Avatar
-                className={classNames(classes.avatar, "border-2 border-solid bg-white border-red-600 mx-auto",
+                className={classNames(classes.avatar, image, "border-2 border-solid bg-white border-red-600 mx-auto",
                 "sm:absolute top-0 before:absolute before:bg-red-600 before:block before:h-full")}
-                src={image} 
             />
             <Typography
                 component="h2"
