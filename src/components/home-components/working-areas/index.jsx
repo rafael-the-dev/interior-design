@@ -21,14 +21,20 @@ const Container = () => {
             </Typography>
             <div className="mt-10">
                 <Card
+                    description="Indignation and dislike men who are so beguiled and our the charms moment."
+                    icon="icon-architecture-and-city1"
                     image="/images/resources/working-1.jpg"
                     title="Residential" 
                 />
                 <Card
+                    description="Righteous indignation work are so beguiled demoralized the blinded by desire."
+                    icon="icon-shop"
                     image="/images/resources/working-2.jpg"
                     title="Commercial" 
                 />
                 <Card
+                    description="Our power of choice is and when nothing prevents work every pleasure interior."
+                    icon="icon-company"
                     image="/images/resources/working-3.jpg"
                     title="Industries" 
                 />
