@@ -43,6 +43,7 @@ const Carousel = () => {
                 </div>
             </div>
             <Controllers 
+                nextIndex={currentIndex}
                 slide={slide}
                 setChildrenListRef={setChildrenListRef} 
             />
