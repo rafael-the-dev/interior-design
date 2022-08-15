@@ -1,0 +1,23 @@
+.imageContainer {
+    height: 280px;
+    width: 100%;
+}
+
+.imageContainer::after, .imageContainer::before {
+    content: "" !important;
+}
+
+.imageContainer::before {
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3));
+    z-index: 3;
+}
+
+.imageContainer::after {
+    background-image: url(/images/icon/home.png);
+    height: 90px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    z-index: 5;
+}

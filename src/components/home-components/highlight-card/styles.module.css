@@ -23,7 +23,7 @@
     color: #dc2626;
 }
 
-@media screen {
+@media screen and (min-width: 990px) {
     .container {
         margin-bottom: 6rem;
     }

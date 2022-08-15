@@ -1,5 +1,6 @@
 import Hero from "src/components/home-components/hero";
-import HightlightCard from "src/components/home-components/highlight-card"
+import HightlightCard from "src/components/home-components/highlight-card";
+import About from "src/components/home-components/about";
 
 const Home = () => {
 
@@ -22,6 +23,7 @@ const Home = () => {
                     />
                 </div>
             </div>
+            <About />
             <style jsx>
                 {
                     `
