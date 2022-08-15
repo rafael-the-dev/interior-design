@@ -35,7 +35,7 @@ const ControllersContainer = ({ nextIndex, slide, setChildrenListRef }) => {
             }
 
             nextSlide();
-        }, 3000);
+        }, 4000);
 
         return () => { clearInterval(timer); };
     }, [ nextSlide ]);

@@ -65,7 +65,7 @@ const Carousel = () => {
                 {
                     `
                         .mission-carousel {
-                            height: 180px;
+                            height: 275px;
                         }
 
                         .mission-carousel:after {
@@ -77,11 +77,12 @@ const Carousel = () => {
                         }
 
                         .slider {
-                            transition: transform .8s ease-in
+                            transition: transform .8s ease;
                         }
 
                         @media screen and (min-width: 1024px) {
                             .mission-carousel {
+                                height: 170px;
                                 padding-left: 10%;
                                 padding-right: 10%;
                             }
