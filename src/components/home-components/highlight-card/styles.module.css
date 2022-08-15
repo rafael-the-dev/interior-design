@@ -11,8 +11,12 @@
     content: "" !important;
     left: 50%;
     transform: translateX(-50%);
-    transition: width .5s ease-in;
+    transition: all .5s ease-in;
     width: 0;
+}
+
+.icon {
+    transition: color .5s ease-in;
 }
 
 .container:hover .avatar::before {
@@ -23,6 +27,10 @@
     color: #dc2626;
 }
 
+.container:hover .icon {
+    color: #e2e8f0;
+}
+
 @media screen and (min-width: 990px) {
     .container {
         margin-bottom: 6rem;
@@ -30,6 +38,7 @@
 
     .avatar {
         height: 105px;
+        position: absolute;
         transform: translate(-50%, -50%);
         width: 105px;
         left: 50%;

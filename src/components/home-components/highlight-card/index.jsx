@@ -12,10 +12,12 @@ const HightlightCard  = ({ description, image, title }) => (
         className={classNames(classes.container, "flex flex-col items-stretch mb-6 rounded-lg text-center last:mb-0")}
         elevation={2}>
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
-            <Avatar
-                className={classNames(classes.avatar, image, "border-2 border-solid bg-white border-red-600 mx-auto",
-                "sm:absolute top-0 before:absolute before:bg-red-600 before:block before:h-full")}
-            />
+            <div
+                className={classNames(classes.avatar, "border-2 border-solid bg-white border-red-600 mx-auto",
+                "rounded-full relative top-0 before:absolute before:bg-red-600 before:block before:h-full before:rounded-full")}
+            >
+                <span className={classNames(classes.icon, image, `relative flex h-full items-center justify-center rounded-full text-5xl text-slate-500 w-full`)}></span>
+            </div>
             <Typography
                 component="h2"
                 className={classNames("capitalize font-bold mt-6 text-xl sm:mt-10 lg:text-2xl")}>
