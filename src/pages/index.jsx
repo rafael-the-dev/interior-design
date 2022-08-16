@@ -2,6 +2,7 @@ import Hero from "src/components/home-components/hero";
 import HightlightCard from "src/components/home-components/highlight-card";
 import About from "src/components/home-components/about";
 import WorkingAreas from "src/components/home-components/working-areas";
+import OurWorkingProcess from "src/components/home-components/working-process";
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
             </div>
             <About />
             <WorkingAreas />
+            <OurWorkingProcess />
             <style jsx>
                 {
                     `
