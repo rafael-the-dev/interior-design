@@ -1,3 +1,10 @@
+import { Button, Typography } from "@mui/material"
+import classNames from "classnames"
+
+import classes from "src/styles/home.module.css";
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+
+import Link from "src/components/link";
 import Hero from "src/components/home-components/hero";
 import HightlightCard from "src/components/home-components/highlight-card";
 import About from "src/components/home-components/about";
@@ -31,6 +38,24 @@ const Home = () => {
             <About />
             <WorkingAreas />
             <OurWorkingProcess />
+            <section className="bg-red-600 flex flex-col items-center jusitfy-between px-5 py-12
+                sm:px-[10%] md:flex-row remove-px-10">
+                <Typography
+                    className={classNames(classes.makeAppointmentTitle, "text-xl lg:text-2xl",
+                    "capitalize font-bold grow text-center text-white md:text-left")}>
+                    Wanna work with our professional team?
+                    make an appointment.
+                </Typography>
+                <Link 
+                    className="mt-8 md:mt-0"
+                    href="/">
+                    <Button 
+                        className="bg-white border border-solid border-white capitalize font-bold py-3 px-8 text-black hover:text-white"
+                        endIcon={<ArrowRightAltIcon />}>
+                        Make an appointment
+                    </Button>
+                </Link>
+            </section>
             <style jsx>
                 {
                     `

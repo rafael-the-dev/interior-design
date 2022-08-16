@@ -7,7 +7,7 @@ const Card = ({ description, icon, title }) => {
 
     return (
         <div className={classNames(classes.card, `before:bg-red-600 before:block card mb-24 pb-8 relative 
-            text-center`)}>
+            text-center bg-white`)}>
             <div className={classNames(classes.indexContainer, `absolute border-2 border-solid border-red-600
                 rounded-full before:bg-red-600 before:absolute before:h-full before:rounded-full`)}>
                 <span className={classNames(classes.index, `
@@ -52,6 +52,7 @@ const Card = ({ description, icon, title }) => {
 
                         @media screen and (min-width: 990px) {
                             .card {
+                                margin-bottom: 2rem;
                                 width: 32%;
                             }
                         }
