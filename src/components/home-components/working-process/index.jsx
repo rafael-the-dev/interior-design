@@ -4,6 +4,7 @@ import classNames from "classnames"
 import classes from "./styles.module.css";
 
 import H2 from "src/components/h2";
+import Card from "./components/card"
 
 const WorkingProcessContainer = () => {
 
@@ -14,6 +15,17 @@ const WorkingProcessContainer = () => {
             before:block before:font-bold before:text-sm before:mb-2`)}>
                 <span className="font-bold">Our working</span> Process
             </H2>
+            <div className="mt-24">
+                <Card 
+                    title="Idea &amp; Design"
+                />
+                <Card 
+                    title="Idea &amp; Design"
+                />
+                <Card 
+                    title="Idea &amp; Design"
+                />
+            </div>
         </section>
     );
 };
