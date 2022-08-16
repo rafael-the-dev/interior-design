@@ -17,13 +17,16 @@ const WorkingProcessContainer = () => {
             </H2>
             <div className="mt-24">
                 <Card 
+                    description="With righteous indignation and works off beguiled demoralized charm."
                     title="Idea &amp; Design"
                 />
                 <Card 
-                    title="Idea &amp; Design"
+                    description="Our power of choice is untrammelled and when nothing prevents."
+                    title="Specification"
                 />
                 <Card 
-                    title="Idea &amp; Design"
+                    description="Wing to the claims of duty the obligations will frequently occur."
+                    title="Execution"
                 />
             </div>
         </section>

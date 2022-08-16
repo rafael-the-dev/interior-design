@@ -1,5 +1,5 @@
 
-.title::before {
+.indexContainer {
     background-color: #FFF;
     left: 50%;
     padding: 27px 30px;
@@ -7,14 +7,32 @@
     transform: translate(-50%, -50%);
 }
 
-.card:nth-child(1) .title::before {
+.indexContainer::before {
+    content: "" !important;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .5s ease;
+    top: 0;
+    width: 0;
+}
+
+.card:hover .indexContainer::before {
+    width: 100%;
+}
+
+.card:hover .index::before {
+    color: #FFF;
+    transition: color .5s ease;
+}
+
+.card:nth-child(1) .index::before {
     content: "01";
 }
 
-.card:nth-child(2) .title::before {
+.card:nth-child(2) .index::before {
     content: "02";
 }
 
-.card:nth-child(3) .title::before {
+.card:nth-child(3) .index::before {
     content: "03";
 }
