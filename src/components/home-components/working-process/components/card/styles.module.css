@@ -1,4 +1,7 @@
-
+.card:hover {
+    transition: transform .6s ease-in-out;
+    transform: translateY(-10px);
+}
 .indexContainer {
     background-color: #FFF;
     left: 50%;

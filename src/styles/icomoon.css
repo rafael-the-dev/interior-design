@@ -156,3 +156,12 @@
   .icon-window:before {
     content: "\e929";
   }
+  .icon-kitchen::before {
+    content: "\e93a";
+  }
+  .icon-document::before {
+    content: "\e938";
+  }
+  .icon-productive::before {
+    content: "\e937";
+  }

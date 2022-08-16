@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import classes from "./styles.module.css";
 
-const Card = ({ description, title }) => {
+const Card = ({ description, icon, title }) => {
 
     return (
         <div className={classNames(classes.card, `before:bg-red-600 before:block card mb-24 pb-8 relative 
@@ -24,6 +24,9 @@ const Card = ({ description, title }) => {
                 className="mt-4  px-5">
                 { description }
             </Typography>
+            <div className="mt-8">
+                <span className={classNames(icon, "card__icon before:text-gray-400 before:block")}></span>
+            </div>
             <style jsx>
                 {
                     `
@@ -35,6 +38,22 @@ const Card = ({ description, title }) => {
 
                         .card {
                             box-shadow: 0px 6px 10px 3px #e8e8e8;
+                        }
+
+                        .card__icon::before {
+                            font-size: 4rem;
+                            margin: 0 auto;
+                            transition: color .5s ease;
+                        }
+
+                        .card:hover .card__icon::before {
+                            color: #dc2626;
+                        }
+
+                        @media screen and (min-width: 990px) {
+                            .card {
+                                width: 32%;
+                            }
                         }
                     `
                 }

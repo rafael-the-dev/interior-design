@@ -4,3 +4,10 @@
     content: "To do good design" !important;
     font-size: 1.1rem;
 }
+
+@media screen and (min-width: 990px) {
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
