@@ -9,17 +9,17 @@ import Card from "./components/card";
 
 const Container = () => {
     return (
-        <section className={classNames(classes.container, `bg-cover bg-center bg-no-repeat px-5 py-16`)}>
+        <section className={classNames(classes.container, `bg-cover bg-center bg-no-repeat px-5 py-16 sm:px-[10%]`)}>
             <H2 className={classNames(classes.title, `text-center text-white before:text-red-600 
             before:block before:font-bold before:text-sm before:mb-2`)}>
                 <span className="font-bold">Covered</span> industries
             </H2>
             <Typography
-                className="mt-6 opacity-70 text-white text-center">
+                className={classNames(classes.description, "mt-6 opacity-70 text-white text-center")}>
                 We are an Interior Designer, Who believe in excellence, quality and honesty, 
                 yes we design beautiful home interiors.
             </Typography>
-            <div className="mt-10">
+            <div className="cards-container items-stretch justify-between mt-10 lg:mt-16">
                 <Card
                     description="Indignation and dislike men who are so beguiled and our the charms moment."
                     icon="icon-architecture-and-city1"
@@ -39,6 +39,17 @@ const Container = () => {
                     title="Industries" 
                 />
             </div>
+            <style jsx>
+                {
+                    `
+                        @media screen and (min-width: 990px) {
+                            .cards-container {
+                                display: flex;
+                            }
+                        }
+                    `
+                }
+            </style>
         </section>
     );
 };

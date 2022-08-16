@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Typography } from "@mui/material"
 
 const Card = ({ description, icon, image, title }) => (
-    <div className="mb-6">
+    <div className="card flex-col items-stretch mb-6">
         <div className="image-container relative">
             <Image
                 alt={title} 
@@ -11,8 +11,8 @@ const Card = ({ description, icon, image, title }) => (
                 src={image}
             />
         </div>
-        <div className={classNames(icon, `bg-white card-content flex items-stretch before:bg-gray-200 before:flex 
-        before:items-center before:px-4 before:text-red-600`)}>
+        <div className={classNames(icon, `bg-white card-content flex grow items-stretch before:bg-gray-200 before:flex 
+        before:items-center before:px-4 before:text-red-600 sm:before:px-8 lg:before:px-4`)}>
             <div className="py-6 px-8">
                 <Typography
                     component="h3"
@@ -36,6 +36,24 @@ const Card = ({ description, icon, image, title }) => (
 
                     .card-content::before {
                         font-size: 2rem;
+                    }
+
+                    @media screen and (min-width: 768px) { 
+                        .image-container {
+                            height: 350px;
+                        }
+                    }
+
+                    @media screen and (min-width: 990px) {
+                        .card {
+                            display: flex;
+                            margin-bottom: 0;
+                            width: 32%;
+                        }
+
+                        .image-container {
+                            height: 280px;
+                        }
                     }
                 `
             }
