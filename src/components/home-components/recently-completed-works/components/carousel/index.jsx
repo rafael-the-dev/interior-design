@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react"
 
 import Card from "../card";
+import Controllers from "./components/controllers"
 
 const Carousel = () => {
     const list = [
@@ -36,11 +37,12 @@ const Carousel = () => {
 
     const sliderRef = useRef();
     const setChildrenList = useRef(null);
+    const childrenList = useRef([])
 
     const setLayout = useCallback(() => {
         const { width } = sliderRef.current.getBoundingClientRect();
 
-        [ ...sliderRef.current.children ].forEach((child, index) => {
+        childrenList.current.forEach((child, index) => {
             child.style.left = `${width * index}px`;
             child.style.width = `${width}px`;
         })
@@ -50,16 +52,17 @@ const Carousel = () => {
         sliderRef.current = node;
 
         if(node) {
+            childrenList.current = [ ...node.children ]
             setLayout();
         }
     }, []);
 
     useEffect(() => {
-        setChildrenList.current?.()
+        setChildrenList.current?.(childrenList.current)
     }, [])
 
     return (
-        <div className="overflow-hidden">
+        <div className="mt-16 overflow-hidden">
             <ul 
                 className="relative slider"
                 ref={sliderCallbackRef}>
@@ -69,6 +72,9 @@ const Carousel = () => {
                     ))
                 }
             </ul>
+            <Controllers 
+                setChildrenListRef={setChildrenList}
+            />
             <style jsx>
                 {
                     `
