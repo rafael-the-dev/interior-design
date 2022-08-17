@@ -11,7 +11,7 @@ import ProjectsCarousel from "./components/carousel";
 const RecentlyCompletedWorks = () => {
 
     return (
-        <section className="px-5 py-16">
+        <section className="px-5 py-16 md:pt-24 md:pb-8">
             <div className="flex flex-col justify-between title-container">
                 <H2 className={classNames(classes.title, ` before:text-red-600 
                 before:block before:font-bold before:text-sm before:mb-2`)}>

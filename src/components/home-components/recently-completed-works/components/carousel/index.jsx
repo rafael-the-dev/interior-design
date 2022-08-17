@@ -54,12 +54,12 @@ const Carousel = () => {
             gap = 10;
             itemWidth = (width / 5) - gap;
             sliderRef.current.style.width = `${width * 3}px`;
-            gap += 5;
+            //gap += 5;
         } else if(windowWidth >= 768) {
             gap = 12;
             itemWidth = (width / 2) - gap;
             sliderRef.current.style.width = `${width * Math.round(childrenList.current.length / 2)}px`;
-            gap += 10;
+            //gap += 10;
         }
 
 
@@ -109,7 +109,7 @@ const Carousel = () => {
                 className="relative slider"
                 ref={sliderCallbackRef}>
                 {
-                    [ ...list, ...list, ...list ].map((item, index) => (
+                    [ ...list, ...list.reverse(), ...list ].map((item, index) => (
                         <Card key={index} { ...item } />
                     ))
                 }

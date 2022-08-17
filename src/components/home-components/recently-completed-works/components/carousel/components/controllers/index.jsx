@@ -8,7 +8,37 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
     const [ childrenList, setChildrenList ] = useState([]);
     const [ currentIndex, setCurrentIndex ] = useState(0);
 
+    const childrenListRef = useRef([]);
+    const isReverse = useRef(false);
+
     const clickHandler = useCallback(prop => () => setCurrentIndex(prop), []);
+
+    const nextSlide = useCallback(() => {
+        setCurrentIndex(index => {
+            const width = window.innerWidth;
+
+            if(width >= 1024) {
+                if(index + 1 >= 3) {
+                    isReverse.current = true;
+                }
+            } else if(width >= 768) {
+                if(index + 1 >= 8) {
+                    isReverse.current = true;
+                };
+            } else {
+                if(index + 1 >= 15) {
+                    isReverse.current = true;
+                }
+            }
+
+            if(index - 1 >= 0 && isReverse.current) {
+                return index - 1;
+            } 
+
+            isReverse.current = false;
+            return index + 1;
+        })
+    }, [])
 
     useEffect(() => {
         setChildrenListRef.current = list => setChildrenList(list);
@@ -17,7 +47,13 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
     useEffect(() => {
         currentIndexRef.current = currentIndex;
         slideHandler({ index: currentIndex })
-    }, [ currentIndexRef, currentIndex, slideHandler ])
+    }, [ currentIndexRef, currentIndex, slideHandler ]);
+
+    useEffect(() => {
+        const timer = setInterval(() => nextSlide(), 5000);
+
+        return () => clearInterval(timer);
+    }, [])
 
     return (
         <div className="flex flex-wrap justify-center mt-10">
