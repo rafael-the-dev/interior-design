@@ -10,6 +10,7 @@ import HightlightCard from "src/components/home-components/highlight-card";
 import About from "src/components/home-components/about";
 import WorkingAreas from "src/components/home-components/working-areas";
 import OurWorkingProcess from "src/components/home-components/working-process";
+import RecentlyCompletedWorks from "src/components/home-components/recently-completed-works";
 
 const Home = () => {
 
@@ -37,6 +38,7 @@ const Home = () => {
             </div>
             <About />
             <WorkingAreas />
+            <RecentlyCompletedWorks />
             <OurWorkingProcess />
             <section className="bg-red-600 flex flex-col items-center jusitfy-between px-5 py-12
                 sm:px-[10%] md:flex-row remove-px-10">
