@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { Hidden } from "@mui/material";
-import classNames from "classnames"
+import classNames from "classnames";
+
+import Button from "../button"
 
 const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRef }) => {
     const [ childrenList, setChildrenList ] = useState([]);
@@ -19,15 +21,36 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
 
     return (
         <div className="flex flex-wrap justify-center mt-10">
-            <Hidden smUp>
+            <Hidden mdUp>
                 {
                     childrenList.map((_, index) => (
-                        <button 
-                            className={classNames("border-0 carousel__button mr-2 mb-3 px-3",
-                            currentIndex === index ? "bg-red-600" : "bg-slate-200")}
-                            aria-label="carousel indicator"
-                            onClick={clickHandler(index)}>
-                        </button>
+                        <Button 
+                            clickHandler={clickHandler} 
+                            currentIndex={currentIndex}
+                            index={index}
+                        />
+                    ))
+                }
+            </Hidden>
+            <Hidden mdDown lgUp>
+                {
+                    childrenList.slice(0, Math.round(childrenList.length / 2)).map((_, index) => (
+                        <Button 
+                            clickHandler={clickHandler} 
+                            currentIndex={currentIndex}
+                            index={index}
+                        />
+                    ))
+                }
+            </Hidden>
+            <Hidden lgDown>
+                {
+                    childrenList.slice(0, Math.round(childrenList.length / 5)).map((_, index) => (
+                        <Button 
+                            clickHandler={clickHandler} 
+                            currentIndex={currentIndex}
+                            index={index}
+                        />
                     ))
                 }
             </Hidden>

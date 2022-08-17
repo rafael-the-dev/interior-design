@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Card = ({ image, title }) => {
     return (
-        <li className="absolute h-full">
+        <li className="absolute card h-full ">
             <div className="h-full image-container relative">
                 <Image
                     alt={title}
@@ -13,7 +13,9 @@ const Card = ({ image, title }) => {
             <style jsx>
                 {
                     `
-                        .image-container {
+                        @media screen and (min-width: 768px) {
+                            .card {
+                            }
                         }
                     `
                 }
