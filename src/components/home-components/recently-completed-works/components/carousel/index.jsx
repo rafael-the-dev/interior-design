@@ -24,23 +24,24 @@ const Carousel = () => {
         {
             image: "/images/projects/lat-pro-5.jpg",
             title: "Office partition walls"
-        },
-        {
-            image: "/images/projects/lat-pro-6.jpg",
-            title: "Office partition walls"
-        },
-        {
-            image: "/images/projects/lat-pro-7.jpg",
-            title: "Office partition walls"
-        },
+        }
     ];
 
     const sliderRef = useRef();
     const setChildrenList = useRef(null);
-    const childrenList = useRef([])
+    const childrenList = useRef([]);
+    const currentIndex = useRef(0);
+
+    const slideHandler = useCallback(({ index }) => {
+        const { width } = sliderRef.current.getBoundingClientRect();
+
+        const slideIndex = index ? index : currentIndex.current;
+        sliderRef.current.style.transform = `translateX(-${ (width / childrenList.current.length) * slideIndex }px)`
+    }, [])
 
     const setLayout = useCallback(() => {
         const { width } = sliderRef.current.getBoundingClientRect();
+        sliderRef.current.style.width = `${width * childrenList.current.length}px`;
 
         childrenList.current.forEach((child, index) => {
             child.style.left = `${width * index}px`;
@@ -67,12 +68,14 @@ const Carousel = () => {
                 className="relative slider"
                 ref={sliderCallbackRef}>
                 {
-                    [ ...list, ...list, list[0] ].map((item, index) => (
+                    [ ...list, ...list, ...list ].map((item, index) => (
                         <Card key={index} { ...item } />
                     ))
                 }
             </ul>
             <Controllers 
+                currentIndexRef={currentIndex}
+                slideHandler={slideHandler}
                 setChildrenListRef={setChildrenList}
             />
             <style jsx>
@@ -80,7 +83,7 @@ const Carousel = () => {
                     `
                         .slider {
                             height: 280px;
-                            transition: transfrom 2s ease;
+                            transition: transform 2s ease;
                         }
                     `
                 }

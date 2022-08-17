@@ -2,14 +2,20 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Hidden } from "@mui/material";
 import classNames from "classnames"
 
-const ControllersContainer = ({ setChildrenListRef }) => {
+const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRef }) => {
     const [ childrenList, setChildrenList ] = useState([]);
     const [ currentIndex, setCurrentIndex ] = useState(0);
 
+    const clickHandler = useCallback(prop => () => setCurrentIndex(prop), []);
 
     useEffect(() => {
         setChildrenListRef.current = list => setChildrenList(list);
     }, []);
+
+    useEffect(() => {
+        currentIndexRef.current = currentIndex;
+        slideHandler({ index: currentIndex })
+    }, [ currentIndexRef, currentIndex, slideHandler ])
 
     return (
         <div className="flex flex-wrap justify-center mt-10">
@@ -19,7 +25,8 @@ const ControllersContainer = ({ setChildrenListRef }) => {
                         <button 
                             className={classNames("border-0 carousel__button mr-2 mb-3 px-3",
                             currentIndex === index ? "bg-red-600" : "bg-slate-200")}
-                            aria-label="carousel indicator">
+                            aria-label="carousel indicator"
+                            onClick={clickHandler(index)}>
                         </button>
                     ))
                 }
