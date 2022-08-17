@@ -35,13 +35,14 @@ const Carousel = () => {
     const slideHandler = useCallback(({ index }) => {
         const { width } = sliderRef.current.getBoundingClientRect();
 
-        const slideIndex = index ? index : currentIndex.current;
-        sliderRef.current.style.transform = `translateX(-${ (width / childrenList.current.length) * slideIndex }px)`
+        const slideIndex = index ? index : currentIndex.current; /// childrenList.current.length
+        sliderRef.current.style.transform = `translateX(-${ (width ) * slideIndex }px)`
     }, [])
 
     const setLayout = useCallback(() => {
-        const { width } = sliderRef.current.getBoundingClientRect();
-        sliderRef.current.style.width = `${width * childrenList.current.length}px`;
+        let { width } = sliderRef.current.getBoundingClientRect();
+        //width = width
+        //sliderRef.current.style.width = `${width * childrenList.current.length}px`;
 
         childrenList.current.forEach((child, index) => {
             child.style.left = `${width * index}px`;
@@ -58,9 +59,23 @@ const Carousel = () => {
         }
     }, []);
 
+    const resizeHandler = useCallback(() => {
+        setLayout();
+        slideHandler({});
+    }, [])
+
     useEffect(() => {
         setChildrenList.current?.(childrenList.current)
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const currentWindow = window;
+        window.addEventListener("resize", resizeHandler);
+
+        return () => {
+            currentWindow.removeEventListener("resize", resizeHandler);
+        };
+    }, [ resizeHandler ])
 
     return (
         <div className="mt-16 overflow-hidden">
@@ -84,6 +99,12 @@ const Carousel = () => {
                         .slider {
                             height: 280px;
                             transition: transform 2s ease;
+                        }
+
+                        @media screen and (min-width: 600px) {
+                            .slider {
+                                height: 350px;
+                            }
                         }
                     `
                 }
