@@ -1,0 +1,4 @@
+.title::before {
+    content: "Testimonials" !important;
+    font-size: 1.1rem;
+}
