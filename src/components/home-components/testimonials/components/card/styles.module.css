@@ -10,7 +10,27 @@
 
 .avatar {
     height: 70px;
+    transition: transform 1s ease;
+    transition-delay: .8s;
     width: 70px;
+}
+
+.avatar::after {
+    background-color: rgba(0, 0, 0, .5);
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width .8s ease;
+    width: 0;
+    z-index: 4;
+}
+
+.card:hover .avatar {
+    transform: rotate(360deg);
+}
+
+.card:hover .avatar::after {
+    width: 100%;
 }
 
 @media screen and (min-width: 450px) {

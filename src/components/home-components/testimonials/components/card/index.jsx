@@ -20,7 +20,7 @@ const Card = ({ city, image, name, testimonial }) => {
             </Typography>
             <Avatar
                 alt={name}
-                className={classNames(classes.avatar, `mt-6`)}
+                className={classNames(classes.avatar, `mt-6 relative after:absolute after:h-full after:rounded-full`)}
                 src={image} 
             />
             <Typography
