@@ -4,10 +4,41 @@
 
 .card::before {
     font-size: 1.2rem;
+    opacity: .96;
     padding: 1.2rem 1rem;
 }
 
 .avatar {
     height: 70px;
     width: 70px;
+}
+
+@media screen and (min-width: 450px) {
+    .card::before {
+        font-size: 2rem;
+        padding: 1.2rem;
+    }
+
+    .avatar {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .card {
+        width: 32%;
+    }
+
+    .card::before {
+        font-size: 1.4rem;
+        padding: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .card::before {
+        font-size: 1.6rem;
+        padding: 1.3rem 1.1rem;
+    }
 }

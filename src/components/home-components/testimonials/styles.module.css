@@ -2,3 +2,9 @@
     content: "Testimonials" !important;
     font-size: 1.1rem;
 }
+
+@media screen and (min-width: 990px) {
+    .cardsContainer {
+        display: flex;
+    }
+}

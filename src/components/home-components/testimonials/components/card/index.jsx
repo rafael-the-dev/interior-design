@@ -15,7 +15,7 @@ const Card = ({ city, image, name, testimonial }) => {
             </Typography>
             <Typography
                 component="p"
-                className="opacity-80">
+                className="mt-2 text-sm opacity-80">
                 { city }
             </Typography>
             <Avatar

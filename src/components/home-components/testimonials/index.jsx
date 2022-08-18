@@ -11,7 +11,7 @@ import Card from "./components/card"
 const Testimonials = () => {
 
     return (
-        <section className="px-5 py-16 md:pt-24 md:pb-8">
+        <section className="px-5 py-16 sm:px-[10%] remove-px-10">
             <div className="flex flex-col justify-between title-container">
                 <H2 className={classNames(classes.title, ` before:text-red-600 
                 before:block before:font-bold before:text-sm before:mb-2`)}>
@@ -25,7 +25,7 @@ const Testimonials = () => {
                     </Button>
                 </Link>
             </div>
-            <div className="mt-12">
+            <div className={classNames(classes.cardsContainer, "items-stretch justify-between mt-12")}>
                 <Card
                     city="California"
                     image="/images/testimonial/testi-1.png"
