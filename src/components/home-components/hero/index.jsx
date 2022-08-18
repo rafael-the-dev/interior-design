@@ -71,14 +71,14 @@ const HeroContainer = () => {
         <section className='relative'>
             <ul ref={sliderCallbackRef} className="hero__list overflow-hidden relative">
                 <ListItem className="">
-                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--decoration justify-center px-5 w-full")}>
+                    <div className={classNames("bg-cover bg-center bg-fixed bg-no-repeat flex flex-col  h-full hero--decoration justify-center px-5 w-full")}>
                         <Title>Decorate ideas</Title>
                         <Description />
                         <Link />
                     </div>
                 </ListItem>
                 <ListItem>
-                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--well-invented justify-center px-5 w-full md:items-center")}>
+                    <div className={classNames("bg-cover bg-center bg-fixed bg-no-repeat flex flex-col  h-full hero--well-invented justify-center px-5 w-full md:items-center")}>
                         <div>
                             <Title>Crafted better</Title>
                             <Description />
@@ -87,7 +87,7 @@ const HeroContainer = () => {
                     </div>
                 </ListItem>
                 <ListItem>
-                    <div className={classNames("bg-cover bg-center bg-no-repeat flex flex-col  h-full hero--crafted justify-center px-5 w-full")}>
+                    <div className={classNames("bg-cover bg-center bg-fixed bg-no-repeat flex flex-col  h-full hero--crafted justify-center px-5 w-full")}>
                         <Title>Well Invented</Title>
                         <Description />
                         <Link />

@@ -11,7 +11,7 @@ import Card from "./components/card"
 const Testimonials = () => {
 
     return (
-        <section className="px-5 py-16 sm:px-[10%] remove-px-10">
+        <section className="px-5 py-16 sm:px-[10%] sm:pt-24 remove-px-10">
             <div className="flex flex-col justify-between title-container">
                 <H2 className={classNames(classes.title, ` before:text-red-600 
                 before:block before:font-bold before:text-sm before:mb-2`)}>
