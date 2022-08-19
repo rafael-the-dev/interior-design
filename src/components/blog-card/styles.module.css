@@ -3,3 +3,26 @@
 .imageContainer {
     height: 280px;
 }
+
+@media screen and (min-width: 600px) {
+    .imageContainer {
+        height: 340px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .imageContainer {
+        height: 360px;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .card {
+        margin-bottom: 0;
+        width: 32%;
+    }
+
+    .imageContainer {
+        height: 220px;
+    }
+}

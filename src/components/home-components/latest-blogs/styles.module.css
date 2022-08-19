@@ -2,3 +2,9 @@
 .title::before {
     content: "News & updates";
 }
+
+@media screen and (min-width: 990px) {
+    .cardsContainer {
+        display: flex;
+    }
+}

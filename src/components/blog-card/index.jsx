@@ -14,7 +14,7 @@ const BlogCard = ({ author, date, description, image, location, title }) => {
     const isHome = pathname === "/";
 
     return (
-        <div className="mb-12">
+        <div className={classNames(classes.card, "flex flex-col mb-12")}>
             <div className={classNames(classes.imageContainer, `relative`)}>
                 <Image
                     alt={title}
@@ -22,7 +22,7 @@ const BlogCard = ({ author, date, description, image, location, title }) => {
                     src={image} 
                 />
             </div>
-            <div className="pt-6">
+            <div className="flex flex-col grow items-start pt-6">
                 {
                     isHome  && (
                         <Typography
@@ -54,13 +54,15 @@ const BlogCard = ({ author, date, description, image, location, title }) => {
                     className="leading-6 mt-4 opacity-90 text-sm">
                     { description }
                 </Typography>
-                <Link className="inline-block mt-6" href="/">
-                    <Button 
-                        className="capitalize hover:bg-transparent p-0 text-black hover:text-red-600"
-                        endIcon={<ArrowRightAltIcon />}>
-                        Read more
-                    </Button>
-                </Link>
+                <div className="grow flex items-end">
+                    <Link className="inline-block mt-6" href="/">
+                        <Button 
+                            className="capitalize hover:bg-transparent p-0 text-black hover:text-red-600"
+                            endIcon={<ArrowRightAltIcon />}>
+                            Read more
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

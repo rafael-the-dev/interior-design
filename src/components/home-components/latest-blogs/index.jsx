@@ -13,7 +13,7 @@ const LatestBlogs = () => {
             before:block before:font-bold before:text-sm before:mb-2`)}>
                 <span className="font-bold">Latest from</span> blog
             </H2>
-            <div className={classNames(classes.cardsContainer, `mt-6`)}>
+            <div className={classNames(classes.cardsContainer, `items-stretch justify-between mt-12 lg:mt-16`)}>
                 <BlogCard 
                     author="Rubin Santro"
                     date="02 mar 2019"
