@@ -11,7 +11,8 @@ import About from "src/components/home-components/about";
 import WorkingAreas from "src/components/home-components/working-areas";
 import OurWorkingProcess from "src/components/home-components/working-process";
 import RecentlyCompletedWorks from "src/components/home-components/recently-completed-works";
-import Testimonials from "src/components/home-components/testimonials"
+import Testimonials from "src/components/home-components/testimonials";
+import LatestBlogs from "src/components/home-components/latest-blogs";
 
 const Home = () => {
 
@@ -60,6 +61,7 @@ const Home = () => {
                 </Link>
             </section>
             <Testimonials />
+            <LatestBlogs />
             <style jsx>
                 {
                     `

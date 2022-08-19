@@ -1,0 +1,4 @@
+
+.title::before {
+    content: "News & updates";
+}
