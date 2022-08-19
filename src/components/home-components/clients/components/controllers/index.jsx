@@ -11,10 +11,22 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
 
     const childrenListRef = useRef([]);
     const isReverse = useRef(false);
+    const hasUserClicked = useRef(false);
 
-    const clickHandler = useCallback(prop => () => setCurrentIndex(prop), []);
+    const previousItemClickHandler = useCallback(() => {
+        hasUserClicked.current = true;
+        setCurrentIndex(index => index - 1);
+    }, []);
+
+    const nextItemClickHandler = useCallback(() => {
+        hasUserClicked.current = true;
+        setCurrentIndex(index => index + 1);
+    }, []);
+
+    const hasPreviousItem = useMemo(() => currentIndex - 1 < 0, [ currentIndex ]);
 
     const hasNextItem = useMemo(() => {
+        if(childrenList.length === 0)  return true;
         const width = window.innerWidth;
 
         if(width >= 1150) {
@@ -39,7 +51,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
         }
 
         return false;
-    }, [ currentIndex ])
+    }, [ childrenList, currentIndex ])
 
     const nextSlide = useCallback(() => {
         setCurrentIndex(index => {
@@ -85,7 +97,13 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
     }, [ currentIndexRef, currentIndex, slideHandler ]);
 
     useEffect(() => {
-        const timer = setInterval(() => nextSlide(), 4000);
+        const timer = setInterval(() => {
+            if(hasUserClicked.current) {
+                hasUserClicked.current = false;
+                return;
+            }
+            nextSlide();
+        }, 4000);
 
         return () => clearInterval(timer);
     }, [ nextSlide ]);
@@ -98,12 +116,14 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
         <div className="controllers-container flex mt-10">
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] mr-3 w-[48px]`)}
-                disabled={currentIndex - 1 < 0 }>
+                disabled={hasPreviousItem}
+                onClick={previousItemClickHandler}>
                 <ArrowBackIcon />
             </IconButton>
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] w-[48px]`)}
-                disabled={hasNextItem}>
+                disabled={hasNextItem}
+                onClick={nextItemClickHandler}>
                 <ArrowForwardIcon />
             </IconButton>
             <style jsx>
