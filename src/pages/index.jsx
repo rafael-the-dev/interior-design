@@ -13,6 +13,7 @@ import OurWorkingProcess from "src/components/home-components/working-process";
 import RecentlyCompletedWorks from "src/components/home-components/recently-completed-works";
 import Testimonials from "src/components/home-components/testimonials";
 import LatestBlogs from "src/components/home-components/latest-blogs";
+import Clients from "src/components/home-components/clients";
 
 const Home = () => {
 
@@ -62,6 +63,7 @@ const Home = () => {
             </section>
             <Testimonials />
             <LatestBlogs />
+            <Clients />
             <style jsx>
                 {
                     `

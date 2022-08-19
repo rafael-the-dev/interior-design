@@ -1,14 +1,27 @@
-import { useEffect, useRef } from "react"
+import { useCallback, useEffect, useRef } from "react"
 import classNames from "classnames";
 
+import classes from "./styles.module.css"
+
 import H2 from "src/components/h2";
+import Card from "./components/brand-card";
 
 const Clients = () => {
     const sliderRef = useRef(null);
     const childrenList = useRef([]);
     const setChildrenList = useRef(null);
+    const slideWidth = useRef(0);
 
-    const setLayout = () => {
+    const list = [
+        { image: "/images/brand/1.png" },
+        { image: "/images/brand/2.png" },
+        { image: "/images/brand/3.png" },
+        { image: "/images/brand/4.png" },
+        { image: "/images/brand/5.png" },
+        { image: "/images/brand/6.png" }
+    ];
+
+    const setLayout = useCallback(() => {
         sliderRef.current.style.width = '100%';
         let { width } = sliderRef.current.getBoundingClientRect();
         slideWidth.current = width;
@@ -43,7 +56,7 @@ const Clients = () => {
             child.style.left = `${(itemWidth * index) + (gap * index)}px`;
             child.style.width = `${itemWidth}px`;
         })
-    };
+    }, []);
 
     const sliderCallbackRef = node => {
         sliderRef.current = node;
@@ -54,9 +67,9 @@ const Clients = () => {
         }
     };
 
-    const resizeHandler = () => {
+    const resizeHandler = useCallback(() => {
         setLayout();
-    };
+    }, [ setLayout ]);
 
     useEffect(() => {
         const currentWindow = window;
@@ -66,7 +79,7 @@ const Clients = () => {
         return () => {
             currentWindow.removeEventListener("resize", resizeHandler);
         };
-    }, [])
+    }, [ resizeHandler ])
 
     useEffect(() => {
         setChildrenList.current?.(childrenList.current);
@@ -74,24 +87,28 @@ const Clients = () => {
 
 
 
-    <section className="px-5 py-16 sm:px-[10%] sm:pt-24 remove-px-10">
-        <div className="flex flex-col justify-between title-container">
-            <H2 className={classNames(classes.title, ` before:text-red-600 
-            before:block before:font-bold before:text-sm before:mb-2`)}>
-                <span className="font-bold">Our customer</span> Words
-            </H2>
-            <Link className="mt-6 lg:mt-0 lg:mr-1" href="/">
-                <Button 
-                    className="capitalize hover:bg-transparent p-0 text-black hover:text-red-600"
-                    endIcon={<ArrowRightAltIcon />}>
-                    More reviews
-                </Button>
-            </Link>
-        </div>
-        <div>
-
-        </div>
-    </section>
+    return (
+        <section className="bg-gray-100 px-5 py-16 sm:px-[10%] sm:pt-24 remove-px-10">
+            <div className="flex flex-col justify-between title-container">
+                <H2 className={classNames(classes.title, ` before:text-red-600 
+                before:block before:font-bold before:text-sm before:mb-2`)}>
+                    <span className="font-bold">More than</span> 2000 clients
+                </H2>
+                <span></span>
+            </div>
+            <div className="mt-8 overflow-hidden">
+                <ul 
+                    className={classNames(classes.slider, `relative`)}
+                    ref={sliderCallbackRef}>
+                    {
+                        list.map((item, index) => (
+                            <Card { ...item } key={index} />
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+    );
 };
 
 export default Clients;

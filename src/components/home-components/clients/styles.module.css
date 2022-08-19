@@ -1,0 +1,8 @@
+
+.title::before {
+    content: "corporate clients";
+}
+
+.slider {
+    height: 200px;
+}
