@@ -63,7 +63,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
-                            index={index}
+                            key={index}
                         />
                     ))
                 }
@@ -74,7 +74,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
-                            index={index}
+                            key={index}
                         />
                     ))
                 }
@@ -85,7 +85,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
-                            index={index}
+                            key={index}
                         />
                     ))
                 }
