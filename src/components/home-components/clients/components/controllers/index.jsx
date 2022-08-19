@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import IconButton from "@mui/material/IconButton";
 import classNames from "classnames";
 
@@ -13,6 +13,33 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
     const isReverse = useRef(false);
 
     const clickHandler = useCallback(prop => () => setCurrentIndex(prop), []);
+
+    const hasNextItem = useMemo(() => {
+        const width = window.innerWidth;
+
+        if(width >= 1150) {
+            if(currentIndex + 6 >= childrenListRef.current.length) {
+                return true
+            }
+        } 
+        else if(width >= 990) {
+            if(currentIndex + 5 >= childrenListRef.current.length) {
+                return true
+            };
+        } 
+        else if (width >= 600) {
+            if(currentIndex + 3 >= childrenListRef.current.length) {
+                return true
+            }
+        }
+        else {
+            if(currentIndex + 1 >= childrenListRef.current.length) {
+                return true
+            }
+        }
+
+        return false;
+    }, [ currentIndex ])
 
     const nextSlide = useCallback(() => {
         setCurrentIndex(index => {
@@ -58,7 +85,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
     }, [ currentIndexRef, currentIndex, slideHandler ]);
 
     useEffect(() => {
-        const timer = setInterval(() => nextSlide(), 3000);
+        const timer = setInterval(() => nextSlide(), 4000);
 
         return () => clearInterval(timer);
     }, [ nextSlide ]);
@@ -76,7 +103,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
             </IconButton>
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] w-[48px]`)}
-                disabled={currentIndex + 1 >= childrenList.length}>
+                disabled={hasNextItem}>
                 <ArrowForwardIcon />
             </IconButton>
             <style jsx>
