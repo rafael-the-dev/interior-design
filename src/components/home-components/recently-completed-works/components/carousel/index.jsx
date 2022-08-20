@@ -34,8 +34,6 @@ const Carousel = () => {
     const slideWidth = useRef(0);
 
     const slideHandler = useCallback(({ index }) => {
-        const { width } = sliderRef.current.getBoundingClientRect();
-
         const slideIndex = index ? index : currentIndex.current; /// childrenList.current.length
         sliderRef.current.style.transform = `translateX(-${ (slideWidth.current ) * slideIndex }px)`
     }, [])
@@ -44,8 +42,7 @@ const Carousel = () => {
         sliderRef.current.style.width = '100%';
         let { width } = sliderRef.current.getBoundingClientRect();
         slideWidth.current = width;
-        //width = width
-        //sliderRef.current.style.width = `${width * childrenList.current.length}px`;
+        
         const windowWidth = window.innerWidth;
         let itemWidth = width;
         let gap = 0;
@@ -64,7 +61,6 @@ const Carousel = () => {
 
 
         childrenList.current.forEach((child, index) => {
-            const isFirst = index === 0;
             child.style.left = `${(itemWidth * index) + (gap * index)}px`;
             child.style.width = `${itemWidth}px`;
         })
@@ -77,7 +73,7 @@ const Carousel = () => {
             childrenList.current = [ ...node.children ]
             setLayout();
         }
-    }, []);
+    }, [ setLayout ]);
 
     const resizeHandler = useCallback(() => {
         const width = window.innerWidth;
@@ -88,7 +84,7 @@ const Carousel = () => {
 
         setLayout();
         slideHandler({});
-    }, [])
+    }, [ setLayout, slideHandler ])
 
     useEffect(() => {
         setChildrenList.current?.(childrenList.current)

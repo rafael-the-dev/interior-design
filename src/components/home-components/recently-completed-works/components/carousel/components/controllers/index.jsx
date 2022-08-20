@@ -42,7 +42,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
 
     useEffect(() => {
         setChildrenListRef.current = list => setChildrenList(list);
-    }, []);
+    }, [ setChildrenListRef ]);
 
     useEffect(() => {
         currentIndexRef.current = currentIndex;
@@ -53,7 +53,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
         const timer = setInterval(() => nextSlide(), 5000);
 
         return () => clearInterval(timer);
-    }, [])
+    }, [ nextSlide ])
 
     return (
         <div className="flex flex-wrap justify-center mt-10">
@@ -63,6 +63,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
+                            index={index}
                             key={index}
                         />
                     ))
@@ -74,6 +75,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
+                            index={index}
                             key={index}
                         />
                     ))
@@ -85,6 +87,7 @@ const ControllersContainer = ({ currentIndexRef, slideHandler, setChildrenListRe
                         <Button 
                             clickHandler={clickHandler} 
                             currentIndex={currentIndex}
+                            index={index}
                             key={index}
                         />
                     ))
