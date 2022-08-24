@@ -1,0 +1,7 @@
+
+.title::before {
+    font-size: 1.8rem;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
