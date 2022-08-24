@@ -5,18 +5,20 @@ import classes from "./styles.module.css";
 
 import Link from "../link";
 import DescriptionListItem from "./components/description-list-item";
+import Menu from "./components/menu"
 
 const Header = () => {
 
     return (
         <header className={classNames(classes.header, ``)}>
-            <div className="bg-neutral-900 py-4 px-5 sm:px-[10%]">
+            <div className="bg-neutral-900 pt-4 pb-16 px-5 sm:px-[10%]">
                 <Typography className="text-center text-sm text-white">
                     <span className="opacity-75">Crystalo Inspiring Interiors, Basesd On United States... </span>
                     <Link className="text-white" href="/">Get Approximate Estimation.</Link>
                 </Typography>
             </div>
-            <dl className="bg-gray-100 py-8 px-5 sm:px-[10%]">
+            <Menu />
+            <dl className="bg-gray-100 pt-16 pb-10 px-5 sm:px-[10%]">
                 <DescriptionListItem  
                     description="Flat 201, Reynolds Neck Str"
                     icon="icon-maps-and-location"
