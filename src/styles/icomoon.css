@@ -34,7 +34,7 @@
       content: "\e900" !important;
   }
   .icon-maps-and-location:before {
-    content: "\e901";
+    content: "\e901" !important;
   }
   .icon-music:before {
     content: "\e902";
@@ -46,7 +46,7 @@
     content: "\e904";
   }
   .icon-phone:before {
-    content: "\e905";
+    content: "\e905" !important;
   }
   .icon-quote:before {
     content: "\e906";
@@ -61,7 +61,7 @@
     content: "\e909";
   }
   .icon-mail:before {
-    content: "\e90a";
+    content: "\e90a" !important;
   }
   .icon-pin:before {
     content: "\e90b";

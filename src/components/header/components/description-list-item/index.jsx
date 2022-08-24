@@ -5,7 +5,7 @@ const DescriptionListItem = ({ description, icon, title }) => {
 
     return (
         <div className={classNames(icon, "description-list__item flex flex-col items-center mb-6 relative",
-        "before:absolute last:mb-0")}>
+        "before:absolute last:mb-0 hover:before:text-red-600")}>
             <Typography
                 component="dt"
                 className="font-bold text-lg">
