@@ -27,35 +27,40 @@ const NavigationList = () => {
             ]
         },
         {
-            href: "/", label: "",  list: [
+            href: "/", label: "Projects",  list: [
                 { href: "/", label: "" },
                 { href: "/", label: "" },
                 { href: "/", label: "" }
             ]
         },
         {
-            href: "/", label: "",  list: [
+            href: "/", label: "Blog",  list: [
                 { href: "/", label: "" },
                 { href: "/", label: "" },
                 { href: "/", label: "" }
             ]
         },
         {
-            href: "/", label: "",  list: [
+            href: "/", label: "Shop",  list: [
                 { href: "/", label: "" },
                 { href: "/", label: "" },
                 { href: "/", label: "" }
             ]
+        },
+        {
+            href: "/", label: "Contact"
         }
     ];
 
     return (
-        <ul>
+        <ul className="bg-neutral-900">
             {
                 list.map((item, index) => (
-                    item.list ? <ListItem key={index} { ...item } /> : <li className="mb-4" key={index}>
-                        <Link className="block" href={item.href}>{ item.label }</Link>
-                    </li>
+                    item.list ? <ListItem key={index} { ...item } /> : (
+                        <li className="border-b border-solid border-neutral-800 py-2 px-5" key={index}>
+                            <Link className="block text-white hover:text-red-600" href={item.href}>{ item.label }</Link>
+                        </li>
+                    )
                 ))
             }
         </ul>
