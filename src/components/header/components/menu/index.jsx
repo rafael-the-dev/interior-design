@@ -1,4 +1,5 @@
-import { IconButton } from "@mui/material"
+import { useCallback, useMemo, useState } from "react";
+import { Collapse, IconButton } from "@mui/material"
 import Image from "next/image";
 import classNames from "classnames"
 
@@ -7,24 +8,35 @@ import classes from "./styles.module.css";
 import Bars from "@mui/icons-material/Menu"
 import Logo from "public/images/resources/logo.png";
 
-import Link from "src/components/link"
+import Link from "src/components/link";
+import NavigationList from "./components/navigation";
 
 const Menu = () => {
+    const [ open, setOpen ] = useState(false);
+
+    const toggleState = useCallback(() => setOpen(b => !b), [])
 
     return (
         <div className="relative">
             <div className={classNames(classes.container, 
-                "absolute bg-white flex items-center justify-between py-3 px-2")}>
-                <Link className={classNames(classes.logoContainer, `relative`)} href="/">
-                    <Image
-                        alt="logo"
-                        layout="fill"
-                        src={Logo} 
-                    />
-                </Link>
-                <IconButton className="bg-black rounded-none text-white">
-                    <Bars />
-                </IconButton>
+                "absolute bg-white")}>
+                <div className="flex items-center justify-between py-3 px-2">
+                    <Link className={classNames(classes.logoContainer, `relative`)} href="/">
+                        <Image
+                            alt="logo"
+                            layout="fill"
+                            src={Logo} 
+                        />
+                    </Link>
+                    <IconButton 
+                        className="bg-black rounded-none text-white hover:bg-neutral-700"
+                        onClick={toggleState}>
+                        <Bars />
+                    </IconButton>
+                </div>
+                <Collapse className="absolute bg-white w-full" component="nav" in={open} unmountOnExit>
+                    <NavigationList />
+                </Collapse>
             </div>
         </div>
     );
