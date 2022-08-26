@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 1100px) {
     .descriptionListContainer {
-        flex-direction: row;
+        flex-direction: row !important;
         justify-content: space-between;
     }
 
@@ -18,7 +18,7 @@
     }
 
     .linksList {
-        margin-top: 0;
+        margin-top: 0 !important;
         width: 20%;
     }
 }

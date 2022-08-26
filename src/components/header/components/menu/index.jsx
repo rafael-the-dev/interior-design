@@ -32,7 +32,7 @@ const Menu = () => {
         <div className="relative">
             <div className={classNames(classes.container, 
                 "absolute bg-white")}>
-                <div className="flex items-center justify-between py-3 px-2">
+                <div className="flex items-center justify-between py-3 px-2 sm:px-3">
                     { logoMemo }
                     <IconButton 
                         className="bg-black rounded-none text-white hover:bg-neutral-700"

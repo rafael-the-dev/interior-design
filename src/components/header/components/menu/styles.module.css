@@ -10,3 +10,10 @@
     height: 48px;
     width: 184px;
 }
+
+@media screen and (min-width: 600px) {
+    .logoContainer {
+        height: 51px;
+        width: 221px;
+    }
+}
