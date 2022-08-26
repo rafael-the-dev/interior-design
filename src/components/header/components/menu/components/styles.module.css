@@ -1,0 +1,15 @@
+@media screen and (min-width: 1100px) {
+    .listItem, .listItemButton {
+        border: none;
+        color: #262626;
+        padding: 0;
+    }
+
+    .listItem {
+        margin-right: 13px;
+    }
+
+    .listItem:last-child {
+        margin-right: 0;
+    }
+}

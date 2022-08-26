@@ -1,3 +1,6 @@
+import classNames from "classnames";
+
+import classes from "../styles.module.css"
 
 import Link from "src/components/link";
 import ListItem from "../list-item";
@@ -53,18 +56,38 @@ const NavigationList = () => {
     ];
 
     return (
-        <ul className="bg-neutral-900">
+        <ul className="bg-neutral-900 navigation-list">
             {
                 list.map((item, index) => (
                     item.list ? <ListItem key={index} { ...item } /> : (
-                        <li className="border-b border-solid border-neutral-800 py-2 px-5" key={index}>
-                            <Link className="block text-white hover:text-red-600" href={item.href}>{ item.label }</Link>
+                        <li 
+                            className={classNames(classes.listItem, "border-b border-solid border-neutral-800 py-2 px-5")} 
+                            key={index}>
+                            <Link 
+                                className={classNames(classes.listItemButton, "block text-white hover:text-red-600")}
+                                href={item.href}>
+                                { item.label }
+                            </Link>
                         </li>
                     )
                 ))
             }
+            <style jsx>
+                {
+                    `
+                        @media screen and (min-width: 1100px) {
+                            .navigation-list {
+                                background-color: transparent;
+                                display: flex;
+                            }
+                        }
+                    `
+                }
+            </style>
         </ul>
     );
 };
 
 export default NavigationList;
+
+// av amilcar cabral proximo a emigracao.

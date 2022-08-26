@@ -32,15 +32,20 @@ const Menu = () => {
         <div className="relative">
             <div className={classNames(classes.container, 
                 "absolute bg-white")}>
-                <div className="flex items-center justify-between py-3 px-2 sm:px-3">
+                <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4">
                     { logoMemo }
-                    <IconButton 
-                        className="bg-black rounded-none text-white hover:bg-neutral-700"
-                        onClick={toggleState}>
-                        { open ? <CloseIcon /> : <Bars /> }
-                    </IconButton>
+                    <div className="flex items-center">
+                        <nav className={classNames(classes.navigation, "hidden")}>
+                            { navigationList }
+                        </nav>
+                        <IconButton 
+                            className={classNames(classes.menuButton, "bg-black rounded-none text-white hover:bg-neutral-700")}
+                            onClick={toggleState}>
+                            { open ? <CloseIcon /> : <Bars /> }
+                        </IconButton>
+                    </div>
                 </div>
-                <Collapse className="absolute bg-white w-full" component="nav" in={open} unmountOnExit>
+                <Collapse className={classNames(classes.collapse, "absolute bg-white w-full")} component="nav" in={open} unmountOnExit>
                     { navigationList }
                 </Collapse>
             </div>

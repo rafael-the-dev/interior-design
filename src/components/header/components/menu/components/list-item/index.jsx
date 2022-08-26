@@ -2,6 +2,8 @@ import { useCallback, useMemo, useState } from "react"
 import { Button, Collapse, Typography } from "@mui/material";
 import classNames from "classnames";
 
+import classes from "../styles.module.css"
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
@@ -27,9 +29,10 @@ const ListItem = ({ list, label }) => {
     const toggleState = useCallback(() => setOpen(b => !b), [])
 
     return (
-        <li className="border-b border-solid border-neutral-800">
+        <li className={classNames(classes.listItem, "border-b border-solid border-neutral-800")}>
                 <Button 
-                    className={classNames("items-center justify-between py-3 px-5 text-white w-full hover:text-red-600")}
+                    className={classNames("items-center justify-between py-3 px-5 text-white w-full hover:text-red-600",
+                    classes.listItemButton)}
                     endIcon={ open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                     onClick={toggleState}>
                     { label }
