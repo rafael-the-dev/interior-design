@@ -1,8 +1,17 @@
+
+.listItemButton:hover {
+    background-color: transparent !important;
+}
+
 @media screen and (min-width: 1100px) {
     .listItem, .listItemButton {
-        border: none;
-        color: #262626;
-        padding: 0;
+        border: none !important;
+        color: #262626 !important;
+        padding: 0 !important;
+    }
+
+    .listItem:hover, .listItemButton:hover {
+        color: #dc2626 !important;
     }
 
     .listItem {
