@@ -26,6 +26,19 @@ const Menu = () => {
         </Link>
     ), []);
 
+    const formElementsMemo = useMemo(() => (
+        <>
+            <input 
+                className="border-0 grow outline-none"
+                placeholder="Search here"
+            />
+            <IconButton 
+                className={classNames(classes.icon, classes.searchButton, " text-white rounded-none icon-search")} 
+                aria-label="search"
+            />
+        </>
+    ), [])
+
     const navigationList = useMemo(() => <NavigationList />, [])
 
     const toggleState = useCallback(() => setOpen(b => !b), []);
@@ -66,13 +79,7 @@ const Menu = () => {
                 </Collapse>
                 <form className={classNames("absolute bg-neutral-900 flex items-stretch py-4 px-2 w-full",
                     classes.searchForm, { [classes.searchFormVisible]: openSearchForm } )}>
-                    <input 
-                        className="border-0 grow outline-none"
-                    />
-                    <IconButton 
-                        className={classNames(classes.icon, classes.searchButton, " text-white rounded-none icon-search")} 
-                        aria-label="search"
-                    />
+                    { formElementsMemo }
                 </form>
             </div>
         </div>

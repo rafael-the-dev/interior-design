@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { Button, Collapse, Typography } from "@mui/material";
 import { useRouter } from "next/router"
 import classNames from "classnames";
@@ -16,33 +16,60 @@ const ListItem = ({ id, list, label }) => {
     const { pathname } = useRouter();
 
     const listMemo = useMemo(() => (
-        <ul className="flex flex-col px-5">
+        <>
             {
                 list.map((item, index) => (
                     <li  
                         className="mb-4"
+                        data-navigation="item"
                         key={index}>
-                        <Link className="block text-white hover:text-red-600" href={item.href}>{ item.label }</Link>
+                        <Link className={classNames(classes.listItemLink, "block text-white hover:text-red-600")} href={item.href}>{ item.label }</Link>
                     </li>
                 ))
             }
-        </ul>
+        </>
     ), [ list ])
 
-    const toggleState = useCallback(() => setOpen(b => !b), [])
+    const toggleState = useCallback(() => setOpen(b => !b), []);
+
+    const clickHandler = useCallback((event) => {
+        if(!event.target.getAttribute("data-navigation")) {
+            setOpen(false);
+        }
+    }, [])
+
+    useEffect(() => {
+        const currentWindow = window;
+
+        if(open) {
+            currentWindow.addEventListener("click", clickHandler);
+        } else {
+            currentWindow.removeEventListener("click", clickHandler);
+        }
+
+        return () => {
+            currentWindow.removeEventListener("click", clickHandler);
+        };
+    }, [ clickHandler, open ])
 
     return (
         <li className={classNames(classes.listItem, "border-b border-solid border-neutral-800")}>
-                <Button 
-                    className={classNames("items-center justify-between py-3 px-5 w-full hover:text-red-600",
-                    classes.listItemButton, pathname === id ? classes.currentPage : "text-white")}
-                    endIcon={ open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    onClick={toggleState}>
-                    { label }
-                </Button>
-                <Collapse in={open} unmountOnExit>
-                    { listMemo }
-                </Collapse>
+            <Button 
+                className={classNames("items-center justify-between py-3 px-5 w-full hover:text-red-600",
+                classes.listItemButton, pathname === id ? classes.currentPage : "text-white")}
+                data-navigation="item"
+                endIcon={ open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                onClick={toggleState}>
+                { label }
+            </Button>
+            <Collapse className={classes.listItemCollapse} in={open} unmountOnExit>
+                <ul className="flex flex-col px-5">{ listMemo }</ul>
+            </Collapse>
+            <ul 
+                className={classNames(classes.listItemList, "absolute bg-white flex flex-col h-0 overflow-hidden px-5",
+                { [classes.listItemListVisible]: open })}>
+                { listMemo }
+            </ul>
         </li>
     );
 };

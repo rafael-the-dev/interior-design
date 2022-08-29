@@ -21,6 +21,40 @@
     .listItem:last-child {
         margin-right: 0;
     }
+
+    .listItemCollapse {
+        display: none;
+    }
+
+    .listItemLink {
+        color: #262626 !important;
+    }
+
+    .listItemList {
+        padding: .8rem .7rem .7rem !important;
+        transition: all 1s ease;
+        transform: scale(0);
+        top: 83px;
+        width: auto;
+        z-index: 12;
+    }
+
+    .listItemListVisible {
+        height: auto !important;
+        transform: scale(1);
+    }
+
+    .listItemBg {
+        height: 100vh;
+        left: 0;
+        top: 0;
+        width: 100vw;
+    }
+
+    .listItemBgVisible {
+        display: block !important;
+        z-index: 11;
+    }
 }
 
 
