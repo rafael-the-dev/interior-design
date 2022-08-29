@@ -15,6 +15,16 @@
     font-size: 20px;
 }
 
+.searchForm {
+    transition: all 1s ease;
+    transform: scale(0);
+    z-index: 5;
+}
+
+.searchFormVisible {
+    transform: scale(1);
+}
+
 @media screen and (min-width: 600px) {
     .container {
         left: 10%;
@@ -24,6 +34,11 @@
     .logoContainer {
         height: 51px;
         width: 221px;
+    }
+
+    .searchForm {
+        right: 0;
+        width: 350px;
     }
 }
 

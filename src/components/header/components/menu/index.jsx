@@ -14,6 +14,7 @@ import NavigationList from "./components/navigation";
 
 const Menu = () => {
     const [ open, setOpen ] = useState(false);
+    const [ openSearchForm, setOpenSearchForm ] = useState(false);
 
     const logoMemo = useMemo(() => (
         <Link className={classNames(classes.logoContainer, `relative`)} href="/">
@@ -23,10 +24,12 @@ const Menu = () => {
                 src={Logo} 
             />
         </Link>
-    ), [])
+    ), []);
+
     const navigationList = useMemo(() => <NavigationList />, [])
 
-    const toggleState = useCallback(() => setOpen(b => !b), [])
+    const toggleState = useCallback(() => setOpen(b => !b), []);
+    const toggleFormState = useCallback(() => setOpenSearchForm(b => !b), []);
 
     return (
         <div className="relative">
@@ -43,6 +46,7 @@ const Menu = () => {
                                 className={classNames(classes.icon, classes.searchButton, "rounded-none icon-search",
                                 "border-r border-solid border-slate-200 sm:pr-3")} 
                                 aria-label="search"
+                                onClick={toggleFormState}
                             />
                             <IconButton 
                                 className={classNames(classes.icon, classes.bagButton, "rounded-none icon-bag",
@@ -60,6 +64,16 @@ const Menu = () => {
                 <Collapse className={classNames(classes.collapse, "absolute bg-white w-full")} component="nav" in={open} unmountOnExit>
                     { navigationList }
                 </Collapse>
+                <form className={classNames("absolute bg-neutral-900 flex items-stretch py-4 px-2 w-full",
+                    classes.searchForm, { [classes.searchFormVisible]: openSearchForm } )}>
+                    <input 
+                        className="border-0 grow outline-none"
+                    />
+                    <IconButton 
+                        className={classNames(classes.icon, classes.searchButton, " text-white rounded-none icon-search")} 
+                        aria-label="search"
+                    />
+                </form>
             </div>
         </div>
     );
