@@ -32,12 +32,24 @@ const Menu = () => {
         <div className="relative">
             <div className={classNames(classes.container, 
                 "absolute bg-white")}>
-                <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4">
+                <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4 lg:py-4">
                     { logoMemo }
                     <div className="flex items-center">
                         <nav className={classNames(classes.navigation, "hidden")}>
                             { navigationList }
                         </nav>
+                        <div className="flex h-full mx-1">
+                            <IconButton 
+                                className={classNames(classes.icon, classes.searchButton, "rounded-none icon-search",
+                                "border-r border-solid border-slate-200 sm:pr-3")} 
+                                aria-label="search"
+                            />
+                            <IconButton 
+                                className={classNames(classes.icon, classes.bagButton, "rounded-none icon-bag",
+                                "sm:pl-3")} 
+                                aria-label="cart"
+                            />
+                        </div>
                         <IconButton 
                             className={classNames(classes.menuButton, "bg-black rounded-none text-white hover:bg-neutral-700")}
                             onClick={toggleState}>

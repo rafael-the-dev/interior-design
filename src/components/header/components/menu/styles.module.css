@@ -7,8 +7,12 @@
 }
 
 .logoContainer {
-    height: 48px;
-    width: 184px;
+    height: 37px;
+    width: 156px;
+}
+
+.icon::before {
+    font-size: 20px;
 }
 
 @media screen and (min-width: 600px) {
@@ -33,6 +37,7 @@
 @media screen and (min-width: 1100px) {
     .navigation {
         display: flex !important;
+        margin-right: 1rem;
     }
 
     .collapse, .menuButton {
