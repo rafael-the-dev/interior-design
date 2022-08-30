@@ -8,13 +8,14 @@ import logo from 'public/images/resources/logo-2.png';
 
 import Link from "../link";
 import ListItem from "./components/link";
-import Form from "./components/form"
+import Form from "./components/form";
+import AddressItem from "./components/address-item"
 
 const Footer = () => {
 
     return (
-        <footer className={classNames(classes.footer, `px-5 pt-12 sm:px-[10%] md:px-5 md:pt-20`)}>
-            <div className="flex-wrap justify-between md:flex">
+        <footer className={classNames(classes.footer, ``)}>
+            <div className={classNames(classes.row, "flex-wrap justify-between px-5 pt-12 sm:px-[10%] md:px-5 md:pt-20 md:flex pb-12")}>
                 <div className={classNames(classes.column)}>
                     <Link href="/">
                         <Image
@@ -70,6 +71,27 @@ const Footer = () => {
                     </div>
                 </div>
                 <Form />
+            </div>
+            <div className="relative">
+                <Typography
+                    component="address"
+                    className={classNames(`bg-white flex flex-col flex-wrap items-center justify-center px-5 
+                    py-8 sm:px-[10%] md:flex-row md:justify-between md:px-4 md:py-6`, classes.address)}>
+                    <AddressItem icon="icon-global">
+                        Flat 20, Reynolds Neck, North<br/>Helenaville, FV77 8WS
+                    </AddressItem>
+                    <AddressItem icon="icon-support1">
+                        324 123 45 978 &amp; 01<br/><span className="font-bold">Mon - Friday:</span> 9.00am to 6.00pm
+                    </AddressItem>
+                    <AddressItem icon="icon-shipping-and-delivery">
+                        abc@yourdomain.com<br/>crystalocareer@gmail.com
+                    </AddressItem>
+                </Typography>
+            </div>
+            <div className={classNames(classes.copyright, "py-8 text-center text-red-600 md:pt-24")}>
+                <Typography>
+                    { new Date(Date.now()).getFullYear() }
+                </Typography>
             </div>
         </footer>
     );

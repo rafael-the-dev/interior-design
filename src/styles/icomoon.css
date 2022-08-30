@@ -165,3 +165,12 @@
   .icon-productive::before {
     content: "\e937";
   }
+  .icon-shipping-and-delivery:before {
+    content: "\e945" !important;
+  }
+  .icon-support1:before {
+    content: "\e944" !important;
+}
+.icon-global:before {
+  content: "\e942" !important;
+}

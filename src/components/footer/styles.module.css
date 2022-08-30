@@ -2,13 +2,39 @@
     background-color: #27282c;
 }
 
+.copyright {
+    background-color: #1f1f23;
+}
+
 @media screen and (min-width: 768px) {
     .column {
         width: 48%;
     }
+
+    .row {
+        padding-bottom: 10rem !important;
+    }
+
+    .address {
+        left: 5%;
+        position: absolute;
+        top: 0;
+        transform: translate(0, -50%);
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .row {
+        padding-bottom: 8rem !important;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .row {
+        padding-bottom: 9rem !important;
+    }
+
     .column {
         width: 31%;
     }
