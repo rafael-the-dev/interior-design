@@ -13,9 +13,9 @@ import Form from "./components/form"
 const Footer = () => {
 
     return (
-        <footer className={classNames(classes.footer, `px-5 pt-12 sm:px-[10%]`)}>
-            <div>
-                <div>
+        <footer className={classNames(classes.footer, `px-5 pt-12 sm:px-[10%] md:px-5 md:pt-20`)}>
+            <div className="flex-wrap justify-between md:flex">
+                <div className={classNames(classes.column)}>
                     <Link href="/">
                         <Image
                             alt="logo"
@@ -28,12 +28,12 @@ const Footer = () => {
                         who are so beguiled and demoralized by the charms of pleasure of the blinded 
                         by desiremoment.
                     </Typography>
-                    <div className="flex flex-col mt-6 sm:flex-row">
+                    <div className="flex flex-col mt-6 sm:items-center sm:flex-row">
                         <Typography
                             className="text-white">
                             Follow us on:
                         </Typography>
-                        <ul className="flex mt-2 sm:mt-0">
+                        <ul className="flex mt-2 sm:mt-0 sm:ml-2">
                             <li className="mr-3">
                                 <Link className="text-sm text-white opacity-70 hover:opacity-100" href="/">Facebook</Link>
                             </li>
@@ -46,21 +46,21 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-8">
+                <div className={classNames(classes.column, "mt-8 md:mt-0 md:w-1/2")}>
                     <Typography 
                         component="h2"
                         className="font-bold text-xl text-white">
                         Useful links
                     </Typography>
-                    <div className="mt-4">
-                        <ul className="">
+                    <div className="justify-between mt-4 md:flex">
+                        <ul className="md:border-r border-solid border-gray-700 md:w-1/2">
                             <ListItem href="/" label="Company" />
                             <ListItem href="/" label="Services" />
                             <ListItem href="/" label="Team" />
                             <ListItem href="/" label="Projects" />
                             <ListItem href="/" label="Get a quote" />
                         </ul>
-                        <ul className="mt-3">
+                        <ul className="mt-3 md:mt-0 lg:ml-8 lg:w-1/2">
                             <ListItem href="/" label="News" />
                             <ListItem href="/" label="Testimonials" />
                             <ListItem href="/" label="Partners" />

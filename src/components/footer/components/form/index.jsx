@@ -28,12 +28,12 @@ const Form = () => {
     ), [])
 
     return (
-        <form className="mt-8 w-full ">
+        <form className="footer__form mt-8 w-full md:mt-12 lg:mt-0">
             { legend }
             <div className="mt-6">
                 <input 
                     className="bg-transparent border border-solid border-gray-500 outline-none py-3 px-2 
-                    text-base text-white w-full"
+                    text-base text-white w-full focus:border-gray-300"
                     id="footer-email-input"
                     onChange={changeHandler}
                     placeholder="Your email"
@@ -48,6 +48,23 @@ const Form = () => {
                 </Button>
                 { label }
             </div>
+            <style jsx>
+                {
+                    `
+                        @media screen and (min-width: 768px) {
+                            .footer__form {
+                                width: 48%;
+                            }
+                        }
+
+                        @media screen and (min-width: 1024px) {
+                            .footer__form {
+                                width: 31%;
+                            }
+                        }
+                    `
+                }
+            </style>
         </form>
     );
 };

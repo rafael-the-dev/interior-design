@@ -1,3 +1,15 @@
 .footer {
     background-color: #27282c;
 }
+
+@media screen and (min-width: 768px) {
+    .column {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .column {
+        width: 31%;
+    }
+}
