@@ -15,6 +15,16 @@ const Form = () => {
             className="font-bold text-xl text-white">
             Subscribe us
         </Typography>
+    ), []);
+
+    const label = useMemo(() => (
+        <Typography 
+            component="label"
+            className="block mt-4 text-sm opacity-70 text-white"
+            htmlFor="footer-email-input">
+            <span className="text-red-600">*</span>
+            Subscribe us and get latest news and updates
+        </Typography>
     ), [])
 
     return (
@@ -24,6 +34,7 @@ const Form = () => {
                 <input 
                     className="bg-transparent border border-solid border-gray-500 outline-none py-3 px-2 
                     text-base text-white w-full"
+                    id="footer-email-input"
                     onChange={changeHandler}
                     placeholder="Your email"
                     value={value}
@@ -35,6 +46,7 @@ const Form = () => {
                     endIcon={<TrendingFlatIcon />}>
                     Subscribe
                 </Button>
+                { label }
             </div>
         </form>
     );
