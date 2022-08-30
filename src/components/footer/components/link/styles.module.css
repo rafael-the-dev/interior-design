@@ -1,0 +1,16 @@
+.icon {
+    font-size: .9rem;
+    margin-right: .9rem;
+}
+
+.linkAddIcon {
+    display: none;
+}
+
+.link:hover .linkMinusIcon {
+    display: none;
+}
+
+.link:hover .linkAddIcon {
+    display: inline-block;
+}
