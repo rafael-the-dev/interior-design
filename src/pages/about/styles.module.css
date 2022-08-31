@@ -1,0 +1,8 @@
+
+.title::before {
+    content: "" !important;
+    display: block;
+    height: 4px;
+    margin-bottom: 2rem;
+    width: 40%;
+}
