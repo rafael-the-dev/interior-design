@@ -18,8 +18,8 @@ const NavigationList = () => {
             ]
         },
         {
-            href: "/", id: "about", label: "About us",  list: [
-                { href: "/", label: "About company" },
+            href: "about", id: "about", label: "About us",  list: [
+                { href: "about", label: "About company" },
                 { href: "/", label: "FAQs" },
                 { href: "/", label: "Coming soon" },
                 { href: "/", label: "Error page" }
