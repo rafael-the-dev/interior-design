@@ -10,7 +10,7 @@ const DefaultHero = ({ children, title }) => {
     return (
         <section className={classNames("default-hero bg-center bg-no-repeat bg-cover flex flex-col px-5 sm:px-[10%]",
             { "default-hero--about": pathname === "/about" })}>
-            <div className={classNames("flex grow items-center", { "items-center": pathname !== "/about" })}>
+            <div className={classNames("flex grow items-center sm:items-end", { "items-center": pathname !== "/about" })}>
                 {
                     children ?? (
                         <Typography 

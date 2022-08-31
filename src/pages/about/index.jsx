@@ -13,7 +13,8 @@ const Container = () => {
             <DefaultHero>
                 <Typography 
                     component="h1"
-                    className={classNames(classes.title, "capitalize font-bold text-5xl text-white before:bg-white")}>
+                    className={classNames(classes.title, "leading-tight",
+                    "capitalize font-bold text-5xl text-white before:bg-white lg:leading-snug lg:text-6xl")}>
                     Talented interior<br/>designer.
                 </Typography>
             </DefaultHero>

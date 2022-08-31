@@ -1,10 +1,12 @@
 import { useCallback, useMemo, useState } from "react";
-import { Collapse, IconButton } from "@mui/material"
+import { Button, Collapse, IconButton } from "@mui/material"
 import Image from "next/image";
-import classNames from "classnames"
+import classNames from "classnames";
+import { useRouter } from "next/router"
 
 import classes from "./styles.module.css";
 
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import CloseIcon from '@mui/icons-material/Close';
 import Bars from "@mui/icons-material/Menu"
 import Logo from "public/images/resources/logo.png";
@@ -15,6 +17,7 @@ import NavigationList from "./components/navigation";
 const Menu = () => {
     const [ open, setOpen ] = useState(false);
     const [ openSearchForm, setOpenSearchForm ] = useState(false);
+    const { pathname } = useRouter();
 
     const logoMemo = useMemo(() => (
         <Link className={classNames(classes.logoContainer, `relative`)} href="/">
@@ -46,8 +49,8 @@ const Menu = () => {
 
     return (
         <div className="relative">
-            <div className={classNames(classes.container, 
-                "absolute bg-white")}>
+            <div className={classNames(classes.container, { [`absolute ${classes.containerHome}`]: pathname === "/"},
+                "bg-white")}>
                 <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4 lg:py-4">
                     { logoMemo }
                     <div className="flex items-center">
@@ -72,6 +75,14 @@ const Menu = () => {
                             onClick={toggleState}>
                             { open ? <CloseIcon /> : <Bars /> }
                         </IconButton>
+                        { pathname !== "/" && (
+                            <Button
+                                className={classNames(classes.quoteButton, 
+                                "bg-red-600 capitalize ml-4 px-4 rounded-none text-white")}
+                                endIcon={<ArrowRightAltIcon />}>
+                                Get a quote
+                            </Button>
+                        )}
                     </div>
                 </div>
                 <Collapse className={classNames(classes.collapse, "absolute bg-white w-full")} component="nav" in={open} unmountOnExit>
