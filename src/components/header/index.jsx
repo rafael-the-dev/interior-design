@@ -9,19 +9,22 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 import Link from "../link";
 import DescriptionListItem from "./components/description-list-item";
-import Menu from "./components/menu"
+import Menu from "./components/menu";
+import SubHeader from "./components/sub-header";
 
 const Header = () => {
     const { pathname } = useRouter();
 
     return (
         <header className={classNames(classes.header, ``)}>
-            <div className="bg-neutral-900 pt-4 pb-16 px-5 sm:px-[10%]">
-                <Typography className="text-center text-sm text-white">
-                    <span className="opacity-75">Crystalo Inspiring Interiors, Basesd On United States... </span>
-                    <Link className="text-white" href="/">Get Approximate Estimation.</Link>
-                </Typography>
-            </div>
+            { pathname === "/" ? (
+                <div className="bg-neutral-900 pt-4 pb-16 px-5 sm:px-[10%]">
+                    <Typography className="text-center text-sm text-white">
+                        <span className="opacity-75">Crystalo Inspiring Interiors, Basesd On United States... </span>
+                        <Link className="text-white" href="/">Get Approximate Estimation.</Link>
+                    </Typography>
+                </div> ) : <SubHeader />
+            }
             <Menu />
             { pathname === "/" && (
                 <div className={classNames(classes.descriptionListContainer, "bg-gray-100 pt-16 pb-10 px-5 sm:px-[10%] remove-px-10",
