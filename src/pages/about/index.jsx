@@ -18,17 +18,17 @@ const Container = () => {
                     Talented interior<br/>designer.
                 </Typography>
             </DefaultHero>
-            <section className="px-5 py-12">
-                <div>
+            <section className="px-5 py-12 sm:px-[10%] lg:px-5">
+                <div className="items-center justify-between lg:flex ">
                     <Typography 
                         component="h2"
                         className={classNames(classes.modernDesignTitle, `
-                        font-medium text-2xl uppercase before:block before:font-bold before:mb-2 before:text-red-500`)}>
+                        font-medium text-2xl uppercase md:text-3xl lg:text-4xl before:block before:font-bold before:mb-2 before:text-red-500`)}>
                         <span className="font-bold">Modern &amp; Luxury</span><br/>
                         Interior designers in USA
                     </Typography>
                     <Typography
-                        className="leading-6 mt-4 text-gray-600 text-sm">
+                        className={classNames(classes.moderDesignDescription, "leading-6 mt-4 text-gray-600 text-sm md:text-base")}>
                         We feel that interior design is one of the most important investments you will 
                         ever make. Whether your needs are Residential or Commercial Interior Design or 
                         Model Home Merchandising, our commitment to your project.

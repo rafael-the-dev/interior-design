@@ -11,3 +11,13 @@
     content: "Company overview" !important;
     font-size: .9rem;
 }
+
+@media screen and (min-width: 1024px) {
+    .modernDesignTitle {
+        width: 40%;
+    }
+
+    .moderDesignDescription {
+        width: 55%;
+    }
+}
