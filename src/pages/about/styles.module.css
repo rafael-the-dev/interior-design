@@ -1,8 +1,13 @@
 
-.title::before {
+.heroTitle::before {
     content: "" !important;
     display: block;
     height: 4px;
     margin-bottom: 2rem;
     width: 40%;
+}
+
+.modernDesignTitle::before {
+    content: "Company overview" !important;
+    font-size: .9rem;
 }
