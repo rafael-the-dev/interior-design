@@ -2,3 +2,15 @@
     content: "" !important;
     transform: translate(-32%, 0px);
 }
+
+@media screen and (min-width: 600px) {
+    .container {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .container {
+        width: 23%;
+    }
+}

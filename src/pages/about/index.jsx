@@ -38,8 +38,9 @@ const Container = () => {
                     </div>
                     <ModernDesignCarolusel />
                 </div>
-                <div className={classNames(classes.SingleFactCounterContainer, 
-                    "bg-gray-100 flex flex-col justify-center items-stretch px-[20%] lg:px-5")}>
+                <div className={classNames(classes.SingleFactCounterContainer, `bg-gray-100 flex flex-col 
+                    flex-wrap justify-center items-stretch px-[20%] sm:flex-row sm:justify-between sm:px-[10%] 
+                    lg:px-5`)}>
                     <SingleFactCounter description={<>Years of<br/>Experience</>} title="36" />
                     <SingleFactCounter description={<>Projects<br/>Completed</>} title="5k" />
                     <SingleFactCounter description={<>Branches<br/>Worldwide</>} title="24" />
