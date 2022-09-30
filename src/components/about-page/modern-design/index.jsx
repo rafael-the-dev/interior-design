@@ -20,8 +20,8 @@ const Container = () => {
             year: 1994
         },
         {
-            description: "/images/rosources/history-1.jpg", 
-            image: "", 
+            description: "Indignation and dislike men who are so beguiled and demoralized by the charms pleasure of the moment, so blinded by desire, that they cannot foresee shrinking from toil and pain.", 
+            image: "/images/resources/history-1.jpg", 
             title: <>Crystalo Was Founded by<br/> Chris Miller in USA.</>, 
             year: 1994
         },
@@ -40,7 +40,7 @@ const Container = () => {
     ];
 
     return (
-        <div className="mt-8 relative">
+        <div className="mt-12 relative">
             <div className={classNames("")}>
                 <Carousel
                     spacing={{ xs: { gap: 0, width: 1 } }}>

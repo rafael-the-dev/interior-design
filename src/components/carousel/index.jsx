@@ -17,13 +17,13 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
     const widthRef = useRef(0);
 
     const layout = useCallback(() => {
-        const { innerWidth } = window;
+        const innerWidth = sliderRef.current.parentElement.clientWidth;
         if(!Boolean(spacing)) return;
 
         let width = innerWidth / spacing.xs.width - spacing.xs.gap;
         widthReducer.current = 0;
         let maxHeight = 0;
-
+        console.log(maxHeight)
         childrenList.current.forEach((child, index) => {
             if(innerWidth > 1280 && Boolean(spacing['2xl'])) {
                 width = innerWidth / spacing['2xl'].width;
@@ -54,12 +54,12 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
 
             const { height } = child.getBoundingClientRect();
             if(height > maxHeight) maxHeight = height;
-
+            console.log(height, maxHeight)
             child.style.width = `${width - widthReducer.current}px`;
             child.classList.add("h-full");
             child.style.left = `${(width - (widthReducer.current - 20)) * index}px`;
         });
-        
+
         widthRef.current = width;
         sliderRef.current.style.height = `${maxHeight}px`
         sliderRef.current.style.width = `${width * childrenList.current.length}px`;
@@ -80,7 +80,6 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
 
     useEffect(() => {
         const list = [ ...sliderRef.current.children ];
-        console.log("list", children)
         childrenList.current = list;
         layout();
         setChildrenListRef.current?.(list);

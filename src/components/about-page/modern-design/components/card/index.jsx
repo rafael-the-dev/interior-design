@@ -31,7 +31,7 @@ const Card = ({ description, image, title, year }) => {
                     { title }
                 </Typography>
                 <Typography
-                    className="leading-6 mt-3 mb-4 text-gray-500 text-sm">
+                    className="leading-6 mt-3 mb-8 text-gray-500 text-sm">
                     { description }
                 </Typography>
                 <Link href="/">
