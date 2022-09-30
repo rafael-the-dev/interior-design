@@ -1,0 +1,4 @@
+.titleContainer::before {
+    content: "" !important;
+    transform: translate(-32%, 0px);
+}
