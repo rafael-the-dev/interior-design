@@ -11,7 +11,7 @@ import Link from "src/components/link";
 const Card = ({ description, image, title, year }) => {
 
     return (
-        <li className={classNames(classes.card, `absolute`)}>
+        <li className={classNames(classes.card, `absolute items-center lg:flex`)}>
             <div className={classNames(classes.cardImageContaienr, "relative")}>
                 <Image 
                     alt={title}
@@ -19,7 +19,7 @@ const Card = ({ description, image, title, year }) => {
                     src={image}
                 />
             </div>
-            <div className="pt-8">
+            <div className={classNames(classes.cardContent, "pt-8 lg:pt-0 lg:px-8 xl:px-16")}>
                 <Typography
                     component='h4'
                     className={classNames(classes.cardYear, "bg-red-500 font-semibold py-1 px-2 relative text-center text-lg text-white")}>
@@ -27,11 +27,11 @@ const Card = ({ description, image, title, year }) => {
                 </Typography>
                 <Typography
                     component='h3'
-                    className="font-semibold mt-8 text-lg">
+                    className="font-semibold mt-8 text-lg sm:text-xl md:text-2xl">
                     { title }
                 </Typography>
                 <Typography
-                    className="leading-6 mt-3 mb-8 text-gray-500 text-sm">
+                    className="leading-6 mt-3 mb-8 text-gray-500 text-sm md:text-base">
                     { description }
                 </Typography>
                 <Link href="/">
