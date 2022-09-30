@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import classes from "./styles.module.css"
 
 import DefaultHero from "src/components/default-hero";
+import ModernDesignCarolusel from "src/components/about-page/modern-design"
 
 
 const Container = () => {
@@ -34,6 +35,7 @@ const Container = () => {
                         Model Home Merchandising, our commitment to your project.
                     </Typography>
                 </div>
+                <ModernDesignCarolusel />
             </section>
         </main>
     );
