@@ -74,7 +74,7 @@ const Container = () => {
                 </div>
             </section>
             <section className="px-5 pt-4 pb-12 sm:px-[10%] lg:px-5">
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-between sm:flex-row sm:items-center">
                     <Typography 
                         component="h2"
                         className={classNames(classes.expertsTitle, `
@@ -87,14 +87,14 @@ const Container = () => {
                         href="/">
                         <Button
                             className={classNames(`bg-red-500 border-red-500 py-2 rounded-none text-white 
-                            hover:bg-transparent hover:border-red-500 hover:text-red-500`)}
+                            hover:bg-transparent hover:border-red-500 hover:text-red-500 md:py-3 md:px-6`)}
                             endIcon={<TrendingFlatOutlinedIcon />}
                             variant="outlined">
                             All members
                         </Button>
                     </Link>
                 </div>
-                <ul className="flex flex-wrap items-stretch justify-between mt-8">
+                <ul className="flex flex-wrap items-stretch justify-between mt-8 sm:mt-12">
                     {
                         teamMembers.map((item, index) => (
                             <TeamMemberCard { ...item } key={index} />
