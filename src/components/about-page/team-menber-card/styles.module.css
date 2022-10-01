@@ -1,0 +1,55 @@
+.card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 100%;
+}
+
+.imageContainer {
+    height: 320px;
+}
+
+.imageContainer img {
+    object-fit: cover !important;
+    object-position: center;
+}
+
+.position::before, .position::after {
+    background-color: #9ca3af;
+    content: "";
+    height: 2px;
+    width: 40px;
+}
+
+.position::before {
+    margin-right: 9px;
+}
+
+.position::after {
+    margin-left: 9px;
+}
+
+@media screen and (min-width: 600px) {
+    .card {
+        width: 48%;
+    }
+
+    .imageContainer img {
+        object-fit: unset !important;
+        object-position: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        width: 23%;
+    }
+
+    .imageContainer  {
+        height: 210px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .imageContainer  {
+        height: 250px;
+    }
+}

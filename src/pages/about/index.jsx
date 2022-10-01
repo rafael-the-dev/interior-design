@@ -7,10 +7,33 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import DefaultHero from "src/components/default-hero";
 import Link from "src/components/link"
-import SingleFactCounter from "src/components/about-page/single-fact-counter"
+import SingleFactCounter from "src/components/about-page/single-fact-counter";
+import TeamMemberCard from "src/components/about-page/team-menber-card";
 import ModernDesignCarolusel from "src/components/about-page/modern-design"
 
 const Container = () => {
+    const teamMembers = [
+        {
+            image: "/images/team/1.jpg",
+            name: "Alison Fletcher",
+            position: "CEO & Founder"
+        },
+        {
+            image: "/images/team/v2-2.jpg",
+            name: "Joe Wilson",
+            position: "Designer"
+        },
+        {
+            image: "/images/team/v2-3.jpg",
+            name: "White Grey",
+            position: "Architect"
+        },
+        {
+            image: "/images/team/v2-4.jpg",
+            name: "Kevin Smith",
+            position: "Manager"
+        }
+    ];
 
     return (
         <main>
@@ -43,14 +66,14 @@ const Container = () => {
                 </div>
                 <div className={classNames(classes.SingleFactCounterContainer, `bg-gray-100 flex flex-col 
                     flex-wrap justify-center items-stretch px-[20%] sm:flex-row sm:justify-between sm:px-[10%] 
-                    lg:px-5`)}>
+                    lg:px-[7%]`)}>
                     <SingleFactCounter description={<>Years of<br/>Experience</>} title="36" />
                     <SingleFactCounter description={<>Projects<br/>Completed</>} title="5k" />
                     <SingleFactCounter description={<>Branches<br/>Worldwide</>} title="24" />
                     <SingleFactCounter description={<>Awards<br/>Holds in Hand</>} title="47" />
                 </div>
             </section>
-            <section className="px-5 pt-4 pb-12">
+            <section className="px-5 pt-4 pb-12 sm:px-[10%] lg:px-5">
                 <div className="flex flex-col">
                     <Typography 
                         component="h2"
@@ -71,6 +94,13 @@ const Container = () => {
                         </Button>
                     </Link>
                 </div>
+                <ul className="flex flex-wrap items-stretch justify-between mt-8">
+                    {
+                        teamMembers.map((item, index) => (
+                            <TeamMemberCard { ...item } key={index} />
+                        ))
+                    }
+                </ul>
             </section>
         </main>
     );
