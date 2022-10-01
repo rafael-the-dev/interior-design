@@ -41,7 +41,7 @@ const Container = () => {
 
     return (
         <div className="mt-12 relative">
-            <div className={classNames("")}>
+            <div className={classNames(classes.carouselContainer, "")}>
                 <Carousel
                     spacing={{ xs: { gap: 0, width: 1 } }}>
                     {

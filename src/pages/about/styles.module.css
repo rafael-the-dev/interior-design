@@ -7,14 +7,21 @@
     width: 40%;
 }
 
+.modernDesignTitle::before, .expertsTitle::before {
+    font-size: .9rem;
+}
+
 .modernDesignTitle::before {
     content: "Company overview" !important;
-    font-size: .9rem;
 }
 
 .SingleFactCounterContainer {
     padding-bottom: 5rem;
     padding-top: 5rem;
+}
+
+.expertsTitle::before {
+    content: "Behind our company" !important;
 }
 
 @media screen and (min-width: 1024px) {
