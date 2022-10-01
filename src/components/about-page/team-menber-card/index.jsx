@@ -4,6 +4,10 @@ import classNames from "classnames";
 
 import classes from "./styles.module.css";
 
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import Link from "src/components/link"
@@ -14,6 +18,28 @@ const Card = ({ image, name, position }) => {
     return (
         <li className={classNames(classes.card, "mb-8")}>
             <div className={classNames(classes.imageContainer, `relative`)}>
+                <ul className={classNames(classes.socialMediaList, "absolute flex items-stretch w-full z-10")}>
+                    <li className="bg-white border-r border-solid border-gray-200 flex justify-center pb-2 pt-4 w-1/4">
+                        <Link className='text-neutral-600' href="/">
+                            <FacebookOutlinedIcon />
+                        </Link>
+                    </li>
+                    <li className="bg-white border-r border-solid border-gray-200 flex justify-center pb-2 pt-4 w-1/4">
+                        <Link className='text-neutral-600' href="/">
+                            <TwitterIcon />
+                        </Link>
+                    </li>
+                    <li className="bg-white border-r border-solid border-gray-200 flex justify-center pb-2 pt-4 w-1/4">
+                        <Link className='text-neutral-600' href="/">
+                            <InstagramIcon />
+                        </Link>
+                    </li>
+                    <li className="bg-white flex justify-center pb-2 pt-4 w-1/4">
+                        <Link className='text-neutral-600' href="/">
+                            <LinkedInIcon />
+                        </Link>
+                    </li>
+                </ul>
                 <Image 
                     alt={name}
                     layout="fill"

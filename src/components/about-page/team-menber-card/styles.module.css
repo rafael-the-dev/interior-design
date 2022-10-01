@@ -1,3 +1,11 @@
+.socialMediaList, .socialMediaList li,  .linkContainer, .linkContainer a {
+    transition: all 1s ease .4s;
+}
+
+.linkContainer {
+    background-color: rgba(0, 0, 0, .7);
+}
+
 .card {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 100%;
@@ -17,22 +25,47 @@
     transform: scale(1.05);
 }
 
+.socialMediaList::before {
+    background-color: #000;
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+
+.socialMediaList, .socialMediaList::before {
+    height: 0;
+}
+
+.socialMediaList li {
+    transform: scale(0);
+}
+
+.card:hover .socialMediaList {
+    height: 55px;
+}
+
+.card:hover .socialMediaList::before {
+    height: 4px;
+    z-index: 11;
+}
+
+.card:hover .socialMediaList li {
+    transform: scale(1);
+}
+
 .linkContainer {
-    background-color: rgba(0, 0, 0, .7);
     bottom: 50%;
     height: 0;
     transform: translate(0, 50%);
-    transition: all 1s ease .4s;
 }
 
 .linkContainer a {
     transform: scale(0);
-    transition: all 1s ease .4s;
 }
 
 .card:hover .linkContainer {
     bottom: 0;
-    height: calc(100% - 69px);
+    height: calc(100% - 55px);
     transform: translate(0, 0%);
 }
 
