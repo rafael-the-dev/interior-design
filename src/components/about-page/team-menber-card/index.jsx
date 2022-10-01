@@ -1,8 +1,13 @@
-import { Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 import Image from "next/image"
 import classNames from "classnames";
 
-import classes from "./styles.module.css"
+import classes from "./styles.module.css";
+
+import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
+
+import Link from "src/components/link"
+
 
 const Card = ({ image, name, position }) => {
 
@@ -14,6 +19,15 @@ const Card = ({ image, name, position }) => {
                     layout="fill"
                     src={image}
                 />
+                <div className={classNames(classes.linkContainer, `absolute flex items-center justify-center w-full`)}>
+                    <Link href="/">
+                        <Button
+                            className="capitalize text-white"
+                            endIcon={<TrendingFlatOutlinedIcon />}>
+                            View profile
+                        </Button>
+                    </Link>
+                </div>
             </div> 
             <div className="px-4 py-6 text-center">
                 <Typography
