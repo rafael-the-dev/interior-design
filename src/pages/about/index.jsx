@@ -5,6 +5,7 @@ import classes from "./styles.module.css";
 
 import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
+import Clients from "src/components/home-components/clients"
 import DefaultHero from "src/components/default-hero";
 import Link from "src/components/link"
 import SingleFactCounter from "src/components/about-page/single-fact-counter";
@@ -102,6 +103,7 @@ const Container = () => {
                     }
                 </ul>
             </section>
+            <Clients />
         </main>
     );
 };
