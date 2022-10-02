@@ -11,7 +11,7 @@ import Link from "src/components/link";
 const Card = ({ description, image, title, year }) => {
 
     return (
-        <li className={classNames(classes.card, `absolute items-center lg:flex`)}>
+        <li className={classNames(classes.card, `absolute items-center lg:bg-white lg:flex`)}>
             <div className={classNames(classes.cardImageContaienr, "relative")}>
                 <Image 
                     alt={title}
@@ -19,7 +19,7 @@ const Card = ({ description, image, title, year }) => {
                     src={image}
                 />
             </div>
-            <div className={classNames(classes.cardContent, "pt-8 lg:pt-0 lg:px-8 xl:px-16")}>
+            <div className={classNames(classes.cardContent, "py-8 lg:pt-0 lg:px-8 lg:pb-0 xl:px-16")}>
                 <Typography
                     component='h4'
                     className={classNames(classes.cardYear, "bg-red-500 font-semibold py-1 px-2 relative text-center text-lg text-white")}>

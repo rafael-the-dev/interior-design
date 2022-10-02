@@ -85,7 +85,7 @@ const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
             }
             {
                 dots && (
-                        <div className="flex flex-wrap justify-center py-4">
+                        <div className="flex flex-wrap justify-center py-8">
                             {
                                 childrenList.map((_, currentIndex) => (
                                     <Dot 

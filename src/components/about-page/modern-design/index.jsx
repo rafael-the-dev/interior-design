@@ -40,7 +40,7 @@ const Container = () => {
     ];
 
     return (
-        <div className="mt-12 relative">
+        <div className={classNames(classes.container, "relative")}>
             <div className={classNames(classes.carouselContainer, "")}>
                 <Carousel
                     dots
