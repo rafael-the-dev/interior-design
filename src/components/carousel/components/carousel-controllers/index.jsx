@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FormControl, FormControlLabel, FormGroup, IconButton, Radio, RadioGroup } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { v4 as uuidv4 } from 'uuid';
 import classNames from "classnames";
 
 import classes from "./styles.module.css"
@@ -84,11 +85,11 @@ const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
             }
             {
                 dots && (
-                        <div className="flex justify-center">
+                        <div className="flex flex-wrap justify-center py-4">
                             {
                                 childrenList.map((_, currentIndex) => (
                                     <Dot 
-                                        key={index}
+                                        key={uuidv4()}
                                         onClick={clickHandler(currentIndex)}
                                         selected={index === currentIndex}
                                     />
