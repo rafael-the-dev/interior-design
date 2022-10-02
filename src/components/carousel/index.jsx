@@ -8,7 +8,7 @@ import classes from "./styles.module.css"
 import Controllers from "./components/carousel-controllers"
 
 
-const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassName, wrapperClassName }, ref) => {
+const CarouselContainer = forwardRef(({ children, dots, helper, spacing, sliderClassName, wrapperClassName }, ref) => {
     const setChildrenListRef = useRef(null);
     const sliderRef = useRef(null);
     const childrenList = useRef([]);
@@ -23,7 +23,7 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
         let width = innerWidth / spacing.xs.width - spacing.xs.gap;
         widthReducer.current = 0;
         let maxHeight = 0;
-        console.log(maxHeight)
+
         childrenList.current.forEach((child, index) => {
             if(innerWidth > 1280 && Boolean(spacing['2xl'])) {
                 width = innerWidth / spacing['2xl'].width;
@@ -54,7 +54,7 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
 
             const { height } = child.getBoundingClientRect();
             if(height > maxHeight) maxHeight = height;
-            console.log(height, maxHeight)
+            
             child.style.width = `${width - widthReducer.current}px`;
             child.classList.add("h-full");
             child.style.left = `${(width - (widthReducer.current - 20)) * index}px`;
@@ -103,6 +103,7 @@ const CarouselContainer = forwardRef(({ children, helper, spacing, sliderClassNa
                 </ul>
             </div>
             <Controllers 
+                dots={Boolean(dots)}
                 indexRef={currentIndex} 
                 slide={slide} 
                 setChildrenListRef={setChildrenListRef} 

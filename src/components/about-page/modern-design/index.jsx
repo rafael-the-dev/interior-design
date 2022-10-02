@@ -43,6 +43,7 @@ const Container = () => {
         <div className="mt-12 relative">
             <div className={classNames(classes.carouselContainer, "")}>
                 <Carousel
+                    dots
                     spacing={{ xs: { gap: 0, width: 1 } }}>
                     {
                         list.map((item, index) => (

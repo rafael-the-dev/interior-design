@@ -1,18 +1,21 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { IconButton } from "@mui/material";
+import { FormControl, FormControlLabel, FormGroup, IconButton, Radio, RadioGroup } from "@mui/material";
 import classNames from "classnames";
 
 import classes from "./styles.module.css"
 
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import Dot from "../dot";
 
-const CarouselControllers = ({ indexRef, slide, setChildrenListRef }) => {
+const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
     const [ index, setIndex ] = useState(0);
     const [ childrenList, setChildrenList ] = useState([]); 
     const isFirstRender = useRef(true);
 
     const hasPreviousItem = useMemo(() => index - 1 < 0, [ index ]);
+
+    const clickHandler = useCallback(prop => () => setIndex(prop), []);
 
     const hasNextItem = useMemo(() => {
         if(isFirstRender.current) return;
@@ -60,19 +63,40 @@ const CarouselControllers = ({ indexRef, slide, setChildrenListRef }) => {
 
     return (
         <>
-            <IconButton 
-                className={classNames(`absolute bg-white left-0 hover:bg-zinc-50`, classes.button, classes.previousItem, { "opacity-0": hasPreviousItem})}
-                disabled={hasPreviousItem}
-                onClick={previousItemClickHandler}>
-                <KeyboardArrowLeftIcon />
-            </IconButton>
-            <IconButton 
-                className={classNames(`absolute right-0 bg-white hover:bg-zinc-50`, classes.button, classes.nextItem,
-                { "opacity-0": hasNextItem})}
-                disabled={hasNextItem}
-                onClick={nextItemClickHandler}>
-                <KeyboardArrowRightIcon />
-            </IconButton>
+            {
+                !dots && (
+                    <>
+                        <IconButton 
+                            className={classNames(`absolute bg-white left-0 hover:bg-zinc-50`, classes.button, classes.previousItem, { "opacity-0": hasPreviousItem})}
+                            disabled={hasPreviousItem}
+                            onClick={previousItemClickHandler}>
+                            <KeyboardArrowLeftIcon />
+                        </IconButton>
+                        <IconButton 
+                            className={classNames(`absolute right-0 bg-white hover:bg-zinc-50`, classes.button, classes.nextItem,
+                            { "opacity-0": hasNextItem})}
+                            disabled={hasNextItem}
+                            onClick={nextItemClickHandler}>
+                            <KeyboardArrowRightIcon />
+                        </IconButton>
+                    </>
+                )
+            }
+            {
+                dots && (
+                        <div className="flex justify-center">
+                            {
+                                childrenList.map((_, currentIndex) => (
+                                    <Dot 
+                                        key={index}
+                                        onClick={clickHandler(currentIndex)}
+                                        selected={index === currentIndex}
+                                    />
+                                ))
+                            }
+                        </div>
+                    )
+            }
         </>
     );
 };
