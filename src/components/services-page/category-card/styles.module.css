@@ -1,9 +1,44 @@
+.card:hover .cardButton, .card:hover .icon, .card:hover .icon::before {
+    transition: all .8s ease .4s;
+}
+
+.card:hover .cardButton, .card:hover .icon, .card:hover {
+    border-color: #ef4444;
+}
+
 .card {
     width: 100%;
 }
 
 .cardImageContainer {
     height: 200px;
+}
+
+.card:hover .cardImageContainer img {
+    transition: transform .8s ease;
+    transform: scale(1.1);
+}
+
+.card:hover .cardButton {
+    background-color: #ef4444;
+    color: #FFF;
+}
+
+.icon {
+    height: 80px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    z-index: 2;
+}
+
+.icon::before {
+    font-size: 2rem;
+}
+
+.card:hover .icon::before {
+    color: #ef4444;
 }
 
 @media screen and (min-width: 430px) {
@@ -15,6 +50,11 @@
 @media screen and (min-width: 530px) {
     .cardImageContainer {
         height: 270px;
+    }
+
+    .icon {
+        height: 100px;
+        width: 100px;
     }
 }
 

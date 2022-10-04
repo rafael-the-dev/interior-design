@@ -9,46 +9,43 @@ import Clients from "src/components/home-components/clients";
 import CategoryCard from "src/components/services-page/category-card"
 import DefaultHero from "src/components/default-hero";
 import Link from "src/components/link"
-import SingleFactCounter from "src/components/about-page/single-fact-counter";
-import TeamMemberCard from "src/components/about-page/team-menber-card";
-import ModernDesignCarolusel from "src/components/about-page/modern-design"
 
 const Container = () => {
     const categories = [
         {
             description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
             image: "/images/services/v2-1.jpg",
-            icon: "",
+            icon: "icon-concept",
             title: "Concept designs"
         },
         {
             description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents .",
             image: "/images/services/v2-2.jpg",
-            icon: "",
+            icon: "icon-scheme",
             title: "Project designs"
         },
         {
             description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
             image: "/images/services/v2-3.jpg",
-            icon: "",
+            icon: "icon-cupboard",
             title: "Make overs"
         },
         {
             description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
             image: "/images/services/v2-4.jpg",
-            icon: "",
+            icon: "icon-teacher",
             title: "Consulting"
         },
         {
             description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
             image: "/images/services/v2-5.jpg",
-            icon: "",
+            icon: "icon-furniture-and-household",
             title: "Glass & Wrought"
         },
         {
             description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents.",
             image: "/images/services/v2-6.jpg",
-            icon: "",
+            icon: "icon-sketch",
             title: "Space planning"
         }
     ];
