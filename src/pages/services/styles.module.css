@@ -1,0 +1,25 @@
+
+.heroTitle::before {
+    content: "Our services" !important;
+    display: block;
+    font-size: .9rem;
+    margin: 0 auto;
+}
+
+.categoriesTitle::before, .expertsTitle::before {
+    font-size: .9rem;
+}
+
+.categoriesTitle::before {
+    content: "Company overview" !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .categoriesTitle {
+        width: 40%;
+    }
+
+    .categoriesDescription {
+        width: 55%;
+    }
+}
