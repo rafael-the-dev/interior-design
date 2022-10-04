@@ -9,16 +9,16 @@ import Link from "src/components/link"
 const Card = ({ description, icon, image, title }) => {
 
     return (
-        <li className={classNames(classes.card, "flex flex-col items-stretch mb-4")}>
+        <li className={classNames(classes.card, "flex flex-col items-stretch mb-8")}>
             <div
-                className={classNames(classes.cardImageContainer)}>
+                className={classNames(classes.cardImageContainer, `relative`)}>
                 <Image 
                     alt={title}
                     layout="fill"
                     src={image}
                 />
             </div>
-            <div className="flex flex-col grow items-center justify-between text-center">
+            <div className="flex flex-col grow items-center justify-between pt-8 text-center">
                 <div>
                     <Typography
                         component="h3"

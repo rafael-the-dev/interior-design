@@ -17,37 +17,37 @@ const Container = () => {
     const categories = [
         {
             description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
-            image: "",
+            image: "/images/services/v2-1.jpg",
             icon: "",
             title: "Concept designs"
         },
         {
             description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents .",
-            image: "",
+            image: "/images/services/v2-2.jpg",
             icon: "",
             title: "Project designs"
         },
         {
             description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
-            image: "",
+            image: "/images/services/v2-3.jpg",
             icon: "",
             title: "Make overs"
         },
         {
             description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
-            image: "",
+            image: "/images/services/v2-4.jpg",
             icon: "",
             title: "Consulting"
         },
         {
             description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
-            image: "",
+            image: "/images/services/v2-5.jpg",
             icon: "",
             title: "Glass & Wrought"
         },
         {
             description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents.",
-            image: "",
+            image: "/images/services/v2-6.jpg",
             icon: "",
             title: "Space planning"
         }
@@ -71,7 +71,7 @@ const Container = () => {
                         component="h2"
                         className={classNames(classes.categoriesTitle, `
                         font-medium text-2xl uppercase md:text-3xl lg:text-4xl before:block before:font-bold before:mb-2 before:text-red-500`)}>
-                        <span className="font-bold lg:mr-3">Working</span><br className="lg:hidden" />
+                        <span className="font-bold sm:mr-3">Working</span><br className="sm:hidden" />
                         Sectors
                     </Typography>
                     <Typography
@@ -79,7 +79,7 @@ const Container = () => {
                         We are an Interior Designer, Who believe in excellence, quality and honesty, yes we design beautiful home interiors.
                     </Typography>
                 </div>
-                <ul className="flex flex-wrap items-stretch justify-between">
+                <ul className="flex flex-wrap items-stretch justify-between mt-8 sm:mt-12">
                     {
                         categories.map((item, index) => (
                             <CategoryCard { ...item } key={index} />

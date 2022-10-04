@@ -3,16 +3,32 @@
 }
 
 .cardImageContainer {
-    height: 250px;
+    height: 200px;
+}
+
+@media screen and (min-width: 430px) {
+    .cardImageContainer {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .cardImageContainer {
+        height: 270px;
+    }
 }
 
 @media screen and (min-width: 600px) {
     .card {
         width: 48%;
     }
+
+    .cardImageContainer {
+        height: 250px;
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .card {
         width: 32%;
     }
