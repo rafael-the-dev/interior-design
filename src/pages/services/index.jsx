@@ -5,7 +5,8 @@ import classes from "./styles.module.css";
 
 import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
-import Clients from "src/components/home-components/clients"
+import Clients from "src/components/home-components/clients";
+import CategoryCard from "src/components/services-page/category-card"
 import DefaultHero from "src/components/default-hero";
 import Link from "src/components/link"
 import SingleFactCounter from "src/components/about-page/single-fact-counter";
@@ -13,6 +14,44 @@ import TeamMemberCard from "src/components/about-page/team-menber-card";
 import ModernDesignCarolusel from "src/components/about-page/modern-design"
 
 const Container = () => {
+    const categories = [
+        {
+            description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
+            image: "",
+            icon: "",
+            title: "Concept designs"
+        },
+        {
+            description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents .",
+            image: "",
+            icon: "",
+            title: "Project designs"
+        },
+        {
+            description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
+            image: "",
+            icon: "",
+            title: "Make overs"
+        },
+        {
+            description: "Every pleasure to be welcomed every circumstances and owing power occur that repudiated & annoyances .",
+            image: "",
+            icon: "",
+            title: "Consulting"
+        },
+        {
+            description: "Indignation dislike are beguile works & demoralized the charms except to obtain some advantage from it.",
+            image: "",
+            icon: "",
+            title: "Glass & Wrought"
+        },
+        {
+            description: "Our power of choice untrammelled all nothing prevents best choice untrammeled when nothing prevents.",
+            image: "",
+            icon: "",
+            title: "Space planning"
+        }
+    ];
 
     return (
         <main>
@@ -40,6 +79,13 @@ const Container = () => {
                         We are an Interior Designer, Who believe in excellence, quality and honesty, yes we design beautiful home interiors.
                     </Typography>
                 </div>
+                <ul className="flex flex-wrap items-stretch justify-between">
+                    {
+                        categories.map((item, index) => (
+                            <CategoryCard { ...item } key={index} />
+                        ))
+                    }
+                </ul>
             </section>
         </main>
     );

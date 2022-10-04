@@ -11,7 +11,7 @@
 }
 
 .categoriesTitle::before {
-    content: "Company overview" !important;
+    content: "Categories" !important;
 }
 
 @media screen and (min-width: 1024px) {
