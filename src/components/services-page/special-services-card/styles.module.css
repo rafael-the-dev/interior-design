@@ -36,5 +36,36 @@
     bottom: 0;
 }
 
-.icon::before {
+@media screen and (min-width: 450px) {
+    .cardImageContainer {
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .cardImageContainer {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 690px) {
+    .cardImageContainer {
+        height: 430px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        width: 48%;
+    }
+
+    .cardImageContainer {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        width: 23.5%;
+    }
 }
