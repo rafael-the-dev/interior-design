@@ -9,7 +9,7 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import Link from "src/components/link"
 
-const Card = ({ icon, index, image, title }) => {
+const Card = ({ description, icon, index, image, title }) => {
 
     return (
         <div className={classNames(classes.card, "bg-white mb-8")}>
@@ -21,8 +21,8 @@ const Card = ({ icon, index, image, title }) => {
                     src={image}
                 />
             </div>
-            <div className={classNames("px-4 py-6")}>
-                <div>
+            <div className={classNames(classes.content, "relative")}>
+                <div className={classNames(classes.titleContent, `absolute left-0 px-4 py-6 w-full`)}>
                     <div className="flex justify-between">
                         <span className={classNames(classes.icon, icon, `before:text-gray-400 before:text-6xl`)}></span>
                         <span className={classNames(classes.index, "font-bold text-6xl")}>0{ index }</span>
@@ -39,6 +39,19 @@ const Card = ({ icon, index, image, title }) => {
                             </IconButton>
                         </Link>
                     </div>
+                </div>
+                <div className={classNames(classes.descriptionContent, `absolute h-full left-0 px-4 py-6 w-full`)}>
+                    <Typography
+                        className={classNames("text-gray-500")}>
+                        { description }
+                    </Typography>
+                    <Link 
+                        className={classNames(classes.descriptionContentLink)}
+                        href="/">
+                        <IconButton className="bg-red-500 text-white hover:bg-red-700">
+                            <EastIcon />
+                        </IconButton>
+                    </Link>
                 </div>
             </div>
         </div>

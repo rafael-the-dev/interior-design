@@ -53,25 +53,25 @@ const Container = () => {
 
     const specialServices = [
         {
-            description: "",
+            description: "On that others hand, we will denounce with all righteous of demoralized charms.",
             icon: "icon-lamp", 
             image: "/images/services/1.jpg",
             title: "Lighting"
         },
         {
-            description: "",
+            description: "On that others hand, we will denounce with all righteous of demoralized charms.",
             icon: "icon-paint", 
             image: "/images/services/2.jpg",
             title: "Coloring"
         },
         {
-            description: "",
+            description: "On that others hand, we will denounce with all righteous of demoralized charms.",
             icon: "icon-floor", 
             image: "/images/services/3.jpg",
             title: "Patterns"
         },
         {
-            description: "",
+            description: "On that others hand, we will denounce with all righteous of demoralized charms.",
             icon: "icon-window", 
             image: "/images/services/4.jpg",
             title: "Textures"

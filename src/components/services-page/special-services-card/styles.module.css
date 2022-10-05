@@ -1,4 +1,5 @@
-.card:hover .cardButton, .card:hover .icon, .card:hover .icon::before, .card:hover .cardImageContainer::before, .card:hover .cardImageContainer::after {
+.card:hover .cardButton, .card:hover .icon, .card:hover .icon::before, .card:hover .cardImageContainer::before, 
+.card:hover .cardImageContainer::after, .titleContent, .descriptionContent, .descriptionContentLink {
     transition: all .8s ease .4s;
 }
 
@@ -21,7 +22,7 @@
     height: 0;
     position: absolute;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
 }
 
 .card:hover .cardImageContainer::before, .card:hover .cardImageContainer::after {
@@ -34,6 +35,47 @@
 
 .cardImageContainer::after {
     bottom: 0;
+}
+
+.content {
+    height: 160px;
+}
+
+.titleContent {
+    top: 0;
+}
+
+.card:hover .titleContent {
+    top: -200px;
+    z-index: -1;
+}
+
+.index {
+    background: -webkit-linear-gradient(#ef4444, #991b1b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descriptionContent {
+    top: -200px;
+    z-index: -1;
+}
+
+.card:hover .descriptionContent {
+    top: 0;
+    z-index: 1;
+}
+
+.descriptionContentLink {
+    bottom: 0;
+    position: absolute;
+    right: 20px;
+    transform: scale(0);
+}
+
+.card:hover .descriptionContentLink {
+    transform: translate(0, 50%) scale(1);
 }
 
 @media screen and (min-width: 450px) {
@@ -53,6 +95,7 @@
         height: 430px;
     }
 }
+
 
 @media screen and (min-width: 768px) {
     .card {
