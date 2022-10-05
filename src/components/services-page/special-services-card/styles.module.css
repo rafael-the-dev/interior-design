@@ -1,0 +1,40 @@
+.card:hover .cardButton, .card:hover .icon, .card:hover .icon::before, .card:hover .cardImageContainer::before, .card:hover .cardImageContainer::after {
+    transition: all .8s ease .4s;
+}
+
+.card {
+    width: 100%;
+}
+
+.cardImageContainer {
+    height: 300px;
+}
+
+.card:hover .cardImageContainer img {
+    transition: transform .8s ease;
+    transform: scale(1.1);
+}
+
+.cardImageContainer::before, .cardImageContainer::after {
+    background-color: rgba(0, 0, 0, .5);
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.card:hover .cardImageContainer::before, .card:hover .cardImageContainer::after {
+    height: 50%;
+}
+
+.cardImageContainer::before {
+    top: 0;
+}
+
+.cardImageContainer::after {
+    bottom: 0;
+}
+
+.icon::before {
+}

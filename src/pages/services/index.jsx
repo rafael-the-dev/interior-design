@@ -8,6 +8,7 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 import Clients from "src/components/home-components/clients";
 import CategoryCard from "src/components/services-page/category-card"
 import DefaultHero from "src/components/default-hero";
+import SpecialServicesCard from "src/components/services-page/special-services-card"
 import Link from "src/components/link"
 
 const Container = () => {
@@ -50,6 +51,33 @@ const Container = () => {
         }
     ];
 
+    const specialServices = [
+        {
+            description: "",
+            icon: "icon-lamp", 
+            image: "/images/services/1.jpg",
+            title: "Lighting"
+        },
+        {
+            description: "",
+            icon: "icon-paint", 
+            image: "/images/services/2.jpg",
+            title: "Coloring"
+        },
+        {
+            description: "",
+            icon: "icon-floor", 
+            image: "/images/services/3.jpg",
+            title: "Patterns"
+        },
+        {
+            description: "",
+            icon: "icon-window", 
+            image: "/images/services/4.jpg",
+            title: "Textures"
+        }
+    ];
+
     return (
         <main>
             <DefaultHero className="">
@@ -84,7 +112,7 @@ const Container = () => {
                     }
                 </ul>
             </section>
-            <section className="bg-gray-100 py-12">
+            <section className="bg-gray-100 py-12 px-5 sm:px-[10%] lg:px-5">
                 <Typography 
                     component="h2"
                     className={classNames(classes.servicesTitle, `
@@ -92,6 +120,13 @@ const Container = () => {
                     <span className="font-bold sm:mr-3">Some special</span><br className="sm:hidden" />
                     services
                 </Typography>
+                <div className="flex flex-wrap items-stretch justify-between mt-8 sm:mt-12">
+                    {
+                        specialServices.map((item, index) => (
+                            <SpecialServicesCard { ...item } index={index + 1} key={index} />
+                        ))
+                    }
+                </div>
             </section>
         </main>
     );
