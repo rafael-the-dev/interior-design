@@ -84,6 +84,15 @@ const Container = () => {
                     }
                 </ul>
             </section>
+            <section className="bg-gray-100 py-12">
+                <Typography 
+                    component="h2"
+                    className={classNames(classes.servicesTitle, `
+                    font-medium text-center text-2xl uppercase md:text-3xl lg:text-4xl before:block before:font-bold before:mb-2 before:text-red-500`)}>
+                    <span className="font-bold sm:mr-3">Some special</span><br className="sm:hidden" />
+                    services
+                </Typography>
+            </section>
         </main>
     );
 };

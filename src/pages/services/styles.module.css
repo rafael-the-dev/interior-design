@@ -6,12 +6,16 @@
     margin: 0 auto;
 }
 
-.categoriesTitle::before, .expertsTitle::before {
+.categoriesTitle::before, .servicesTitle::before {
     font-size: .9rem;
 }
 
 .categoriesTitle::before {
     content: "Categories" !important;
+}
+
+.servicesTitle::before {
+    content: "Interior elements" !important;
 }
 
 @media screen and (min-width: 1024px) {
