@@ -1,0 +1,11 @@
+
+.title::before {
+    content: "Testimonials";
+}
+
+
+@media screen and (min-width: 600px) {
+    .slider {
+        height: 150px;
+    }
+}

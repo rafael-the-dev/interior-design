@@ -8,7 +8,8 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 import Clients from "src/components/home-components/clients";
 import CategoryCard from "src/components/services-page/category-card"
 import DefaultHero from "src/components/default-hero";
-import SpecialServicesCard from "src/components/services-page/special-services-card"
+import SpecialServicesCard from "src/components/services-page/special-services-card";
+import Testimonials from "src/components/services-page/testimonials"
 import Link from "src/components/link"
 
 const Container = () => {
@@ -128,6 +129,7 @@ const Container = () => {
                     }
                 </div>
             </section>
+            <Testimonials />
         </main>
     );
 };
