@@ -8,7 +8,7 @@ import classes from "./styles.module.css"
 import Controllers from "./components/carousel-controllers"
 
 
-const CarouselContainer = forwardRef(({ children, dots, helper, spacing, sliderClassName, wrapperClassName }, ref) => {
+const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, hasPreviousItem, nextOnClick, noControllers, previousOnClick, spacing, setIndex, sliderClassName, wrapperClassName }, ref) => {
     const setChildrenListRef = useRef(null);
     const sliderRef = useRef(null);
     const childrenList = useRef([]);
@@ -104,8 +104,14 @@ const CarouselContainer = forwardRef(({ children, dots, helper, spacing, sliderC
             </div>
             <Controllers 
                 dots={Boolean(dots)}
+                hasNextItemRef={hasNextItem}
+                hasPreviousItemRef={hasPreviousItem}
                 indexRef={currentIndex} 
+                nextOnClick={nextOnClick}
+                noControllers={noControllers}
+                previousOnClick={previousOnClick}
                 slide={slide} 
+                setCurrentIndex={setIndex}
                 setChildrenListRef={setChildrenListRef} 
             />
         </div>

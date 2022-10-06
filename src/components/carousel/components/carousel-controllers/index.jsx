@@ -9,31 +9,44 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Dot from "../dot";
 
-const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
+const CarouselControllers = ({ dots, hasNextItemRef, hasPreviousItemRef, indexRef, nextOnClick, noControllers, previousOnClick, slide, 
+    setCurrentIndex, setChildrenListRef }) => {
     const [ index, setIndex ] = useState(0);
     const [ childrenList, setChildrenList ] = useState([]); 
     const isFirstRender = useRef(true);
 
-    const hasPreviousItem = useMemo(() => index - 1 < 0, [ index ]);
+    const hasPreviousItem = useMemo(() => {
+        const hasItem = index - 1 > -1;
+        
+        if(hasPreviousItemRef) hasPreviousItemRef.current = hasItem;
+
+        return hasItem;
+    }, [ hasPreviousItemRef, index ]);
 
     const clickHandler = useCallback(prop => () => setIndex(prop), []);
 
     const hasNextItem = useMemo(() => {
         if(isFirstRender.current) return;
 
+        let hasItem = false;
+
         const { innerWidth } = window;
         if(innerWidth > 1240) {
-            return index + 4 >= childrenList.length;
+            hasItem = index + 4 < childrenList.length;
         }
         else if(innerWidth > 930) {
-            return index + 3 >= childrenList.length;
+            hasItem = index + 3 < childrenList.length;
         }
         else if(innerWidth > 768) {
-            return index + 2 >= childrenList.length;
+            hasItem = index + 2 < childrenList.length;
         }
 
-        return index + 1 >= childrenList.length;
-    }, [ childrenList, index ]);
+        hasItem = index + 1 < childrenList.length;
+
+        if(hasNextItemRef) hasNextItemRef.current = hasItem;
+
+        return hasItem;
+    }, [ childrenList, hasNextItemRef, index ]);
 
     const nextItemClickHandler = useCallback(() => {
         setIndex(currentIndex => {
@@ -46,6 +59,16 @@ const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
             return currentIndex - 1;
         })
     }, []);
+
+    useEffect(() => {
+        if(previousOnClick)
+            previousOnClick.current = previousItemClickHandler;
+    }, [ previousItemClickHandler, previousOnClick ]);
+
+    useEffect(() => {
+        if(nextOnClick)
+            nextOnClick.current = nextItemClickHandler;
+    }, [ nextOnClick, nextItemClickHandler ]);
 
     useEffect(() => {
         if(isFirstRender.current) {
@@ -61,6 +84,12 @@ const CarouselControllers = ({ dots, indexRef, slide, setChildrenListRef }) => {
         indexRef.current = index;
         slide({ index });
     }, [ index, indexRef, slide ]);
+
+    useEffect(() => {
+        Boolean(setCurrentIndex) && setCurrentIndex.current(index);
+    }, [ index, setCurrentIndex ])
+
+    if(Boolean(noControllers)) return <></>;
 
     return (
         <>

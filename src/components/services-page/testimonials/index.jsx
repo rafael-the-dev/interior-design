@@ -1,22 +1,80 @@
+import * as React from "react";
 import classNames from "classnames";
 
 import classes from "./styles.module.css";
 
+import Card from "./components/card";
 import Carousel from "src/components/carousel";
 import Controllers from "./components/controllers"
 import H2 from "src/components/h2";
 
 const Container = () => {
+    const hasNextItem = React.useRef(true);
+    const hasPreviousItem = React.useRef(true);
+    const nextClickHandler = React.useRef(null);
+    const previousClickHandler = React.useRef(null);
+    const setIndex = React.useRef(null);
+
+    const list = [
+        {
+            image: "/images/testimonial/testi1.png",
+            location: "New York city",
+            name: "Z. Gartrell Wright",
+            rating: 0,
+            text: "crystalo have done an excellent job presenting the analysis & insights. I am confident in saying have helped encounter is to be welcomed and every pain avoided."
+        },
+        {
+            image: "/images/testimonial/testi2.png",
+            location: "Los Angels",
+            name: "H.Sam Danisley",
+            rating: 0,
+            text: "Owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted always holds"
+        },
+        {
+            image: "/images/testimonial/testi3.png",
+            location: "",
+            name: "",
+            rating: 0
+        },
+        {
+            image: "/images/testimonial/testi4.png",
+            location: "",
+            name: "",
+            rating: 0
+        }
+    ];
+
+
 
     return (
         <section className="px-5 py-16 sm:px-[10%] sm:pt-24 lg:px-5">
-            <div className="flex flex-col justify-between title-container">
+            <div className="flex flex-col justify-between mb-8 title-container">
                 <H2 className={classNames(classes.title, ` before:text-red-600 
                     before:block before:font-bold before:text-sm before:mb-2`)}>
                     <span className="font-bold">Our costumer</span> words
                 </H2>
-                <Controllers />
+                <Controllers 
+                    hasNextItem={hasNextItem}
+                    hasPreviousItem={hasPreviousItem}
+                    nextOnClick={nextClickHandler}
+                    previousOnClick={previousClickHandler}
+                    setIndex={setIndex}
+                />
             </div>
+            <Carousel
+                hasNextItem={hasNextItem}
+                hasPreviousItem={hasPreviousItem}
+                nextOnClick={nextClickHandler}
+                noControllers
+                previousOnClick={previousClickHandler}
+                setIndex={setIndex}
+                spacing={{ xs: { gap: 0, width: 1 } }}>
+                {
+                    list.map((item, index) => (
+                        <Card { ...item } key={index} />
+                    ))
+                }
+            </Carousel>
         </section>
     );
 };

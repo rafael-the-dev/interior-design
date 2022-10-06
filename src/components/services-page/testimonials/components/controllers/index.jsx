@@ -5,27 +5,28 @@ import classNames from "classnames";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const ControllersContainer = ({ hasPrevious, hasNext, nextOnClick, previousOnClick }) => {
-    const [ childrenList, setChildrenList ] = useState([]);
+const ControllersContainer = ({ hasNextItem, hasPreviousItem, nextOnClick, previousOnClick, setIndex }) => {
     const [ currentIndex, setCurrentIndex ] = useState(0);
-
-    const childrenListRef = useRef([]);
 
     const nextClickHandler = useCallback(() => nextOnClick.current?.(), [ nextOnClick ]);
     const previousClickHandler = useCallback(() => previousOnClick.current?.(), [ previousOnClick ]);
+
+    useEffect(() => {
+        setIndex.current = index => setCurrentIndex(index);
+    }, [ setIndex ])
 
 
     return (
         <div className="controllers-container flex mt-10">
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] mr-3 w-[48px]`)}
-                disabled={hasPrevious}
+                disabled={!hasPreviousItem.current}
                 onClick={previousClickHandler}>
                 <ArrowBackIcon />
             </IconButton>
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] w-[48px]`)}
-                disabled={hasNext}
+                disabled={!hasNextItem.current}
                 onClick={nextClickHandler}>
                 <ArrowForwardIcon />
             </IconButton>
