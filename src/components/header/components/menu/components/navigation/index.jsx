@@ -20,23 +20,27 @@ const NavigationList = () => {
         {
             href: "about", id: "about", label: "About us",  list: [
                 { href: "about", label: "About company" },
-                { href: "/", label: "FAQs" },
-                { href: "/", label: "Coming soon" },
-                { href: "/", label: "Error page" }
+                { href: "about", label: "FAQs" },
+                { href: "about", label: "Coming soon" },
+                { href: "about", label: "Error page" }
             ]
         },
         {
             href: "/", id: "services", label: "Services",  list: [
-                { href: "/", label: "View all services" },
-                { href: "/", label: "concept design" },
-                { href: "/", label: "Project design" }
+                { href: "services", label: "View all services" },
+                { href: "services", label: "concept design" },
+                { href: "services", label: "Project design" }
             ]
         },
         {
             href: "/", id: "projects", label: "Projects",  list: [
-                { href: "/", label: "" },
-                { href: "/", label: "" },
-                { href: "/", label: "" }
+                { href: "projects", label: "Class view 01" },
+                { href: "projects", label: "Class view 02" },
+                { href: "projects", label: "Modern view 01" },
+                { href: "projects", label: "Modern view 02" },
+                { href: "projects", label: "Fullwidth 01" },
+                { href: "projects", label: "Fullwidth 02" },
+                { href: "projects", label: "Projects single" },
             ]
         },
         {
