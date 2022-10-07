@@ -1,0 +1,17 @@
+.button {
+    padding: .7rem;
+}
+
+.lengthHidden {
+    transform: scale(0);
+}
+
+.button:hover .length {
+    transform: scale(1);
+}
+
+@media screen and (min-width: 768px) {
+    .button {
+        padding: .7rem 1rem;
+    }
+}

@@ -6,6 +6,7 @@ import classes from "./styles.module.css";
 import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import DefaultHero from "src/components/default-hero";
+import ProjectsList from "src/components/projects-page/projects"
 
 const Container = () => {
 
@@ -21,6 +22,7 @@ const Container = () => {
                     </Typography>
                 </div>
             </DefaultHero>
+            <ProjectsList />
         </main>
     );
 };
