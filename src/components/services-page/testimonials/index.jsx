@@ -17,30 +17,30 @@ const Container = () => {
 
     const list = [
         {
-            image: "/images/testimonial/testi1.png",
+            image: "/images/testimonial/testi-1.png",
             location: "New York city",
             name: "Z. Gartrell Wright",
-            rating: 0,
+            rating: 2.8,
             text: "crystalo have done an excellent job presenting the analysis & insights. I am confident in saying have helped encounter is to be welcomed and every pain avoided."
         },
         {
-            image: "/images/testimonial/testi2.png",
+            image: "/images/testimonial/testi-2.png",
             location: "Los Angels",
             name: "H.Sam Danisley",
-            rating: 0,
+            rating: 5,
             text: "Owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted always holds"
         },
         {
-            image: "/images/testimonial/testi3.png",
+            image: "/images/testimonial/testi-3.png",
             location: "",
             name: "",
-            rating: 0
+            rating: 3.5
         },
         {
-            image: "/images/testimonial/testi4.png",
-            location: "",
-            name: "",
-            rating: 0
+            image: "/images/testimonial/testi-style3-2.png",
+            location: "Mozambique",
+            name: "Rafael Tivane",
+            rating: 4
         }
     ];
 

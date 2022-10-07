@@ -17,3 +17,16 @@
     left: -20px;
     top: 20px;
 }
+
+.description {
+    position: relative;
+    width: 90%;
+    z-index: 4;
+}
+
+.quoteIcon {
+    bottom: -49px;
+    font-size: 10rem;
+    opacity: .5;
+    right: -11px;
+}
