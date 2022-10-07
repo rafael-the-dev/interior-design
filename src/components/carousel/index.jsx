@@ -17,32 +17,34 @@ const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, has
     const widthRef = useRef(0);
 
     const layout = useCallback(() => {
-        const innerWidth = sliderRef.current.parentElement.clientWidth;
+        const { innerWidth } = window;
+        const parentWidth = sliderRef.current.parentElement.clientWidth;
         if(!Boolean(spacing)) return;
 
-        let width = innerWidth / spacing.xs.width - spacing.xs.gap;
+        let width = parentWidth / spacing.xs.width - spacing.xs.gap;
         widthReducer.current = 0;
         let maxHeight = 0;
-
+        
         childrenList.current.forEach((child, index) => {
+
             if(innerWidth > 1280 && Boolean(spacing['2xl'])) {
-                width = innerWidth / spacing['2xl'].width;
+                width = parentWidth / spacing['2xl'].width;
                 widthReducer.current = spacing['2xl'].gap;
             } 
             else if(innerWidth > 1024 && Boolean(spacing.xl)) {
-                width = innerWidth / spacing.xl.width;
+                width = parentWidth / spacing.xl.width;
                 widthReducer.current = spacing.xl.gap;
             } 
             else if(innerWidth > 900 && Boolean(spacing.lg)) {
-                width = innerWidth / spacing.lg.width;
+                width = parentWidth / spacing.lg.width;
                 widthReducer.current = spacing.lg.gap;
             } 
             else if(innerWidth > 768 && Boolean(spacing.md)) {
-                width = innerWidth / spacing.md.width;
+                width = parentWidth / spacing.md.width;
                 widthReducer.current = spacing.md.gap;
             } 
             else if(innerWidth > 600 && Boolean(spacing.sm)) {
-                width = innerWidth / spacing.sm.width;
+                width = parentWidth / spacing.sm.width;
                 widthReducer.current = spacing.sm.gap;
             }  
 
@@ -59,7 +61,7 @@ const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, has
             child.classList.add("h-full");
             child.style.left = `${(width - (widthReducer.current - 20)) * index}px`;
         });
-
+        
         widthRef.current = width;
         sliderRef.current.style.height = `${maxHeight}px`
         sliderRef.current.style.width = `${width * childrenList.current.length}px`;

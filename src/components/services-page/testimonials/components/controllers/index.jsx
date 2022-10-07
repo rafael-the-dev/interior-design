@@ -17,7 +17,7 @@ const ControllersContainer = ({ hasNextItem, hasPreviousItem, nextOnClick, previ
 
 
     return (
-        <div className="controllers-container flex mt-10">
+        <div className="controllers-container flex mt-10 md:mt-0">
             <IconButton
                 className={classNames(`border border-solid border-slate-200 h-[50px] mr-3 w-[48px]`)}
                 disabled={!hasPreviousItem.current}

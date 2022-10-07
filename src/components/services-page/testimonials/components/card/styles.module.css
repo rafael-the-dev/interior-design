@@ -3,16 +3,6 @@
     z-index: 2;
 }
 
-.card::y {
-    content: "";
-    border: 1px solid #000;
-    height: 100%;
-    left: -20px;
-    position: absolute;
-    top: 20px;
-    width: 100%;
-}
-
 .cardBorder {
     height: calc(100% - 17px);
     top: 33px;
@@ -27,8 +17,8 @@
 }
 
 .quoteIcon {
-    bottom: -49px;
+    bottom: -6px;
     font-size: 10rem;
     opacity: .5;
-    right: -11px;
+    right: 3px;
 }

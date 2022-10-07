@@ -50,7 +50,7 @@ const Container = () => {
 
     return (
         <section className="px-5 py-16 sm:px-[10%] sm:pt-24 lg:px-5">
-            <div className="flex flex-col justify-between mb-8 title-container">
+            <div className="flex flex-col justify-between mb-8 title-container md:flex-row md:mb-16">
                 <H2 className={classNames(classes.title, ` before:text-red-600 
                     before:block before:font-bold before:text-sm before:mb-2`)}>
                     <span className="font-bold">Our costumer</span> words
@@ -70,7 +70,7 @@ const Container = () => {
                 noControllers
                 previousOnClick={previousClickHandler}
                 setIndex={setIndex}
-                spacing={{ xs: { gap: 0, width: 1 } }}>
+                spacing={{ xs: { gap: 0, width: 1 }, xl: { gap: 0, width: 2 } }}>
                 {
                     list.map((item, index) => (
                         <Card { ...item } key={index} />

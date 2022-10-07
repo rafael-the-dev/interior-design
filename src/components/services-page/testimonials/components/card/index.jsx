@@ -36,10 +36,10 @@ const Card = ({ image, location, name, rating, text }) => {
                         </Typography>
                     </div>
                 </div>
-                <div className="mt-3 relative">
+                <div className="mt-3">
                     <Typography
                         component="blockquote"
-                        className={classNames(classes.description, "leading-6 mb-3 text-sm text-gray-600 sm:text-base")}>
+                        className={classNames(classes.description, "leading-6 mb-3 text-sm text-gray-600")}>
                         &ldquo;{ text }&rdquo;
                     </Typography>
                     <StyledRating value={rating} />
