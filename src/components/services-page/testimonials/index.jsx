@@ -32,15 +32,17 @@ const Container = () => {
         },
         {
             image: "/images/testimonial/testi-3.png",
-            location: "",
-            name: "",
-            rating: 3.5
+            location: "Los Angels",
+            name: "Brian White",
+            rating: 3.5,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             image: "/images/testimonial/testi-style3-2.png",
             location: "Mozambique",
             name: "Rafael Tivane",
-            rating: 4
+            rating: 4,
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
         }
     ];
 

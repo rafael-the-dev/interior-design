@@ -14,8 +14,10 @@
 }
 
 .cardBorder {
-    left: -20px;
-    top: 20px;
+    height: calc(100% - 17px);
+    top: 33px;
+    width: calc(100% - 41px);
+    z-index: -1;
 }
 
 .description {
