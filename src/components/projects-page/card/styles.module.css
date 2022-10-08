@@ -1,7 +1,56 @@
+.content {
+    transition: all .7s ease;
+}
+
+.linkContainer, .footer, .footer h3, .footer h4 {
+    transition: transform .7s ease .4s;
+}
+
 .card {
     height: 300px;
     transition: position 1s ease .4s, transform 1s ease;
     width: 100%;
+}
+
+.card:hover {
+    border: 2px solid #000;
+}
+
+.card:hover .content {
+    transform: scale(.8);
+}
+
+.linkContainer {
+    background-color: rgba(0, 0, 0, .65);
+    height: 60%;
+    transform: scale(0);
+}
+
+.card:hover .linkContainer {
+    transform: scale(1);
+}
+
+.linkContainer svg {
+    font-size: 3rem;
+}
+
+.footer {
+    height: 0;
+    transform: perspective(1200px) rotateX(90deg) translateZ(-32px);
+    transform-style: preserve-3d;
+}
+
+.footer h3, .footer h4 {
+    transform: scale(0);
+}
+
+.card:hover .footer {
+    height: 40%;
+    transform: perspective(1200px) rotateX(0) translateZ(0);
+}
+
+.card:hover .footer h3, .card:hover .footer h4 {
+    transform: scale(1);
 }
 
 @media screen and (min-width: 450px) {
