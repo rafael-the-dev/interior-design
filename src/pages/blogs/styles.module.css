@@ -1,0 +1,6 @@
+.heroTitle::before {
+    content: "Blog default" !important;
+    display: block;
+    font-size: .9rem;
+    margin: 0 auto;
+}
