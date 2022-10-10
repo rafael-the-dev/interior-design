@@ -1,0 +1,13 @@
+
+.imageContainer {
+    height: 200px;
+}
+
+.title::before {
+    content: "" !important;
+    height: 30px;
+    left: -5.2%;
+    transform: translate(0, 0%);
+    width: 3px;
+    z-index: 15;
+}
