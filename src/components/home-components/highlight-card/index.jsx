@@ -1,4 +1,4 @@
-import { Avatar, Button, Paper, Typography } from "@mui/material"
+import { Button, Paper, Typography } from "@mui/material"
 import classNames from "classnames";
 
 import classes from "./styles.module.css";
@@ -10,6 +10,7 @@ import Link from "src/components/link";
 const HightlightCard  = ({ description, image, title }) => (
     <Paper 
         className={classNames(classes.container, "flex flex-col items-stretch mb-6 rounded-lg text-center last:mb-0")}
+        data-aos="fade-up"
         elevation={2}>
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
             <div
