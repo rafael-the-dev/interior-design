@@ -8,6 +8,7 @@ import classes from "../styles.module.css"
 
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 import Link from "src/components/link";
 
@@ -24,7 +25,14 @@ const ListItem = ({ id, list, label }) => {
                         className="mb-4"
                         data-navigation="item"
                         key={index}>
-                        <Link className={classNames(classes.listItemLink, "block text-white hover:text-red-600")} href={item.href}>{ item.label }</Link>
+                        <Link 
+                            className={classNames(classes.listItemLink, "block items-center text-white hover:text-red-600 lg:flex")} 
+                            href={item.href}>
+                            <span className={classNames(classes.iconWrapper)} >
+                                <TrendingFlatIcon />
+                            </span>
+                            { item.label }
+                        </Link>
                     </li>
                 ))
             }

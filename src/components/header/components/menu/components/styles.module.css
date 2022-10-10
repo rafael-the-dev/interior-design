@@ -3,6 +3,11 @@
     background-color: transparent !important;
 }
 
+.iconWrapper {
+    display: none;
+    transition: all .8s ease;
+}
+
 @media screen and (min-width: 1100px) {
     .listItem, .listItemButton {
         border: none !important;
@@ -30,7 +35,12 @@
         color: #262626 !important;
     }
 
+    .listItemLink:hover {
+        color: #ef4444 !important;
+    }
+
     .listItemList {
+        min-width: 210px;
         padding: .8rem .7rem .7rem !important;
         transition: all 1s ease;
         transform: scale(0);
@@ -58,6 +68,17 @@
     .listItemBgVisible {
         display: block !important;
         z-index: 11;
+    }
+
+    .iconWrapper {
+        display: inline-flex;
+        transform: scale(0);
+        width: 0;
+    }
+
+    .listItemLink:hover .iconWrapper {
+        transform: scale(1);
+        width: 40px;
     }
 }
 
