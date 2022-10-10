@@ -92,7 +92,7 @@ const Container = () => {
                     before:absolute before:bg-gray-200 before:h-full before:top-0 lg:pt-20 lg:pl-0`)}>
                     {
                         blogsList.map((blog, index) => (
-                            <Card { ...blog } key={index} />
+                            <Card { ...blog } index={ index + 1 } key={index} />
                         ))  
                     }
                 </div>

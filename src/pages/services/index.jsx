@@ -107,7 +107,7 @@ const Container = () => {
                 <ul className="flex flex-wrap items-stretch justify-between mt-8 sm:mt-12">
                     {
                         categories.map((item, index) => (
-                            <CategoryCard { ...item } key={index} />
+                            <CategoryCard { ...item } index={index} key={index} />
                         ))
                     }
                 </ul>

@@ -5,14 +5,17 @@ import classNames from "classnames";
 import classes from "./styles.module.css";
 
 import EastIcon from '@mui/icons-material/East';
-import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import Link from "src/components/link"
 
 const Card = ({ description, icon, index, image, title }) => {
+    const durations = [ "2500", "2000", "1500", "1000" ];
 
     return (
-        <div className={classNames(classes.card, "bg-white mb-8")}>
+        <div 
+            className={classNames(classes.card, "bg-white mb-8")}
+            data-aos="fade-up"
+            data-aos-duration={durations[index - 1]}>
             <div
                 className={classNames(classes.cardImageContainer, `relative`)}>
                 <Image 

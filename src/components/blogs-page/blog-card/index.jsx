@@ -8,10 +8,21 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 import Link from "src/components/link"
 
-const Card = ({ author, category, description, image, title }) => {
+const Card = ({ author, category, description, index, image, title }) => {
+    const getDuration = () => {
+        const durations = [ "2500", "2000", "1500" ];
+        
+        if(index % 3 === 0) return durations[2];
+        if(index * 2 === 0) return durations[1];
+
+        return durations[0];
+    };
 
     return (
-        <div className={classNames(classes.card, `mb-8 relative lg:mb-12 lg:px-6`)}>
+        <div 
+            className={classNames(classes.card, `mb-8 relative lg:mb-12 lg:px-6`)}
+            data-aos="fade-right"
+            data-aos-duration={getDuration()}>
             <div className={classNames(classes.imageContainer, "relative")}>
                 <Image 
                     alt={title}

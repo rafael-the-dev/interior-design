@@ -8,10 +8,14 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 
 import Link from "src/components/link"
 
-const Card = ({ description, icon, image, title }) => {
+const Card = ({ description, icon, index, image, title }) => {
+    const durations = [ "2500", "2000", "1500", "2500", "2000", "1500" ];
 
     return (
-        <li className={classNames(classes.card, "flex flex-col items-stretch mb-8")}>
+        <li 
+            className={classNames(classes.card, "flex flex-col items-stretch mb-8")}
+            data-aos="fade-up"
+            data-aos-duration={durations[index]}>
             <div
                 className={classNames(classes.cardImageContainer, `relative`)}>
                 <Image 
