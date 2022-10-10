@@ -1,3 +1,6 @@
+.card {
+    width: 100%;
+}
 
 .imageContainer {
     height: 200px;
@@ -12,11 +15,57 @@
     z-index: 15;
 }
 
+@media screen and (min-width: 420px) {
+    .imageContainer {
+        height: 230px;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    .imageContainer {
+        height: 260px;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .imageContainer {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .imageContainer {
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .imageContainer {
+        height: 380px;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .card {
         width: 33.3333%;
     }
 
+    .imageContainer {
+        height: 210px;
+    }
+
+    .title::before {
+        left: -10.2%;
+    }
+}
+
+@media screen and (min-width: 1033px) {
+    .title::before {
+        left: -8.2%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
     .title::before {
         left: -7.2%;
     }
