@@ -16,6 +16,7 @@ const LatestBlogs = () => {
             <div className={classNames(classes.cardsContainer, `items-stretch justify-between mt-12 lg:mt-16`)}>
                 <BlogCard 
                     author="Rubin Santro"
+                    aosDuration="2500"
                     date="02 mar 2019"
                     description="Same as saying through shrinkings from toil &amp; our pain these cases perfectly simple."
                     image="/images/blog/latest-b-v1-1.jpg"
@@ -32,6 +33,7 @@ const LatestBlogs = () => {
                 />
                 <BlogCard 
                     author="Rubin Santro"
+                    aosDuration="1500"
                     date="18 jan 2019"
                     description="Every pleasure is to be welcomed every pain avoided. in certain circumstances obligations."
                     image="/images/blog/latest-b-v1-3.jpg"

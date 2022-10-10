@@ -7,10 +7,11 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import Link from "src/components/link";
 
-const HightlightCard  = ({ description, image, title }) => (
+const HightlightCard  = ({ aosDuration, description, image, title }) => (
     <Paper 
         className={classNames(classes.container, "flex flex-col items-stretch mb-6 rounded-lg text-center last:mb-0")}
         data-aos="fade-up"
+        data-aos-duration={ aosDuration ?? "2000" }
         elevation={2}>
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
             <div

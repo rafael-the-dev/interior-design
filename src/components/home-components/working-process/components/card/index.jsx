@@ -3,11 +3,14 @@ import classNames from "classnames";
 
 import classes from "./styles.module.css";
 
-const Card = ({ description, icon, title }) => {
+const Card = ({ aosDuration, description, icon, title }) => {
 
     return (
-        <div className={classNames(classes.card, `before:bg-red-600 before:block card mb-24 pb-8 relative 
-            text-center bg-white`)}>
+        <div 
+            className={classNames(classes.card, `before:bg-red-600 before:block card mb-24 pb-8 relative 
+            text-center bg-white`)}
+            data-aos="fade-up"
+            data-aos-duration={ aosDuration ?? "2000" }>
             <div className={classNames(classes.indexContainer, `absolute border-2 border-solid border-red-600
                 rounded-full before:bg-red-600 before:absolute before:h-full before:rounded-full`)}>
                 <span className={classNames(classes.index, `

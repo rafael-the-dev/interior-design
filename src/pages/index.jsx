@@ -23,6 +23,7 @@ const Home = () => {
             <div>
                 <div className="hightlight-cards-container justify-between px-5 py-12 relative sm:px-[10%] sm:pt-28 lg:py-0 lg:px-5">
                     <HightlightCard
+                        aosDuration="2500"
                         description="Indignation dislike who are beguile works &amp; demoralized the charms."
                         image="icon-concept"
                         title="Concept designs" 
@@ -33,6 +34,7 @@ const Home = () => {
                         title="Project designs" 
                     />
                     <HightlightCard
+                        aosDuration="1500"
                         description="Every pleasure is to be welcomed &amp; every circumstances &amp; owing power."
                         image="icon-cupboard"
                         title="Make overs" 

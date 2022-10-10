@@ -9,12 +9,15 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 import Link from "../link"
 
-const BlogCard = ({ author, date, description, image, location, title }) => {
+const BlogCard = ({ author, aosDuration, date, description, image, location, title }) => {
     const { pathname } = useRouter();
     const isHome = pathname === "/";
 
     return (
-        <div className={classNames(classes.card, "flex flex-col mb-12")}>
+        <div 
+            className={classNames(classes.card, "flex flex-col mb-12")}
+            data-aos="fade-right"
+            data-aos-duration={ aosDuration ?? "2000" }>
             <div className={classNames(classes.imageContainer, `relative`)}>
                 <Image
                     alt={title}

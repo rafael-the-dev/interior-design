@@ -17,6 +17,7 @@ const WorkingProcessContainer = () => {
             </H2>
             <div className="cards-container justify-between items-stretch mt-24">
                 <Card 
+                    aosDuration="2500"
                     description="With righteous indignation and works off beguiled demoralized charm."
                     icon="icon-productive"
                     title="Idea &amp; Design"
@@ -27,6 +28,7 @@ const WorkingProcessContainer = () => {
                     title="Specification"
                 />
                 <Card 
+                    aosDuration="1500"
                     description="Wing to the claims of duty the obligations will frequently occur."
                     icon="icon-kitchen"
                     title="Execution"

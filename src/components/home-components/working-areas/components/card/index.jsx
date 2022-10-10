@@ -2,8 +2,11 @@ import classNames from "classnames";
 import Image from "next/image";
 import { Typography } from "@mui/material"
 
-const Card = ({ description, icon, image, title }) => (
-    <div className="card flex-col items-stretch mb-6">
+const Card = ({ aosDuration, description, icon, image, title }) => (
+    <div 
+        className="card flex-col items-stretch mb-6"
+        data-aos="fade-down"
+        data-aos-duration={ aosDuration ?? "2000" }>
         <div className="image-container relative">
             <Image
                 alt={title} 
