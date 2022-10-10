@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useState } from "react"
-import { Button, Collapse, Typography } from "@mui/material";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { Button, Collapse } from "@mui/material";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { useRouter } from "next/router"
 import classNames from "classnames";
@@ -14,6 +14,8 @@ import Link from "src/components/link";
 
 const ListItem = ({ id, list, label }) => {
     const [ open, setOpen ] = useState(false);
+
+    const pathnameRef = useRef("");
 
     const { pathname } = useRouter();
 
@@ -41,6 +43,14 @@ const ListItem = ({ id, list, label }) => {
 
     const toggleState = useCallback((event) => setOpen(b => !b), []);
     const closeHandler = useCallback(() => setOpen(false), []);
+
+    useEffect(() => {
+        if(Boolean(pathnameRef.current) && (pathname !== pathnameRef.current)) {
+            setOpen(false);
+        }
+
+        pathnameRef.current = pathname;
+    }, [ pathname ])
 
     return (
         <ClickAwayListener
