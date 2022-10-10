@@ -1,9 +1,6 @@
 
 .heroTitle::before {
     content: "Our services" !important;
-    display: block;
-    font-size: .9rem;
-    margin: 0 auto;
 }
 
 .categoriesTitle::before, .servicesTitle::before {

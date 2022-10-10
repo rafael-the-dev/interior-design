@@ -8,6 +8,7 @@ import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
 import Clients from "src/components/home-components/clients";
 import CategoryCard from "src/components/services-page/category-card"
 import DefaultHero from "src/components/default-hero";
+import H1 from "src/components/h1";
 import SpecialServicesCard from "src/components/services-page/special-services-card";
 import Testimonials from "src/components/services-page/testimonials"
 import Link from "src/components/link"
@@ -83,12 +84,10 @@ const Container = () => {
         <main>
             <DefaultHero className="">
                 <div className="flex flex-col h-full items-center justify-center w-full">
-                    <Typography 
-                        component="h1"
-                        className={classNames(classes.heroTitle, "leading-tight",
-                        "capitalize font-bold text-5xl text-center text-white before:text-red-500 lg:leading-snug lg:text-6xl")}>
+                    <H1 
+                        className={classNames(classes.heroTitle)}>
                         Bringing great designer.
-                    </Typography>
+                    </H1>
                 </div>
             </DefaultHero>
             <section className="py-12 px-5 sm:px-[10%] lg:px-5">
