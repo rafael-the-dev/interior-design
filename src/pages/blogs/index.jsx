@@ -5,6 +5,7 @@ import classes from "./styles.module.css";
 
 
 import DefaultHero from "src/components/default-hero";
+import H1 from "src/components/h1"
 import Link from "src/components/link"
 
 
@@ -14,12 +15,10 @@ const Container = () => {
         <main>
             <DefaultHero className="">
                 <div className="flex flex-col h-full items-center justify-center w-full">
-                    <Typography 
-                        component="h1"
-                        className={classNames(classes.heroTitle, "leading-tight",
-                        "capitalize font-bold text-5xl text-center text-white before:text-red-500 lg:leading-snug lg:text-6xl")}>
+                    <H1 
+                        className={classNames(classes.heroTitle)}>
                         The (r)evolution of media.
-                    </Typography>
+                    </H1>
                 </div>
             </DefaultHero>
         </main>
