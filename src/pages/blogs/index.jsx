@@ -86,9 +86,10 @@ const Container = () => {
                     </H1>
                 </div>
             </DefaultHero>
-            <div className="px-5">
-                <div className={classNames(`border-l border-gray-500 border-solid flex flex-wrap items-stretch 
-                    justify-between pl-5 py-12`)}>
+            <div className="px-5 sm:px-[10%] lg:px-5">
+                <div className={classNames(classes.grid, `border-l border-gray-200 border-solid flex flex-wrap items-stretch 
+                    justify-between pl-5 py-12 relative after:h-full after:absolute after:bg-gray-200 after:top-0 
+                    before:absolute before:bg-gray-200 before:h-full before:top-0 lg:pl-0`)}>
                     {
                         blogsList.map((blog, index) => (
                             <Card { ...blog } key={index} />

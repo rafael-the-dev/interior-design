@@ -11,3 +11,13 @@
     width: 3px;
     z-index: 15;
 }
+
+@media screen and (min-width: 1024px) {
+    .card {
+        width: 33.3333%;
+    }
+
+    .title::before {
+        left: -7.2%;
+    }
+}

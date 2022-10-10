@@ -11,7 +11,7 @@ import Link from "src/components/link"
 const Card = ({ author, category, description, image, title }) => {
 
     return (
-        <div className={classNames(classes.card, `mb-8 relative`)}>
+        <div className={classNames(classes.card, `mb-8 relative lg:px-6`)}>
             <div className={classNames(classes.imageContainer, "relative")}>
                 <Image 
                     alt={title}

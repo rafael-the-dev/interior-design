@@ -1,3 +1,18 @@
 .heroTitle::before {
     content: "Blog default" !important;
 }
+
+@media screen and (min-width: 1024px) {
+    .grid::before, .grid::after {
+        content: "" !important;
+        width: 1px;
+    }
+
+    .grid::before {
+        left: 33.1%;
+    }
+
+    .grid::after {
+        left: 66.5%;
+    }
+}
