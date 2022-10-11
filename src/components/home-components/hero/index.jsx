@@ -61,7 +61,7 @@ const HeroContainer = () => {
             setLayout();
 
         }
-    }, [])
+    }, [ setLayout ])
 
     useEffect(() => {
         setChildren.current?.(children.current);

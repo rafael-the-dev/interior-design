@@ -11,7 +11,7 @@ const ControllersContainer = ({ nextIndex, slide, setChildrenListRef }) => {
     const clickHandler = useCallback(prop => () => {
         wasChangeByUser.current = true;
         setIndex(prop);
-    }, [ slide ])
+    }, [ ])
 
     useEffect(() => {
         setChildrenListRef.current = list => setChildrenList(list);
@@ -25,7 +25,7 @@ const ControllersContainer = ({ nextIndex, slide, setChildrenListRef }) => {
 
             return currentIndex + 1;
         })
-    }, [ nextIndex ])
+    }, [ ])
 
     useEffect(() => {
         const timer = setInterval(() => {
