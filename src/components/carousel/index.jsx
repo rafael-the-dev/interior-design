@@ -13,6 +13,7 @@ const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, has
     const sliderRef = useRef(null);
     const childrenList = useRef([]);
     const currentIndex = useRef(0);
+    const timeoutRef = useRef(null);
     const widthReducer = useRef(0);
     const widthRef = useRef(0);
 
@@ -76,15 +77,24 @@ const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, has
 
 
     const resizeHandler = useCallback(() => {
-        layout();
-        slide({});
+            layout();
+            slide({});
     }, [ layout, slide ]);
 
     useEffect(() => {
         const list = [ ...sliderRef.current.children ];
         childrenList.current = list;
+
         layout();
         setChildrenListRef.current?.(list);
+
+        timeoutRef.current = setTimeout(() => {
+            layout();
+        }, 5000);
+
+        return () => {
+            clearTimeout(timeoutRef.current);
+        }
     }, [ children, childrenList, layout ]);
 
     useEffect(() => {
