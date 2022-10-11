@@ -21,6 +21,10 @@
     z-index: 5;
 }
 
+.searchInput {
+    padding: .83rem .5rem;
+}
+
 .searchFormVisible {
     transform: scale(1);
 }
@@ -44,7 +48,7 @@
 
     .searchForm {
         right: 0;
-        width: 350px;
+        width: 350px !important;
     }
 }
 

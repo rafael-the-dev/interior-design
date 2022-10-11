@@ -32,7 +32,7 @@ const Menu = () => {
     const formElementsMemo = useMemo(() => (
         <>
             <input 
-                className="border-0 grow outline-none"
+                className={classNames(classes.searchInput, "border-0 grow mr-4 outline-none text-base")}
                 placeholder="Search here"
             />
             <IconButton 
@@ -88,7 +88,7 @@ const Menu = () => {
                 <Collapse className={classNames(classes.collapse, "absolute bg-white w-full")} component="nav" in={open} unmountOnExit>
                     { navigationList }
                 </Collapse>
-                <form className={classNames("absolute bg-neutral-900 flex items-stretch py-4 px-2 w-full",
+                <form className={classNames("absolute bg-neutral-900 flex items-stretch py-4 px-2 w-full lg:pl-4",
                     classes.searchForm, { [classes.searchFormVisible]: openSearchForm } )}>
                     { formElementsMemo }
                 </form>
