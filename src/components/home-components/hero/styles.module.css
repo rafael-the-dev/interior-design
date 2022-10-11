@@ -1,0 +1,33 @@
+.heroList {
+    height: 320px;
+}
+
+.heroDecoration {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .1)), url(/images/slides/v1-1.jpg);
+}
+
+.heroWellInvented {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .1)), url(/images/slides/v1-2.jpg);
+}
+
+.heroCrafted {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .1)), url(/images/slides/v1-3.jpg);
+}
+
+@media screen and (min-width: 600px) {
+    .heroList {
+        height: 420px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .heroList {
+        height: 520px;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .heroList {
+        height: 620px;
+    }
+}
