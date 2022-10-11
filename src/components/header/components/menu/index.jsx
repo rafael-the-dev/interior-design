@@ -78,7 +78,7 @@ const Menu = () => {
                         { pathname !== "/" && (
                             <Button
                                 className={classNames(classes.quoteButton, 
-                                "bg-red-600 capitalize ml-4 px-4 rounded-none text-white")}
+                                "border border-solid border-red-600 bg-red-600 capitalize ml-4 px-4 rounded-none text-white hover:bg-transparent hover:text-red-600")}
                                 endIcon={<ArrowRightAltIcon />}>
                                 Get a quote
                             </Button>
