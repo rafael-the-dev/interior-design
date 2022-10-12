@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button, Collapse, IconButton } from "@mui/material"
 import Image from "next/image";
 import classNames from "classnames";
@@ -18,6 +18,8 @@ const Menu = () => {
     const [ open, setOpen ] = useState(false);
     const [ openSearchForm, setOpenSearchForm ] = useState(false);
     const { pathname } = useRouter();
+
+    const containerRef = useRef(null);
 
     const logoMemo = useMemo(() => (
         <Link className={classNames(classes.logoContainer, `relative`)} href="/">
@@ -47,8 +49,37 @@ const Menu = () => {
     const toggleState = useCallback(() => setOpen(b => !b), []);
     const toggleFormState = useCallback(() => setOpenSearchForm(b => !b), []);
 
+    const scrollHandler = useCallback(() => {
+        const { scrollY } = window;
+
+        if(scrollY > 200) {
+            containerRef.current.classList.add(classes.fixedContainerBase)
+        } 
+        else if((scrollY > 80)) {
+            containerRef.current.classList.add(classes.fixedContainer)
+        } 
+        else {
+            containerRef.current.classList.remove(classes.fixedContainer);
+            containerRef.current.classList.remove(classes.fixedContainerBase);
+        }
+    }, [])
+
+    useEffect(() => {
+        const currentWindow = window;
+
+        scrollHandler();
+
+        currentWindow.addEventListener("scroll", scrollHandler);
+
+        return () => {
+            currentWindow.removeEventListener("scroll", scrollHandler);
+        };
+    }, [ scrollHandler ])
+
     return (
-        <div className="relative">
+        <div 
+            className={classNames(classes.base, "relative")}
+            ref={containerRef}>
             <div className={classNames(classes.container, { [`absolute ${classes.containerHome}`]: pathname === "/"},
                 "bg-white")}>
                 <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4 lg:py-4">
