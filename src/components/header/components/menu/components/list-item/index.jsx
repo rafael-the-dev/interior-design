@@ -24,11 +24,11 @@ const ListItem = ({ id, list, label }) => {
             {
                 list.map((item, index) => (
                     <li  
-                        className="mb-4"
+                        className={classNames(classes.menuListItem, "mb-4 last:border-0")}
                         data-navigation="item"
                         key={index}>
                         <Link 
-                            className={classNames(classes.listItemLink, "block items-center text-white hover:text-red-600 lg:flex")} 
+                            className={classNames(classes.listItemLink, "block capitalize items-center text-white hover:text-red-600 lg:flex")} 
                             href={item.href}>
                             <span className={classNames(classes.iconWrapper)} >
                                 <TrendingFlatIcon />

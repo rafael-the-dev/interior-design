@@ -14,7 +14,8 @@ const NavigationList = () => {
             href: "/", id: "/", label: "Home",  list: [
                 { href: "/", label: "Home page 01" },
                 { href: "/", label: "Home page 02" },
-                { href: "/", label: "Home page 03" }
+                { href: "/", label: "Home page 03" },
+                { href: "/", label: "Header styles" }
             ]
         },
         {
@@ -29,7 +30,11 @@ const NavigationList = () => {
             href: "/", id: "services", label: "Services",  list: [
                 { href: "services", label: "View all services" },
                 { href: "services", label: "concept design" },
-                { href: "services", label: "Project design" }
+                { href: "services", label: "Project design" },
+                { href: "services", label: "Make overs" },
+                { href: "services", label: "Consulting" },
+                { href: "services", label: "Glass & wrought" },
+                { href: "services", label: "Space planning" },
             ]
         },
         {
@@ -45,16 +50,18 @@ const NavigationList = () => {
         },
         {
             href: "/", id: "blog", label: "Blog",  list: [
-                { href: "/", label: "" },
-                { href: "/", label: "" },
-                { href: "/", label: "" }
+                { href: "blogs", label: "Blog grid view" },
+                { href: "blogs", label: "Blog with sidebar" },
+                { href: "blogs", label: "Blog single post" }
             ]
         },
         {
             href: "/", id: "shop", label: "Shop",  list: [
-                { href: "/", label: "" },
-                { href: "/", label: "" },
-                { href: "/", label: "" }
+                { href: "/", label: "Our products" },
+                { href: "/", label: "Products single" },
+                { href: "/", label: "Shopping cart" },
+                { href: "/", label: "Checkout" },
+                { href: "/", label: "My account" }
             ]
         },
         {

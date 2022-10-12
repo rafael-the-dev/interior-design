@@ -31,6 +31,12 @@
         display: none;
     }
 
+    .menuListItem {
+        border-bottom: 1px solid #e7e5e4;
+        margin-bottom: 0 !important;
+        padding: .6rem 1.5rem;
+    }
+
     .listItemLink {
         color: #262626 !important;
     }
@@ -40,8 +46,8 @@
     }
 
     .listItemList {
-        min-width: 210px;
-        padding: .8rem .7rem .7rem !important;
+        min-width: 250px;
+        padding: .8rem 0 !important;
         transition: all 1s ease;
         transform: scale(0);
         top: 83px;
