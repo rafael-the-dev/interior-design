@@ -1,0 +1,8 @@
+.listItem svg {
+    color: #FFF;
+    opacity: .5;
+}
+
+.listItem:hover svg {
+    color: #d97706;
+}

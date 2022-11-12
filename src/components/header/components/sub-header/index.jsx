@@ -10,7 +10,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import Link from "src/components/link"
+import Link from "src/components/link";
+import SocialMediaListItem from "./components/social-media-list-item"
 
 const Container = () => {
 
@@ -42,18 +43,18 @@ const Container = () => {
             </div>
             <div className={classNames(classes.row, "flex flex-col items-center mt-4 md:mt-0 md:items-end")}>
                 <ul className={classNames("flex mt-3", classes.socialMediaContainer)}>
-                    <li className="mr-3">
-                        <FacebookIcon className="opacity-50  text-white hover:text-amber-600" />
-                    </li>
-                    <li className="mr-3">
-                        <TwitterIcon className="opacity-50  text-white hover:text-amber-600" />
-                    </li>
-                    <li className="mr-3">
-                        <InstagramIcon className="opacity-50  text-white hover:text-amber-600" />
-                    </li>
-                    <li className="">
-                        <LinkedInIcon className="opacity-50  text-white hover:text-amber-600" />
-                    </li>
+                    <SocialMediaListItem>
+                        <FacebookIcon />
+                    </SocialMediaListItem>
+                    <SocialMediaListItem>
+                        <TwitterIcon />
+                    </SocialMediaListItem>
+                    <SocialMediaListItem>
+                        <InstagramIcon />
+                    </SocialMediaListItem>
+                    <SocialMediaListItem>
+                        <LinkedInIcon />
+                    </SocialMediaListItem>
                 </ul>
             </div>
         </div>
