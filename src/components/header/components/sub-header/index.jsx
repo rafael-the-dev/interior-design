@@ -19,7 +19,7 @@ const Container = () => {
             <div className={classNames("flex flex-col items-center md:items-start", classes.row)}>
                 <Typography
                     className="flex font-bold items-center">
-                    <span className="icon-music mr-2 text-red-600"></span>
+                    <span className="icon-music mr-2 text-amber-600"></span>
                     We have answers
                 </Typography>
                 <ul className={classNames("flex flex-wrap justify-center mt-3 mb-1", classes.list)}>
@@ -43,16 +43,16 @@ const Container = () => {
             <div className={classNames(classes.row, "flex flex-col items-center mt-4 md:mt-0 md:items-end")}>
                 <ul className={classNames("flex mt-3", classes.socialMediaContainer)}>
                     <li className="mr-3">
-                        <FacebookIcon className="opacity-50  text-white hover:text-red-600" />
+                        <FacebookIcon className="opacity-50  text-white hover:text-amber-600" />
                     </li>
                     <li className="mr-3">
-                        <TwitterIcon className="opacity-50  text-white hover:text-red-600" />
+                        <TwitterIcon className="opacity-50  text-white hover:text-amber-600" />
                     </li>
                     <li className="mr-3">
-                        <InstagramIcon className="opacity-50  text-white hover:text-red-600" />
+                        <InstagramIcon className="opacity-50  text-white hover:text-amber-600" />
                     </li>
                     <li className="">
-                        <LinkedInIcon className="opacity-50  text-white hover:text-red-600" />
+                        <LinkedInIcon className="opacity-50  text-white hover:text-amber-600" />
                     </li>
                 </ul>
             </div>

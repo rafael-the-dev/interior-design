@@ -78,7 +78,7 @@ const NavigationList = () => {
                             className={classNames(classes.listItem, "border-b border-solid border-neutral-800 py-2 px-5")} 
                             key={item.id}>
                             <Link 
-                                className={classNames(classes.listItemButton, "block hover:text-red-600",
+                                className={classNames(classes.listItemButton, "block hover:text-amber-600",
                                 pathname === item.id ? classes.currentPage : "text-white")}
                                 href={item.href}>
                                 { item.label }

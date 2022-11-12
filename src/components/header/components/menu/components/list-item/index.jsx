@@ -28,7 +28,7 @@ const ListItem = ({ id, list, label }) => {
                         data-navigation="item"
                         key={index}>
                         <Link 
-                            className={classNames(classes.listItemLink, "block capitalize items-center text-white hover:text-red-600 lg:flex")} 
+                            className={classNames(classes.listItemLink, "block capitalize items-center text-white hover:text-amber-600 lg:flex")} 
                             href={item.href}>
                             <span className={classNames(classes.iconWrapper)} >
                                 <TrendingFlatIcon />

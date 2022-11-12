@@ -16,7 +16,7 @@
     }
 
     .listItem:hover, .listItemButton:hover {
-        color: #dc2626 !important;
+        color: #d97706 !important;
     }
 
     .listItem {
@@ -42,7 +42,7 @@
     }
 
     .listItemLink:hover {
-        color: #ef4444 !important;
+        color: #d97706 !important;
     }
 
     .listItemList {
@@ -90,5 +90,5 @@
 
 
 .currentPage {
-    color: #dc2626 !important;
+    color: #d97706 !important;
 }
