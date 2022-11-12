@@ -17,16 +17,9 @@ const Header = () => {
 
     return (
         <header className={classNames(classes.header, ``)}>
-            { pathname === "/" ? (
-                <div className="bg-neutral-900 pt-4 pb-16 px-5 sm:px-[10%]">
-                    <Typography className="text-center text-sm text-white">
-                        <span className="opacity-75">Crystalo Inspiring Interiors, Basesd On United States... </span>
-                        <Link className="text-white" href="/">Get Approximate Estimation.</Link>
-                    </Typography>
-                </div> ) : <SubHeader />
-            }
+            <SubHeader />
             <Menu />
-            { pathname === "/" && (
+            { /*pathname === "/" && (
                 <div className={classNames(classes.descriptionListContainer, "bg-gray-100 pt-16 pb-10 px-5 sm:px-[10%] remove-px-10",
                     "flex flex-col items-stretch")}>
                     <dl className={classNames(classes.descriptionList, "")}>
@@ -64,7 +57,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-            )}
+            )*/}
         </header>
     );
 };

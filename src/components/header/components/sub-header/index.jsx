@@ -15,7 +15,7 @@ import Link from "src/components/link"
 const Container = () => {
 
     return (
-        <div className={classNames("justify-between py-4 px-5 text-white md:flex", classes.container)}>
+        <div className={classNames("justify-between py-4 px-5 text-white md:flex lg:px-8", classes.container)}>
             <div className={classNames("flex flex-col items-center md:items-start", classes.row)}>
                 <Typography
                     className="flex font-bold items-center">
@@ -41,20 +41,6 @@ const Container = () => {
                 </ul>
             </div>
             <div className={classNames(classes.row, "flex flex-col items-center mt-4 md:mt-0 md:items-end")}>
-                <ul className="flex">
-                    <li className="mr-2 lg:mr-3">
-                        <Link className="opacity-50 text-sm text-white" href="/">Partners</Link>
-                    </li>
-                    <li className="mr-2 lg:mr-3">
-                        <Link className="opacity-50 text-sm text-white" href="/">Media</Link>
-                    </li>
-                    <li className="mr-2 lg:mr-3">
-                        <Link className="opacity-50 text-sm text-white" href="/">3600 View</Link>
-                    </li>
-                    <li className="">
-                        <Link className="opacity-50 text-sm text-white" href="/">FAQ</Link>
-                    </li>
-                </ul>
                 <ul className={classNames("flex mt-3", classes.socialMediaContainer)}>
                     <li className="mr-3">
                         <FacebookIcon className="opacity-50  text-white hover:text-red-600" />

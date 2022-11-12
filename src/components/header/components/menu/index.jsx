@@ -80,40 +80,25 @@ const Menu = () => {
         <div 
             className={classNames(classes.base, "relative")}
             ref={containerRef}>
-            <div className={classNames(classes.container, { [`absolute ${classes.containerHome}`]: pathname === "/"},
+            <div className={classNames(classes.container,
                 "bg-white")}>
-                <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4 lg:py-4">
+                <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-8 lg:py-4">
                     { logoMemo }
                     <div className="flex items-center">
                         <nav className={classNames(classes.navigation, "hidden")}>
                             { navigationList }
                         </nav>
-                        <div className="flex h-full mx-1">
-                            <IconButton 
-                                className={classNames(classes.icon, classes.searchButton, "rounded-none icon-search",
-                                "border-r border-solid border-slate-200 sm:pr-3")} 
-                                aria-label="search"
-                                onClick={toggleFormState}
-                            />
-                            <IconButton 
-                                className={classNames(classes.icon, classes.bagButton, "rounded-none icon-bag",
-                                "sm:pl-3")} 
-                                aria-label="cart"
-                            />
-                        </div>
                         <IconButton 
                             className={classNames(classes.menuButton, "bg-black rounded-none text-white hover:bg-neutral-700")}
                             onClick={toggleState}>
                             { open ? <CloseIcon /> : <Bars /> }
                         </IconButton>
-                        { pathname !== "/" && (
-                            <Button
-                                className={classNames(classes.quoteButton, 
-                                "border border-solid border-red-600 bg-red-600 capitalize ml-4 px-4 rounded-none text-white hover:bg-transparent hover:text-red-600")}
-                                endIcon={<ArrowRightAltIcon />}>
-                                Get a quote
-                            </Button>
-                        )}
+                        <Button
+                            className={classNames(classes.quoteButton, 
+                            "border border-solid border-red-600 bg-red-600 capitalize ml-4 px-4 rounded-none text-white hover:bg-transparent hover:text-red-600")}
+                            endIcon={<ArrowRightAltIcon />}>
+                            Get a quote
+                        </Button>
                     </div>
                 </div>
                 <Collapse className={classNames(classes.collapse, "absolute bg-white w-full")} component="nav" in={open} unmountOnExit>
