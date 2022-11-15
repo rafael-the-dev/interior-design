@@ -27,12 +27,18 @@ const Form = () => {
         </Typography>
     ), [])
 
+    const submitHandler = useCallback(e => {
+        e.preventDefault();
+    }, [])
+
     return (
-        <form className="footer__form mt-8 w-full md:mt-12 lg:mt-0">
+        <form 
+            className="footer__form mt-8 w-full md:mt-12 lg:mt-0"
+            onSubmit={submitHandler}>
             { legend }
             <div className="mt-6">
                 <input 
-                    className="bg-transparent border border-solid border-gray-500 outline-none py-3 px-2 
+                    className="bg-transparent border border-solid border-stone-500 outline-none py-3 px-2 
                     text-base text-white w-full focus:border-gray-300"
                     id="footer-email-input"
                     onChange={changeHandler}
@@ -40,9 +46,8 @@ const Form = () => {
                     value={value}
                 />
                 <Button 
-                    className={classNames("border border-solid border-red-600 bg-red-600 mt-4 py-2 px-8 rounded-none text-white",
-                    value.trim() ? "hover:bg-transparent hover:text-red-600" : "")}
-                    disabled={!Boolean(value.trim())}
+                    className={classNames("border border-solid border-stone-800 bg-stone-800 mt-4 py-2 px-8 rounded-none text-white md:py-3",
+                    value.trim() ? "hover:bg-transparent hover:text-stone-800" : "")}
                     endIcon={<TrendingFlatIcon />}>
                     Subscribe
                 </Button>

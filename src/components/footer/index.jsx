@@ -4,7 +4,7 @@ import Image from "next/image"
 import classNames from "classnames";
 
 import classes from "./styles.module.css"
-import logo from 'public/images/resources/logo-2.png';
+import logo from 'public/images/logo/black_logo.png';
 
 import Link from "../link";
 import ListItem from "./components/link";
@@ -14,7 +14,7 @@ import AddressItem from "./components/address-item"
 const Footer = () => {
 
     return (
-        <footer className={classNames(classes.footer, ``)}>
+        <footer className={classNames(classes.footer, `bg-amber-600`)}>
             <div className={classNames(classes.row, "flex-wrap justify-between px-5 pt-12 sm:px-[10%] md:px-5 md:pt-20 md:flex pb-12")}>
                 <div className={classNames(classes.column)}>
                     <Link href="/">
@@ -88,7 +88,7 @@ const Footer = () => {
                     </AddressItem>
                 </Typography>
             </div>
-            <div className={classNames(classes.copyright, "py-8 text-center text-red-600 md:pt-24")}>
+            <div className={classNames(classes.copyright, "bg-amber-700 py-8 text-center text-white md:pt-24")}>
                 <Typography>
                     { new Date(Date.now()).getFullYear() }
                 </Typography>

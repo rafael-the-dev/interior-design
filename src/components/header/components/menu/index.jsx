@@ -97,7 +97,7 @@ const Menu = () => {
                             className={classNames(classes.quoteButton, 
                             "border border-solid border-amber-600 bg-amber-600 capitalize ml-4 px-4 rounded-none text-white hover:bg-transparent hover:text-amber-600")}
                             endIcon={<ArrowRightAltIcon />}>
-                            Get a quote
+                            Contact
                         </Button>
                     </div>
                 </div>
