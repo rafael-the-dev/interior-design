@@ -9,7 +9,7 @@ import logo from 'public/images/logo/black_logo.png';
 import Link from "../link";
 import ListItem from "./components/link";
 import Form from "./components/form";
-import AddressItem from "./components/address-item"
+import AddressItem from "./components/address-item";
 
 const Footer = () => {
 

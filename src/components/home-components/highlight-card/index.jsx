@@ -15,8 +15,8 @@ const HightlightCard  = ({ aosDuration, description, image, title }) => (
         elevation={2}>
         <div className="px-5 pt-8 grow relative sm:px-[10%] lg:px-5">
             <div
-                className={classNames(classes.avatar, "border-2 border-solid bg-white border-red-600 mx-auto",
-                "rounded-full relative top-0 before:absolute before:bg-red-600 before:block before:h-full before:rounded-full")}
+                className={classNames(classes.avatar, "border-2 border-solid bg-white border-amber-600 mx-auto",
+                "rounded-full relative top-0 before:absolute before:bg-amber-600 before:block before:h-full before:rounded-full")}
             >
                 <span className={classNames(classes.icon, image, `relative flex h-full items-center justify-center rounded-full text-5xl text-slate-500 w-full`)}></span>
             </div>
@@ -36,7 +36,7 @@ const HightlightCard  = ({ aosDuration, description, image, title }) => (
             href="/">
             <Button 
                 className={classNames(classes.button, `bg-slate-50 capitalize font-normal py-3 rounded-t-none rounded-b-lg text-black w-full 
-                hover:bg-slate-50 hover:text-red-600 sm:py-4`)}
+                hover:bg-slate-50 hover:text-amber-600 sm:py-4`)}
                 endIcon={<ArrowForwardIcon />}>
                 Read more
             </Button>

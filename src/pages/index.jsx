@@ -77,8 +77,8 @@ const Home = () => {
 
                         @media screen and (min-width: 1060px) {
                             .hightlight-cards-container {
-                                transform: translateY(-86px);
-                                z-index: 20;
+                                padding-bottom: 4rem;
+                                padding-top: 9rem;
                             }
                         }
                     `
@@ -89,3 +89,12 @@ const Home = () => {
 };
 
 export default Home;
+
+/**
+ @media screen and (min-width: 1060px) {
+                            .hightlight-cards-container {
+                                transform: translateY(-86px);
+                                z-index: 20;
+                            }
+                        }
+ */

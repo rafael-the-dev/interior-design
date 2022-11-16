@@ -7,11 +7,13 @@
     width: 85px;
 }
 
+.avatar::before, .button {
+    transition: all .5s ease-in;
+}
 .avatar::before {
     content: "" !important;
     left: 50%;
     transform: translateX(-50%);
-    transition: all .5s ease-in;
     width: 0;
 }
 
@@ -24,7 +26,8 @@
 }
 
 .container:hover .button {
-    color: #dc2626;
+    background-color: #d97706;
+    color: #FFF;
 }
 
 .container:hover .icon {

@@ -5,6 +5,7 @@ const LinkContainer = ({ className, children, href, onClick }) => (
     <Typography 
         className={className} 
         component={Link}
+        href={href}
         onClick={onClick}>
         { children }
     </Typography>
