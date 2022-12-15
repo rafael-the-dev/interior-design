@@ -17,7 +17,7 @@ const Card = ({ description, icon, index, image, title }) => {
             data-aos="fade-up"
             data-aos-duration={durations[index - 1]}>
             <div
-                className={classNames(classes.cardImageContainer, `relative`)}>
+                className={classNames(classes.cardImageContainer, `overflow-hidden relative`)}>
                 <Image 
                     alt={title}
                     layout="fill"
