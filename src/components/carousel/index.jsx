@@ -48,24 +48,34 @@ const CarouselContainer = forwardRef(({ children, dots, helper, hasNextItem, has
                 width = parentWidth / spacing.sm.width;
                 widthReducer.current = spacing.sm.gap;
             }  
-
-            if(helper) {
-                width = helper();
-            }
-
+            
             child.classList.remove("h-full");
 
             const { height } = child.getBoundingClientRect();
             if(height > maxHeight) maxHeight = height;
+
+            if(helper) {
+                const result = helper();
+
+                if(result.isNew) {
+                    width = result.width ?? width;
+                    maxHeight = result.height ?? maxHeight;
+                }
+                else {
+                    width = result;
+                }
+            }
             
             child.style.width = `${width - widthReducer.current}px`;
             child.classList.add("h-full");
             child.style.left = `${(width - (widthReducer.current - 20)) * index}px`;
         });
         
-        widthRef.current = width;
-        sliderRef.current.style.height = `${maxHeight}px`
-        sliderRef.current.style.width = `${width * childrenList.current.length}px`;
+        setTimeout(() => {
+            widthRef.current = width;
+            sliderRef.current.style.height = `${maxHeight}px`
+            sliderRef.current.style.width = `${width * childrenList.current.length}px`;
+        }, 2000)
     }, [ helper, spacing ]);
 
     const slide = useCallback(({ index }) => {

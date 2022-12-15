@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Button, Typography } from "@mui/material";
+import { Button, Hidden, Typography } from "@mui/material";
 
 import classes from "./styles.module.css";
 
@@ -65,14 +65,16 @@ const Container = () => {
                     </div>
                     <ModernDesignCarolusel />
                 </div>
-                <div className={classNames(classes.SingleFactCounterContainer, `bg-gray-100 flex flex-col 
-                    flex-wrap justify-center items-stretch px-[20%] sm:flex-row sm:justify-between sm:px-[10%] 
-                    lg:px-[7%]`)}>
-                    <SingleFactCounter description={<>Years of<br/>Experience</>} title="36" />
-                    <SingleFactCounter description={<>Projects<br/>Completed</>} title="5k" />
-                    <SingleFactCounter description={<>Branches<br/>Worldwide</>} title="24" />
-                    <SingleFactCounter description={<>Awards<br/>Holds in Hand</>} title="47" />
-                </div>
+                <Hidden xlDown>
+                    <div className={classNames(classes.SingleFactCounterContainer, `bg-gray-100 flex flex-col 
+                        flex-wrap justify-center items-stretch px-[20%] sm:flex-row sm:justify-between sm:px-[10%] 
+                        lg:px-[7%]`)}>
+                        <SingleFactCounter description={<>Years of<br/>Experience</>} title="36" />
+                        <SingleFactCounter description={<>Projects<br/>Completed</>} title="5k" />
+                        <SingleFactCounter description={<>Branches<br/>Worldwide</>} title="24" />
+                        <SingleFactCounter description={<>Awards<br/>Holds in Hand</>} title="47" />
+                    </div>
+                </Hidden>
             </section>
             <section className="px-5 pt-4 pb-12 sm:px-[10%] lg:px-5">
                 <div className="flex flex-col justify-between sm:flex-row sm:items-center">

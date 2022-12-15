@@ -39,11 +39,22 @@ const Container = () => {
         }
     ];
 
+    const helper = () => {
+        const { innerWidth } = window;
+
+        if(innerWidth >= 1200) {
+            return { height: 450, isNew: true }
+        }
+
+        return { isNew: true };
+    };
+
     return (
-        <div className={classNames(classes.container, "relative")}>
+        <div className={classNames(classes.container, "mt-8 relative lg:mt-16")}>
             <div className={classNames(classes.carouselContainer, "")}>
                 <Carousel
                     dots
+                    helper={helper}
                     spacing={{ xs: { gap: 0, width: 1 } }}>
                     {
                         list.map((item, index) => (
