@@ -20,6 +20,7 @@ const Menu = () => {
     const { pathname } = useRouter();
 
     const containerRef = useRef(null);
+    const rootRef = useRef(null);
 
     const logoMemo = useMemo(() => (
         <Link className={classNames(classes.logoContainer, `relative`)} href="/">
@@ -50,19 +51,21 @@ const Menu = () => {
     const toggleFormState = useCallback(() => setOpenSearchForm(b => !b), []);
 
     const scrollHandler = useCallback(() => {
+        const elementRef = pathname === "/" ? containerRef : rootRef;
+
         const { scrollY } = window;
 
         if(scrollY > 200) {
-            containerRef.current.classList.add(classes.fixedContainerBase)
+            elementRef.current.classList.add(classes.fixedContainerBase)
         } 
         else if((scrollY > 80)) {
-            containerRef.current.classList.add(classes.fixedContainer)
+            elementRef.current.classList.add(classes.fixedContainer)
         } 
         else {
-            containerRef.current.classList.remove(classes.fixedContainer);
-            containerRef.current.classList.remove(classes.fixedContainerBase);
+            elementRef.current.classList.remove(classes.fixedContainer);
+            elementRef.current.classList.remove(classes.fixedContainerBase);
         }
-    }, [])
+    }, [ pathname ])
 
     useEffect(() => {
         const currentWindow = window;
@@ -79,9 +82,11 @@ const Menu = () => {
     return (
         <div 
             className={classNames(classes.base, "relative")}
-            ref={containerRef}>
-            <div className={classNames(classes.container, { [`absolute ${classes.containerHome}`]: pathname === "/"},
-                "bg-white")}>
+            ref={rootRef}>
+            <div 
+                className={classNames(classes.container, { [`absolute ${classes.containerHome}`]: pathname === "/"},
+                "bg-white")}
+                ref={containerRef}>
                 <div className="flex items-center justify-between py-3 px-2 sm:px-3 lg:px-4 lg:py-4">
                     { logoMemo }
                     <div className="flex items-center">

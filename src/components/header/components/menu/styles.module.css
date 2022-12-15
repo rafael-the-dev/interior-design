@@ -2,22 +2,6 @@
     transition: all 1s ease;
 }
 
-.fixedContainer, .fixedContainerBase {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    left: 0;
-    position: fixed !important;
-    width: 100%;
-    z-index: 200;
-}
-
-.fixedContainer {
-    top: -200px;
-}
-
-.fixedContainerBase {
-    top: 0;
-}
-
 .containerHome {
     left: 5%;
     top: 50%;
@@ -92,4 +76,21 @@
     .quoteButton {
         display: flex;
     }
+}
+
+.fixedContainer, .fixedContainerBase {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    left: 0;
+    position: fixed !important;
+    transform: translate(0, 0);
+    width: 100%;
+    z-index: 200;
+}
+
+.fixedContainer {
+    top: -200px;
+}
+
+.fixedContainerBase {
+    top: 0;
 }
