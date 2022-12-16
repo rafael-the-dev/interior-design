@@ -7,3 +7,6 @@ To accomplish this task I am using  for styling:
 Material-UI
 
 Tailwind Css
+
+
+and JS, React
