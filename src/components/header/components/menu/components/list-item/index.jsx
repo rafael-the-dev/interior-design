@@ -30,10 +30,12 @@ const ListItem = ({ id, list, label }) => {
                         <Link 
                             className={classNames(classes.listItemLink, "block capitalize items-center text-white hover:text-red-600 lg:flex")} 
                             href={item.href}>
-                            <span className={classNames(classes.iconWrapper)} >
-                                <TrendingFlatIcon />
-                            </span>
-                            { item.label }
+                            <div className={classNames(classes.listItemLink, "block capitalize items-center text-white hover:text-red-600 lg:flex")}>
+                                <span className={classNames(classes.iconWrapper)} >
+                                    <TrendingFlatIcon />
+                                </span>
+                                { item.label }
+                            </div>
                         </Link>
                     </li>
                 ))
