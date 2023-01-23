@@ -9,11 +9,13 @@ import Link from "src/components/link"
 const LinkContainer = ({ href, label }) => (
     <li className={classNames(classes.container, `mb-3 last:mb-0`)}>
         <Link 
-            className={classNames(classes.link, `capitalize flex items-center opacity-70 text-sm text-white hover:opacity-100`)}
+            className={classNames(classes.link, `capitalize opacity-70 text-sm text-white hover:opacity-100`)}
             href={href}>
-            <AddIcon className={classNames(classes.icon, classes.linkAddIcon)} />
-            <HorizontalRuleIcon className={classNames(classes.icon, classes.linkMinusIcon)} />
-            { label }
+            <div className="flex items-center ">
+                <AddIcon className={classNames(classes.icon, classes.linkAddIcon)} />
+                <HorizontalRuleIcon className={classNames(classes.icon, classes.linkMinusIcon)} />
+                { label }
+            </div>
         </Link>
     </li>
 );
