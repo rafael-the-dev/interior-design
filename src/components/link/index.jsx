@@ -5,7 +5,7 @@ const LinkContainer = ({ className, children, href, onClick }) => (
     <Link href={href}
         className={className} 
         onClick={onClick}>
-        { children }
+        <a className={className}>{ children }</a>
     </Link>
 );
 
